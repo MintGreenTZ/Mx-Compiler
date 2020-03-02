@@ -1,7 +1,11 @@
 grammar Mxstar;
 
 program
-    : (classDecl | variableDecl | functionDecl)*
+    : decl*
+    ;
+
+decl
+    : (classDecl | variableDecl | functionDecl)
     ;
 
 classDecl
@@ -61,7 +65,7 @@ statement
 
 expression
     // Basement
-    : const                                                          # constExpr
+    : constant                                                       # constExpr
     | This                                                           # thisExpr
     | Identifier                                                     # idExpt
     | '(' expression ')'                                             # subExpr
@@ -75,24 +79,24 @@ expression
     | <assoc = right> op = ('+' | '-')               expression      # prefixExpr
     | 'new' creator                                                  # newExpr
     // Binary Operator
-    | lhs = expression op=('*' | '/' | '%') rhs = expression         # binaryExpr
-    | lhs = expression op=('+' | '-') rhs = expression               # binaryExpr
-    | lhs = expression op=('<<' | '>>') rhs = expression             # binaryExpr
-    | lhs = expression op=('<' | '>' | '>=' | '<=') rhs = expression # binaryExpr
-    | lhs = expression op=('==' | '!=' ) rhs = expression            # binaryExpr
-    | lhs = expression op='&' rhs = expression                       # binaryExpr
-    | lhs = expression op='^' rhs = expression                       # binaryExpr
-    | lhs = expression op='|' rhs = expression                       # binaryExpr
-    | lhs = expression op='&&' rhs = expression                      # binaryExpr
-    | lhs = expression op='||' rhs = expression                      # binaryExpr
-    | <assoc = right> lhs = expression op='=' rhs = expression       # assignExpr
+    | lhs = expression op=('*' | '/' | '%') rhs = expression         # binaryOpExpr
+    | lhs = expression op=('+' | '-') rhs = expression               # binaryOpExpr
+    | lhs = expression op=('<<' | '>>') rhs = expression             # binaryOpExpr
+    | lhs = expression op=('<' | '>' | '>=' | '<=') rhs = expression # binaryOpExpr
+    | lhs = expression op=('==' | '!=' ) rhs = expression            # binaryOpExpr
+    | lhs = expression op='&' rhs = expression                       # binaryOpExpr
+    | lhs = expression op='^' rhs = expression                       # binaryOpExpr
+    | lhs = expression op='|' rhs = expression                       # binaryOpExpr
+    | lhs = expression op='&&' rhs = expression                      # binaryOpExpr
+    | lhs = expression op='||' rhs = expression                      # binaryOpExpr
+    | <assoc = right> lhs = expression op='=' rhs = expression       # assignOpExpr
     ;
 
 expressionList
     : expression (',' expression)*
     ;
 
-const
+constant
     : ConstInteger
     | ConstString
     | ConstBool

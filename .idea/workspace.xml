@@ -1,13 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4800a084-ac35-4fe1-a738-8a8707ee9e97" name="Default Changelist" comment="" />
+    <list default="true" id="4800a084-ac35-4fe1-a738-8a8707ee9e97" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ASTdesign.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/AssignNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/BinaryOpNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/BlockNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/BreakNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ClassDeclNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstBoolNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstIntNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstStringNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstantNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ContinueNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/DeclNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ExprNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ExprStmtNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ForNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/FuncCallNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/FunctionDeclNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/IdNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/IfNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/MemberAccessNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/NewNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ParameterListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ProgramNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ReturnNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/StmtNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/SubscriptNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/ThisNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/TypeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/UnaryOpNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VoidNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/WhileNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Utils/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XsHLUg4TpmCR9MbxHl9UdhlCVa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,6 +70,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.7.0_67/lib/antlr-4.7.1-complete.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -52,25 +108,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Other_File_Types/0.0.1280.680@0.0.1280.680" timestamp="1582355701246" />
-    <state x="389" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582285960905">
+    <state x="389" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583063290233">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="389" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1582285960905" />
+    <state x="389" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1583063290233" />
+    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583118127749">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1583118127749" />
     <state x="442" y="96" key="FileChooserDialogImpl" timestamp="1582447048061">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="442" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582447048061" />
-    <state x="129" y="0" key="SettingsEditor" timestamp="1582447057986">
+    <state x="129" y="0" key="SettingsEditor" timestamp="1583062711894">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="129" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582447057986" />
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1582447125632">
+    <state x="129" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583062711894" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1583062278991">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582447125632" />
-    <state x="28" y="0" key="new project wizard" timestamp="1582285886906">
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1583062278991" />
+    <state x="28" y="0" key="new project wizard" timestamp="1583062376579">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="28" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1582285886906" />
+    <state x="28" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1583062376579" />
   </component>
 </project>
