@@ -1,4 +1,4 @@
-// Generated from Mxstar.g4 by ANTLR 4.7.1
+package Compiler.Parser;// Generated from Mxstar.g4 by ANTLR 4.7.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -22,6 +22,18 @@ public class MxstarBaseListener implements MxstarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitProgram(MxstarParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDecl(MxstarParser.DeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDecl(MxstarParser.DeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -267,6 +279,18 @@ public class MxstarBaseListener implements MxstarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAssignOpExpr(MxstarParser.AssignOpExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignOpExpr(MxstarParser.AssignOpExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFuncCallExpr(MxstarParser.FuncCallExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -351,18 +375,6 @@ public class MxstarBaseListener implements MxstarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignExpr(MxstarParser.AssignExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAssignExpr(MxstarParser.AssignExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterThisExpr(MxstarParser.ThisExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -375,13 +387,13 @@ public class MxstarBaseListener implements MxstarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBinaryExpr(MxstarParser.BinaryExprContext ctx) { }
+	@Override public void enterBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBinaryExpr(MxstarParser.BinaryExprContext ctx) { }
+	@Override public void exitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

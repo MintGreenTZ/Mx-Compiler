@@ -17,7 +17,8 @@ variableDecl
     ;
 
 type
-    : nonArrayType ('[' ']')*
+    : type '[' ']'
+    | nonArrayType
     ;
 
 nonArrayType
@@ -55,7 +56,7 @@ statement
     | If '(' expression ')' statement (Else statement)?                 # ifStmt
     | While '(' expression ')' statement                                # whileStmt
     | For '(' init = expression? ';' cond = expression? ';'
-              step = expression ')' statement                           # forStmt
+              step = expression? ')' statement                           # forStmt
     | Return expression ';'                                             # retStmt
     | Break ';'                                                         # breakStmt
     | Continue ';'                                                      # continueStmt

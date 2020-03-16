@@ -3,6 +3,7 @@ package Compiler.SemanticAnalysis;
 import Compiler.AST.*;
 
 public interface ASTVisitor {
+    void visit(ArrayTypeNode node);
     void visit(AssignNode node);
     void visit(BinaryOpNode node);
     void visit(BlockNode node);
@@ -10,6 +11,7 @@ public interface ASTVisitor {
     void visit(ClassDeclNode node);
     void visit(ConstBoolNode node);
     void visit(ConstIntNode node);
+    void visit(ConstructorNode node);
     void visit(ConstStringNode node);
     void visit(ContinueNode node);
     void visit(ExprStmtNode node);
@@ -20,8 +22,10 @@ public interface ASTVisitor {
     void visit(IfNode node);
     void visit(MemberAccessNode node);
     void visit(NewNode node);
-    void visit(ProgramNode node);
+    void visit(NonArrayTypeNode node);
+    void visit(ParameterNode node);
     void visit(ParameterListNode node);
+    void visit(ProgramNode node);
     void visit(ReturnNode node);
     void visit(SubscriptNode node);
     void visit(ThisNode node);

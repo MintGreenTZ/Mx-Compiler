@@ -3,16 +3,14 @@ package Compiler.AST;
 import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
-import java.util.List;
-
-public class VariableDeclNode extends DeclNode {
+public class ParameterNode extends Node {
     private TypeNode type;
-    private List<IdNode> variableNames;
+    private String identifier;
 
-    public VariableDeclNode(Location location, TypeNode type, List<IdNode> variableNames) {
+    public ParameterNode(Location location, TypeNode type, String identifier) {
         super(location);
         this.type = type;
-        this.variableNames = variableNames;
+        this.identifier = identifier;
     }
 
     public void accept(ASTVisitor visitor) {

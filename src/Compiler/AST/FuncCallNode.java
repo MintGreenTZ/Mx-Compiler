@@ -7,9 +7,9 @@ import java.util.List;
 
 public class FuncCallNode extends ExprNode {
     private ExprNode funcObj;
-    private List<ExprNode> parameterList;
+    private ParameterListNode parameterList;
 
-    public FuncCallNode(Location location, ExprNode funcObj, List<ExprNode> parameterList) {
+    public FuncCallNode(Location location, ExprNode funcObj, ParameterListNode parameterList) {
         super(location);
         this.funcObj = funcObj;
         this.parameterList = parameterList;

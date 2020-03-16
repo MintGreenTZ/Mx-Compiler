@@ -1,4 +1,4 @@
-// Generated from Mxstar.g4 by ANTLR 4.7.1
+package Compiler.Parser;// Generated from Mxstar.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -15,6 +15,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitProgram(MxstarParser.ProgramContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MxstarParser#decl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecl(MxstarParser.DeclContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MxstarParser#classDecl}.
 	 * @param ctx the parse tree
@@ -147,6 +153,13 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMemberExpr(MxstarParser.MemberExprContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code assignOpExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignOpExpr(MxstarParser.AssignOpExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code funcCallExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
@@ -196,13 +209,6 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSuffixExpr(MxstarParser.SuffixExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code assignExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignExpr(MxstarParser.AssignExprContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code thisExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
@@ -210,12 +216,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitThisExpr(MxstarParser.ThisExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code binaryExpr}
+	 * Visit a parse tree produced by the {@code binaryOpExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBinaryExpr(MxstarParser.BinaryExprContext ctx);
+	T visitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code subsriptExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.

@@ -5,7 +5,7 @@ import Compiler.Utils.Location;
 
 import java.util.List;
 
-abstract public class ProgramNode extends Node {
+public class ProgramNode extends Node {
     private List<DeclNode> decl;
 
     public ProgramNode(Location location, List<DeclNode> decl) {

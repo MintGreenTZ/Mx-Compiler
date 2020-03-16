@@ -2,7 +2,7 @@ package Compiler.AST;
 
 import Compiler.Utils.Location;
 
-abstract public class ExprNode extends StmtNode {
+abstract public class ExprNode extends Node {
     private Location location;
 
     public ExprNode(Location location) {

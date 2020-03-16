@@ -1,11 +1,15 @@
 Node
     TypeNode
+        ArrayTypeNode
+        NonArrayTypeNode
     ProgramNode
     DeclNode
         ClassDeclNode
         VariableDeclNode
         FunctionDeclNode
+    ParameterNode
     ParameterListNode
+    ConstructorNode
     StmtNode
         BlockStmtNode
         IfNode
@@ -15,18 +19,18 @@ Node
         ContinueNode
         ExprStmtNode
         ReturnNode
-        ExprNode
-            ConstantNode
-                ConstIntNode
-                ConstStringNode
-                ConstBoolNode
-                VoidNode
-            BinaryOpNode
-            UnaryOpNode
-            AssignNode
-            MemberAccessNode
-            IdNode
-            NewNode
-            ThisNode
-            FuncCallNode
-            SubscriptNode
+    ExprNode
+        ConstantNode
+            ConstIntNode
+            ConstStringNode
+            ConstBoolNode
+            VoidNode
+        BinaryOpNode
+        UnaryOpNode
+        AssignNode
+        MemberAccessNode
+        IdNode
+        NewNode
+        ThisNode
+        FuncCallNode
+        SubscriptNode
