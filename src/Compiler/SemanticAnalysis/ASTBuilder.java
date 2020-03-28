@@ -194,93 +194,123 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         return new FuncCallNode(new Location(ctx.getStart()), funcObj, parameterList);
     }
 
-    @Override public Node visitIdExpt(MxstarParser.IdExptContext ctx) {
+    @Override public Node visitNewExpr(MxstarParser.NewExprContext ctx) {
+        return visit(ctx.creator());
+    }
+
+    @Override public Node visitPrefixExpr(MxstarParser.PrefixExprContext ctx) {
+        ExprNode expr = (ExprNode) visit(ctx.expression());
+        PrefixExprNode.Op op;
+        switch (ctx.op.getText()) {
+            case "~":  op = PrefixExprNode.Op.INV; break;
+            case "!":  op = PrefixExprNode.Op.LogicINV; break;
+            case "++": op = PrefixExprNode.Op.SelfADD; break;
+            case "--": op = PrefixExprNode.Op.SelfSUB; break;
+            case "+":  op = PrefixExprNode.Op.ADD; break;
+            case "-":  op = PrefixExprNode.Op.SUB; break;
+            default: op = null;
+        }
+        return new PrefixExprNode(new Location(ctx.getStart()), op, expr);
+    }
+
+    @Override public Node visitSubExpr(MxstarParser.SubExprContext ctx) {
+        return visit(ctx.expression());
+    }
+
+    @Override public Node visitIdExpr(MxstarParser.IdExprContext ctx) {
         return new IdNode(new Location(ctx.getStart()), ctx.Identifier().getText());
     }
 
-    @Override public Node visitNewExpr(MxstarParser.NewExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitPrefixExpr(MxstarParser.PrefixExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitSubExpr(MxstarParser.SubExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitConstExpr(MxstarParser.ConstExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitSuffixExpr(MxstarParser.SuffixExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitThisExpr(MxstarParser.ThisExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitSubsriptExpr(MxstarParser.SubsriptExprContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitExpressionList(MxstarParser.ExpressionListContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitConstant(MxstarParser.ConstantContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitNaryCreator(MxstarParser.NaryCreatorContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitArrayCreator(MxstarParser.ArrayCreatorContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
-    @Override public Node visitClassCreator(MxstarParser.ClassCreatorContext ctx) { return visitChildren(ctx); }
+    @Override public Node visitConstExpr(MxstarParser.ConstExprContext ctx) {
+        return visit(ctx.constant());
+    }
+
+    @Override public Node visitSuffixExpr(MxstarParser.SuffixExprContext ctx) {
+        ExprNode expr = (ExprNode) visit(ctx.expression());
+        PrefixExprNode.Op op;
+        switch (ctx.op.getText()) {
+            case "++": op = PrefixExprNode.Op.SelfADD; break;
+            case "--": op = PrefixExprNode.Op.SelfSUB; break;
+            default: op = null;
+        }
+        return new PrefixExprNode(new Location(ctx.getStart()), op, expr);
+    }
+
+    @Override public Node visitThisExpr(MxstarParser.ThisExprContext ctx) {
+        return new ThisNode(new Location(ctx.getStart()));
+    }
+
+    @Override public Node visitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx) {
+        ExprNode lhs = (ExprNode) visit(ctx.lhs);
+        ExprNode rhs = (ExprNode) visit(ctx.rhs);
+        BinaryOpNode.Op op;
+        switch (ctx.op.getText()) {
+            case "*":  op = BinaryOpNode.Op.MUL; break;
+            case "/":  op = BinaryOpNode.Op.DIV; break;
+            case "%":  op = BinaryOpNode.Op.MOD; break;
+            case "+":  op = BinaryOpNode.Op.ADD; break;
+            case "-":  op = BinaryOpNode.Op.SUB; break;
+            case "<<": op = BinaryOpNode.Op.SHL; break;
+            case ">>": op = BinaryOpNode.Op.SHR; break;
+            case "<":  op = BinaryOpNode.Op.LT; break;
+            case "<=": op = BinaryOpNode.Op.LE; break;
+            case ">":  op = BinaryOpNode.Op.GT; break;
+            case ">=": op = BinaryOpNode.Op.GE; break;
+            case "==": op = BinaryOpNode.Op.EQ; break;
+            case "!=": op = BinaryOpNode.Op.NEQ; break;
+            case "&":  op = BinaryOpNode.Op.AND; break;
+            case "^":  op = BinaryOpNode.Op.XOR; break;
+            case "|":  op = BinaryOpNode.Op.OR; break;
+            case "&&": op = BinaryOpNode.Op.LAND; break;
+            case "||": op = BinaryOpNode.Op.LOR; break;
+            case "=":  op = BinaryOpNode.Op.ASS; break;
+            default:op = null;
+        }
+        return new BinaryOpNode(new Location(ctx.getStart()), lhs, op, rhs);
+    }
+
+    @Override public Node visitSubscriptExpr(MxstarParser.SubscriptExprContext ctx) {
+        ExprNode body = (ExprNode) visit(ctx.expression(0));
+        ExprNode subscript = (ExprNode) visit(ctx.expression(1));
+        return new SubscriptNode(new Location(ctx.getStart()), body, subscript);
+    }
+
+    @Override public Node visitExpressionList(MxstarParser.ExpressionListContext ctx) {
+        List<ExprNode> exprNodes = new ArrayList<>();
+        for (var expression: ctx.expression())
+            exprNodes.add((ExprNode) visit(expression));
+        return new ExprListNode(new Location(ctx.getStart()), exprNodes);
+    }
+
+    @Override public Node visitConstInteger(MxstarParser.ConstIntegerContext ctx) {
+        return new ConstIntNode(new Location(ctx.getStart()), Integer.parseInt(ctx.getText()));
+    }
+
+    @Override public Node visitConstString(MxstarParser.ConstStringContext ctx) {
+        return new ConstStringNode(new Location(ctx.getStart()), ctx.getText());
+    }
+
+    @Override public Node visitConstBool(MxstarParser.ConstBoolContext ctx) {
+        return new ConstBoolNode(new Location(ctx.getStart()), Boolean.parseBoolean(ctx.getText()));
+    }
+
+    @Override public Node visitConstNull(MxstarParser.ConstNullContext ctx) {
+        return new VoidNode(new Location(ctx.getStart()));
+    }
+
+    @Override public Node visitNaryCreator(MxstarParser.NaryCreatorContext ctx) {
+        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, null);
+    }
+
+    @Override public Node visitArrayCreator(MxstarParser.ArrayCreatorContext ctx) {
+        int dim = (ctx.getChildCount() - ctx.expression().size() - 1) >> 1;
+        List<ExprNode> exprList = new ArrayList<>();
+        for (var expr :ctx.expression())
+            exprList.add((ExprNode) visit(expr));
+        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), dim, exprList);
+    }
+
+    @Override public Node visitClassCreator(MxstarParser.ClassCreatorContext ctx) {
+        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, null);
+    }
 }

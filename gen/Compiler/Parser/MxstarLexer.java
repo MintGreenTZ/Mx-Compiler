@@ -1,5 +1,5 @@
+// Generated from C:/Git Projects/Mx-Compiler/src/Compiler/Parser\Mxstar.g4 by ANTLR 4.8
 package Compiler.Parser;
-// Generated from Mxstar.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MxstarLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -33,33 +33,43 @@ public class MxstarLexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] ruleNames = {
-		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
-		"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "T__15", "T__16", 
-		"T__17", "T__18", "T__19", "T__20", "T__21", "T__22", "T__23", "T__24", 
-		"T__25", "T__26", "T__27", "T__28", "T__29", "T__30", "T__31", "Int", 
-		"Bool", "String", "Null", "Void", "True", "False", "If", "Else", "For", 
-		"While", "Break", "Continue", "Return", "New", "Class", "This", "ConstInteger", 
-		"ConstString", "ConstBool", "ConstNull", "Identifier", "WhiteSpace", "LineComment", 
-		"BlockComment"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
+			"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "T__15", "T__16", 
+			"T__17", "T__18", "T__19", "T__20", "T__21", "T__22", "T__23", "T__24", 
+			"T__25", "T__26", "T__27", "T__28", "T__29", "T__30", "T__31", "Int", 
+			"Bool", "String", "Null", "Void", "True", "False", "If", "Else", "For", 
+			"While", "Break", "Continue", "Return", "New", "Class", "This", "ConstInteger", 
+			"ConstString", "ConstBool", "ConstNull", "Identifier", "WhiteSpace", 
+			"LineComment", "BlockComment"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'{'", "'}'", "';'", "','", "'['", "']'", "'('", "')'", "'++'", 
-		"'--'", "'.'", "'~'", "'!'", "'+'", "'-'", "'*'", "'/'", "'%'", "'<<'", 
-		"'>>'", "'<'", "'>'", "'>='", "'<='", "'=='", "'!='", "'&'", "'^'", "'|'", 
-		"'&&'", "'||'", "'='", "'int'", "'bool'", "'string'", "'null'", "'void'", 
-		"'true'", "'false'", "'if'", "'else'", "'for'", "'while'", "'break'", 
-		"'continue'", "'return'", "'new'", "'class'", "'this'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, "Int", "Bool", "String", 
-		"Null", "Void", "True", "False", "If", "Else", "For", "While", "Break", 
-		"Continue", "Return", "New", "Class", "This", "ConstInteger", "ConstString", 
-		"ConstBool", "ConstNull", "Identifier", "WhiteSpace", "LineComment", "BlockComment"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'{'", "'}'", "';'", "','", "'['", "']'", "'('", "')'", "'++'", 
+			"'--'", "'.'", "'~'", "'!'", "'+'", "'-'", "'*'", "'/'", "'%'", "'<<'", 
+			"'>>'", "'<'", "'>'", "'>='", "'<='", "'=='", "'!='", "'&'", "'^'", "'|'", 
+			"'&&'", "'||'", "'='", "'int'", "'bool'", "'string'", "'null'", "'void'", 
+			"'true'", "'false'", "'if'", "'else'", "'for'", "'while'", "'break'", 
+			"'continue'", "'return'", "'new'", "'class'", "'this'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, "Int", "Bool", 
+			"String", "Null", "Void", "True", "False", "If", "Else", "For", "While", 
+			"Break", "Continue", "Return", "New", "Class", "This", "ConstInteger", 
+			"ConstString", "ConstBool", "ConstNull", "Identifier", "WhiteSpace", 
+			"LineComment", "BlockComment"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**

@@ -1,5 +1,5 @@
+// Generated from C:/Git Projects/Mx-Compiler/src/Compiler/Parser\Mxstar.g4 by ANTLR 4.8
 package Compiler.Parser;
-// Generated from Mxstar.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -147,6 +147,41 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitEmptyStmt(MxstarParser.EmptyStmtContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code newExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNewExpr(MxstarParser.NewExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code thisExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThisExpr(MxstarParser.ThisExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code prefixExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrefixExpr(MxstarParser.PrefixExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code subscriptExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubscriptExpr(MxstarParser.SubscriptExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code suffixExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuffixExpr(MxstarParser.SuffixExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code memberExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
@@ -161,26 +196,19 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignOpExpr(MxstarParser.AssignOpExprContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code binaryOpExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code funcCallExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitFuncCallExpr(MxstarParser.FuncCallExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code newExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNewExpr(MxstarParser.NewExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code prefixExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPrefixExpr(MxstarParser.PrefixExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code subExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
@@ -189,13 +217,6 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSubExpr(MxstarParser.SubExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code idExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIdExpr(MxstarParser.IdExprContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code constExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
@@ -203,33 +224,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConstExpr(MxstarParser.ConstExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code suffixExpr}
+	 * Visit a parse tree produced by the {@code idExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSuffixExpr(MxstarParser.SuffixExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code subscriptExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubscriptExpr(MxstarParser.SubscriptExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code thisExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitThisExpr(MxstarParser.ThisExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code binaryOpExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBinaryOpExpr(MxstarParser.BinaryOpExprContext ctx);
+	T visitIdExpr(MxstarParser.IdExprContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MxstarParser#expressionList}.
 	 * @param ctx the parse tree

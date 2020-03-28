@@ -56,7 +56,7 @@ statement
     | If '(' expression ')' statement (Else statement)?                 # ifStmt
     | While '(' expression ')' statement                                # whileStmt
     | For '(' init = expression? ';' cond = expression? ';'
-              step = expression? ')' statement                           # forStmt
+              step = expression? ')' statement                          # forStmt
     | Return expression ';'                                             # retStmt
     | Break ';'                                                         # breakStmt
     | Continue ';'                                                      # continueStmt
@@ -68,12 +68,12 @@ expression
     // Basement
     : constant                                                       # constExpr
     | This                                                           # thisExpr
-    | Identifier                                                     # idExpt
+    | Identifier                                                     # idExpr
     | '(' expression ')'                                             # subExpr
     // Second Priority Level
     | expression op = ('++' | '--')                                  # suffixExpr
     | expression '.' Identifier                                      # memberExpr
-    | expression '[' expression ']'                                  # subsriptExpr
+    | expression '[' expression ']'                                  # subscriptExpr
     | expression '(' expressionList? ')'                             # funcCallExpr
     // Third Priority Level
     | <assoc = right> op = ('~' | '!' | '++' | '--') expression      # prefixExpr
@@ -98,10 +98,10 @@ expressionList
     ;
 
 constant
-    : ConstInteger
-    | ConstString
-    | ConstBool
-    | ConstNull
+    : ConstInteger      # ConstInteger
+    | ConstString       # ConstString
+    | ConstBool         # ConstBool
+    | ConstNull         # ConstNull
     ;
 
 creator

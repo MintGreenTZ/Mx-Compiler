@@ -1,6 +1,5 @@
+// Generated from C:/Git Projects/Mx-Compiler/src/Compiler/Parser\Mxstar.g4 by ANTLR 4.8
 package Compiler.Parser;
-// Generated from Mxstar.g4 by ANTLR 4.7.1
-import Compiler.Parser.MxstarVisitor;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MxstarParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -31,28 +30,38 @@ public class MxstarParser extends Parser {
 		RULE_type = 4, RULE_nonArrayType = 5, RULE_functionDecl = 6, RULE_parameterList = 7, 
 		RULE_parameter = 8, RULE_constructorDef = 9, RULE_block = 10, RULE_statement = 11, 
 		RULE_expression = 12, RULE_expressionList = 13, RULE_constant = 14, RULE_creator = 15;
-	public static final String[] ruleNames = {
-		"program", "decl", "classDecl", "variableDecl", "type", "nonArrayType", 
-		"functionDecl", "parameterList", "parameter", "constructorDef", "block", 
-		"statement", "expression", "expressionList", "constant", "creator"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"program", "decl", "classDecl", "variableDecl", "type", "nonArrayType", 
+			"functionDecl", "parameterList", "parameter", "constructorDef", "block", 
+			"statement", "expression", "expressionList", "constant", "creator"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'{'", "'}'", "';'", "','", "'['", "']'", "'('", "')'", "'++'", 
-		"'--'", "'.'", "'~'", "'!'", "'+'", "'-'", "'*'", "'/'", "'%'", "'<<'", 
-		"'>>'", "'<'", "'>'", "'>='", "'<='", "'=='", "'!='", "'&'", "'^'", "'|'", 
-		"'&&'", "'||'", "'='", "'int'", "'bool'", "'string'", "'null'", "'void'", 
-		"'true'", "'false'", "'if'", "'else'", "'for'", "'while'", "'break'", 
-		"'continue'", "'return'", "'new'", "'class'", "'this'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, "Int", "Bool", "String", 
-		"Null", "Void", "True", "False", "If", "Else", "For", "While", "Break", 
-		"Continue", "Return", "New", "Class", "This", "ConstInteger", "ConstString", 
-		"ConstBool", "ConstNull", "Identifier", "WhiteSpace", "LineComment", "BlockComment"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'{'", "'}'", "';'", "','", "'['", "']'", "'('", "')'", "'++'", 
+			"'--'", "'.'", "'~'", "'!'", "'+'", "'-'", "'*'", "'/'", "'%'", "'<<'", 
+			"'>>'", "'<'", "'>'", "'>='", "'<='", "'=='", "'!='", "'&'", "'^'", "'|'", 
+			"'&&'", "'||'", "'='", "'int'", "'bool'", "'string'", "'null'", "'void'", 
+			"'true'", "'false'", "'if'", "'else'", "'for'", "'while'", "'break'", 
+			"'continue'", "'return'", "'new'", "'class'", "'this'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, "Int", "Bool", 
+			"String", "Null", "Void", "True", "False", "If", "Else", "For", "While", 
+			"Break", "Continue", "Return", "New", "Class", "This", "ConstInteger", 
+			"ConstString", "ConstBool", "ConstNull", "Identifier", "WhiteSpace", 
+			"LineComment", "BlockComment"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -102,6 +111,7 @@ public class MxstarParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
 	public static class ProgramContext extends ParserRuleContext {
 		public List<DeclContext> decl() {
 			return getRuleContexts(DeclContext.class);
@@ -123,7 +133,7 @@ public class MxstarParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor) return ((MxstarVisitor<? extends T>)visitor).visitProgram(this);
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -867,65 +877,6 @@ public class MxstarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class WhileStmtContext extends StatementContext {
-		public TerminalNode While() { return getToken(MxstarParser.While, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public StatementContext statement() {
-			return getRuleContext(StatementContext.class,0);
-		}
-		public WhileStmtContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterWhileStmt(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitWhileStmt(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitWhileStmt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class ExprStmtContext extends StatementContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ExprStmtContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterExprStmt(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitExprStmt(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitExprStmt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class ContinueStmtContext extends StatementContext {
-		public TerminalNode Continue() { return getToken(MxstarParser.Continue, 0); }
-		public ContinueStmtContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterContinueStmt(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitContinueStmt(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitContinueStmt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class RetStmtContext extends StatementContext {
 		public TerminalNode Return() { return getToken(MxstarParser.Return, 0); }
 		public ExpressionContext expression() {
@@ -943,25 +894,6 @@ public class MxstarParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitRetStmt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class VariableDeclStmtContext extends StatementContext {
-		public VariableDeclContext variableDecl() {
-			return getRuleContext(VariableDeclContext.class,0);
-		}
-		public VariableDeclStmtContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterVariableDeclStmt(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitVariableDeclStmt(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitVariableDeclStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -994,22 +926,45 @@ public class MxstarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class BlockStmtContext extends StatementContext {
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
+	public static class ExprStmtContext extends StatementContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
-		public BlockStmtContext(StatementContext ctx) { copyFrom(ctx); }
+		public ExprStmtContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterBlockStmt(this);
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterExprStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitBlockStmt(this);
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitExprStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitBlockStmt(this);
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitExprStmt(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class WhileStmtContext extends StatementContext {
+		public TerminalNode While() { return getToken(MxstarParser.While, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public StatementContext statement() {
+			return getRuleContext(StatementContext.class,0);
+		}
+		public WhileStmtContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterWhileStmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitWhileStmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitWhileStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1040,19 +995,22 @@ public class MxstarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class EmptyStmtContext extends StatementContext {
-		public EmptyStmtContext(StatementContext ctx) { copyFrom(ctx); }
+	public static class BlockStmtContext extends StatementContext {
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public BlockStmtContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterEmptyStmt(this);
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterBlockStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitEmptyStmt(this);
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitBlockStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitEmptyStmt(this);
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitBlockStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1070,6 +1028,58 @@ public class MxstarParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitBreakStmt(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class VariableDeclStmtContext extends StatementContext {
+		public VariableDeclContext variableDecl() {
+			return getRuleContext(VariableDeclContext.class,0);
+		}
+		public VariableDeclStmtContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterVariableDeclStmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitVariableDeclStmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitVariableDeclStmt(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class EmptyStmtContext extends StatementContext {
+		public EmptyStmtContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterEmptyStmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitEmptyStmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitEmptyStmt(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ContinueStmtContext extends StatementContext {
+		public TerminalNode Continue() { return getToken(MxstarParser.Continue, 0); }
+		public ContinueStmtContext(StatementContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterContinueStmt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitContinueStmt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitContinueStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1264,6 +1274,105 @@ public class MxstarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	public static class NewExprContext extends ExpressionContext {
+		public TerminalNode New() { return getToken(MxstarParser.New, 0); }
+		public CreatorContext creator() {
+			return getRuleContext(CreatorContext.class,0);
+		}
+		public NewExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterNewExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitNewExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitNewExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ThisExprContext extends ExpressionContext {
+		public TerminalNode This() { return getToken(MxstarParser.This, 0); }
+		public ThisExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterThisExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitThisExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitThisExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PrefixExprContext extends ExpressionContext {
+		public Token op;
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public PrefixExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterPrefixExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitPrefixExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitPrefixExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SubscriptExprContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public SubscriptExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterSubscriptExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitSubscriptExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitSubscriptExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SuffixExprContext extends ExpressionContext {
+		public Token op;
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public SuffixExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterSuffixExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitSuffixExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitSuffixExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class MemberExprContext extends ExpressionContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -1309,6 +1418,31 @@ public class MxstarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class BinaryOpExprContext extends ExpressionContext {
+		public ExpressionContext lhs;
+		public Token op;
+		public ExpressionContext rhs;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public BinaryOpExprContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterBinaryOpExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitBinaryOpExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitBinaryOpExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class FuncCallExprContext extends ExpressionContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -1350,45 +1484,6 @@ public class MxstarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class PrefixExprContext extends ExpressionContext {
-		public Token op;
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public PrefixExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterPrefixExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitPrefixExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitPrefixExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class NewExprContext extends ExpressionContext {
-		public CreatorContext creator() {
-			return getRuleContext(CreatorContext.class,0);
-		}
-		public NewExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterNewExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitNewExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitNewExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class ConstExprContext extends ExpressionContext {
 		public ConstantContext constant() {
 			return getRuleContext(ConstantContext.class,0);
@@ -1422,90 +1517,6 @@ public class MxstarParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitIdExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class SuffixExprContext extends ExpressionContext {
-		public Token op;
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public SuffixExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterSuffixExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitSuffixExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitSuffixExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class ThisExprContext extends ExpressionContext {
-		public TerminalNode This() { return getToken(MxstarParser.This, 0); }
-		public ThisExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterThisExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitThisExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitThisExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class SubscriptExprContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public SubscriptExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterSubscriptExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitSubscriptExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitSubscriptExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class BinaryOpExprContext extends ExpressionContext {
-		public ExpressionContext lhs;
-		public Token op;
-		public ExpressionContext rhs;
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public BinaryOpExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterBinaryOpExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitBinaryOpExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitBinaryOpExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2010,6 +2021,23 @@ public class MxstarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class ConstNullContext extends ConstantContext {
+		public TerminalNode ConstNull() { return getToken(MxstarParser.ConstNull, 0); }
+		public ConstNullContext(ConstantContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterConstNull(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitConstNull(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitConstNull(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class ConstBoolContext extends ConstantContext {
 		public TerminalNode ConstBool() { return getToken(MxstarParser.ConstBool, 0); }
 		public ConstBoolContext(ConstantContext ctx) { copyFrom(ctx); }
@@ -2041,23 +2069,6 @@ public class MxstarParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitConstString(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class ConstNullContext extends ConstantContext {
-		public TerminalNode ConstNull() { return getToken(MxstarParser.ConstNull, 0); }
-		public ConstNullContext(ConstantContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterConstNull(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitConstNull(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitConstNull(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2127,6 +2138,26 @@ public class MxstarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	public static class NaryCreatorContext extends CreatorContext {
+		public TerminalNode Void() { return getToken(MxstarParser.Void, 0); }
+		public NonArrayTypeContext nonArrayType() {
+			return getRuleContext(NonArrayTypeContext.class,0);
+		}
+		public NaryCreatorContext(CreatorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterNaryCreator(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitNaryCreator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitNaryCreator(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class ClassCreatorContext extends CreatorContext {
 		public TerminalNode Void() { return getToken(MxstarParser.Void, 0); }
 		public NonArrayTypeContext nonArrayType() {
@@ -2170,26 +2201,6 @@ public class MxstarParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitArrayCreator(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class NaryCreatorContext extends CreatorContext {
-		public TerminalNode Void() { return getToken(MxstarParser.Void, 0); }
-		public NonArrayTypeContext nonArrayType() {
-			return getRuleContext(NonArrayTypeContext.class,0);
-		}
-		public NaryCreatorContext(CreatorContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).enterNaryCreator(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MxstarListener ) ((MxstarListener)listener).exitNaryCreator(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MxstarVisitor ) return ((MxstarVisitor<? extends T>)visitor).visitNaryCreator(this);
 			else return visitor.visitChildren(this);
 		}
 	}

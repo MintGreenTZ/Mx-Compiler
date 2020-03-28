@@ -34,3 +34,6 @@ Node
         ThisNode
         FuncCallNode
         SubscriptNode
+        SuffixExprNode
+        PrefixExprNode
+    ExprListNode
