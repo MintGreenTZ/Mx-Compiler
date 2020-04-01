@@ -4,7 +4,6 @@ import Compiler.AST.*;
 import Compiler.Parser.MxstarBaseVisitor;
 import Compiler.Parser.MxstarParser;
 import Compiler.Utils.Location;
-import sun.org.mozilla.javascript.internal.ast.IfStatement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,13 +164,10 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         return new ContinueNode(new Location(ctx.getStart()));
     }
 
-    @Override public Node visitExprStmt(MxstarParser.ExprStmtContext ctx) { return visitChildren(ctx); }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
+    @Override public Node visitExprStmt(MxstarParser.ExprStmtContext ctx) {
+        return new ExprStmtNode(new Location(ctx.getStart()), (ExprNode) visit(ctx.expression()));
+    }
+
     @Override public Node visitEmptyStmt(MxstarParser.EmptyStmtContext ctx) {
         return null;
     }

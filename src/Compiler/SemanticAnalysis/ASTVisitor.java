@@ -14,6 +14,7 @@ public interface ASTVisitor {
     void visit(ConstructorNode node);
     void visit(ConstStringNode node);
     void visit(ContinueNode node);
+    void visit(ExprListNode node);
     void visit(ExprStmtNode node);
     void visit(ForNode node);
     void visit(FuncCallNode node);
@@ -23,14 +24,16 @@ public interface ASTVisitor {
     void visit(MemberAccessNode node);
     void visit(NewNode node);
     void visit(NonArrayTypeNode node);
-    void visit(ParameterNode node);
     void visit(ParameterListNode node);
+    void visit(ParameterNode node);
+    void visit(PrefixExprNode node);
     void visit(ProgramNode node);
     void visit(ReturnNode node);
     void visit(SubscriptNode node);
+    void visit(SuffixExprNode node);
     void visit(ThisNode node);
     void visit(UnaryOpNode node);
     void visit(VariableDeclNode node);
-    void visit(VoidNode node)
+    void visit(VoidNode node);
     void visit(WhileNode node);
 }

@@ -17,5 +17,4 @@ public class SuffixExprNode extends ExprNode {
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }
-} {
 }
