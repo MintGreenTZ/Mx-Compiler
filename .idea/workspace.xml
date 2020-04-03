@@ -2,27 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclStmtNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/Mxstar.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/Mxstar.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Compiler/Parser/MxstarVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ASTdesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ASTdesign.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/FuncCallNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/FuncCallNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/FunctionDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/FunctionDeclNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ParameterNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ParameterNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,6 +50,31 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code.mx" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Compiler.Main" />
+      <module name="Mx-Compiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Compiler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -63,6 +102,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#Project_Structure" timestamp="1585750931328">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1585750931328" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585750583405">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750583405" />
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1585881563637">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585881563637" />
     <state x="488" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585671637009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -71,5 +122,53 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1585671565763" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585845842275">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585845842275" />
+    <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1585848407338">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585848407338" />
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1585884280238">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
+    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1585884280238">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
+    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1585884280238">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
+    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1585884280238">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585849049606">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585849049606">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585849049606">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585849049606">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1585798964070">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585798964070" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585750882006">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750882006" />
   </component>
 </project>

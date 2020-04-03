@@ -3,15 +3,16 @@ package Compiler.AST;
 import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FunctionDeclNode extends DeclNode{
     private TypeNode type;
     private String identifier;
-    private ParameterListNode parameterList;
+    private ArrayList<ParameterNode> parameterList;
     private BlockNode funcBody;
 
-    public FunctionDeclNode(Location location, TypeNode type, String identifier, ParameterListNode parameterList, BlockNode funcNode) {
+    public FunctionDeclNode(Location location, TypeNode type, String identifier, ArrayList<ParameterNode> parameterList, BlockNode funcNode) {
         super(location);
         this.type = type;
         this.identifier = identifier;

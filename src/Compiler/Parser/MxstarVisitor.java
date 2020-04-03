@@ -1,5 +1,6 @@
 package Compiler.Parser;
 // Generated from Mxstar.g4 by ANTLR 4.7.1
+import Compiler.Parser.MxstarParser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -34,6 +35,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVariableDecl(MxstarParser.VariableDeclContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MxstarParser#variable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariable(MxstarParser.VariableContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MxstarParser#type}.
 	 * @param ctx the parse tree

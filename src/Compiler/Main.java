@@ -23,7 +23,6 @@ public class Main {
             input = CharStreams.fromStream(inputStream);
         } catch (Exception error) {
             error.printStackTrace();
-
         }
         MxstarLexer lexer = new MxstarLexer(input);
         CommonTokenStream token = new CommonTokenStream(lexer);

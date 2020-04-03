@@ -34,6 +34,8 @@ public interface ASTVisitor {
     void visit(ThisNode node);
     void visit(UnaryOpNode node);
     void visit(VariableDeclNode node);
+    void visit(VariableDeclStmtNode node);
+    void visit(VariableNode node);
     void visit(VoidNode node);
     void visit(WhileNode node);
 }

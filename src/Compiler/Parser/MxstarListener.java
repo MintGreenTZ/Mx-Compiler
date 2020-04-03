@@ -1,6 +1,5 @@
 package Compiler.Parser;
 // Generated from Mxstar.g4 by ANTLR 4.7.1
-import Compiler.Parser.MxstarParser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -48,6 +47,16 @@ public interface MxstarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariableDecl(MxstarParser.VariableDeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MxstarParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(MxstarParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MxstarParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(MxstarParser.VariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MxstarParser#type}.
 	 * @param ctx the parse tree
