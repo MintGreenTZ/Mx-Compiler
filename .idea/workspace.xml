@@ -2,27 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclStmtNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/NonArrayTypeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/NonArrayTypeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ParameterListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ParameterListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ASTdesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ASTdesign.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ConstructorNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/NonArrayTypeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/NonArrayTypeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ParameterListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ParameterListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ASTdesign.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ASTdesign.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/FuncCallNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/FuncCallNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/FunctionDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/FunctionDeclNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ParameterNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ParameterNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableDeclNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ConstructorNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/NonArrayTypeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/NonArrayTypeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ParameterListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ParameterListNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" afterDir="false" />
     </list>
@@ -110,10 +116,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750583405" />
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1585881563637">
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1585889803785">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585881563637" />
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585889803785" />
     <state x="488" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585671637009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -122,46 +128,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1585671565763" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585845842275">
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585890618095">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585845842275" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585890618095" />
     <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1585848407338">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585848407338" />
-    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1585884280238">
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1585891893060">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
-    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1585884280238">
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585891893060" />
+    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1585891893059">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
-    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1585884280238">
+    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585891893059" />
+    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1585891893059">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
-    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1585884280238">
+    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585891893059" />
+    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1585891893059">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585884280238" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585849049606">
+    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585891893059" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585889943687">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585849049606">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585889943687" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585889943687">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585849049606">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585889943687" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585889943686">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585849049606">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585889943686" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585889943687">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585849049606" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585889943687" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1585798964070">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -170,5 +176,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750882006" />
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585889687618">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1585889687618" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

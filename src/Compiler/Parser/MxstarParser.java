@@ -288,7 +288,7 @@ public class MxstarParser extends Parser {
 			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << Int) | (1L << Bool) | (1L << String) | (1L << Void) | (1L << Identifier))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Int) | (1L << Bool) | (1L << String) | (1L << Void) | (1L << Identifier))) != 0)) {
 				{
 				setState(51);
 				_errHandler.sync(this);
@@ -834,11 +834,11 @@ public class MxstarParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(111);
-			match(T__7);
-			setState(112);
-			match(T__8);
-			setState(113);
 			match(Identifier);
+			setState(112);
+			match(T__7);
+			setState(113);
+			match(T__8);
 			setState(114);
 			block();
 			}
@@ -2506,7 +2506,7 @@ public class MxstarParser extends Parser {
 		"\2\2\2]^\3\2\2\2^_\78\2\2_a\7\n\2\2`b\5\22\n\2a`\3\2\2\2ab\3\2\2\2bc\3"+
 		"\2\2\2cd\7\13\2\2de\5\30\r\2e\21\3\2\2\2fk\5\24\13\2gh\7\6\2\2hj\5\24"+
 		"\13\2ig\3\2\2\2jm\3\2\2\2ki\3\2\2\2kl\3\2\2\2l\23\3\2\2\2mk\3\2\2\2no"+
-		"\5\f\7\2op\5\n\6\2p\25\3\2\2\2qr\7\n\2\2rs\7\13\2\2st\78\2\2tu\5\30\r"+
+		"\5\f\7\2op\5\n\6\2p\25\3\2\2\2qr\78\2\2rs\7\n\2\2st\7\13\2\2tu\5\30\r"+
 		"\2u\27\3\2\2\2vz\7\3\2\2wy\5\32\16\2xw\3\2\2\2y|\3\2\2\2zx\3\2\2\2z{\3"+
 		"\2\2\2{}\3\2\2\2|z\3\2\2\2}~\7\4\2\2~\31\3\2\2\2\177\u00ad\5\30\r\2\u0080"+
 		"\u00ad\5\b\5\2\u0081\u0082\7*\2\2\u0082\u0083\7\n\2\2\u0083\u0084\5\34"+

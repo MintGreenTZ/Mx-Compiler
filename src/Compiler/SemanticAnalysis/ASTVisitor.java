@@ -11,7 +11,6 @@ public interface ASTVisitor {
     void visit(ClassDeclNode node);
     void visit(ConstBoolNode node);
     void visit(ConstIntNode node);
-    void visit(ConstructorNode node);
     void visit(ConstStringNode node);
     void visit(ContinueNode node);
     void visit(ExprListNode node);

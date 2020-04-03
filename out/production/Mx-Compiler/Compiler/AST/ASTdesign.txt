@@ -10,7 +10,6 @@ Node
     VariableNode
     ParameterNode
     ParameterListNode
-    ConstructorNode
     StmtNode
         VariableDeclStmtNode
         BlockStmtNode

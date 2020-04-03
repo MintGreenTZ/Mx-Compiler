@@ -45,7 +45,7 @@ parameter
     ;
 
 constructorDef
-    : '(' ')' Identifier block
+    : Identifier '(' ')' block
     ;
 
 block
@@ -143,7 +143,7 @@ ConstInteger
     ;
 
 ConstString
-    : '"' (. | '\\"' | '\\n' | '\\\\')*? '"'
+    : '"' ('\\"' | '\\n' | '\\\\' | .)*? '"'
     ;
 
 ConstBool

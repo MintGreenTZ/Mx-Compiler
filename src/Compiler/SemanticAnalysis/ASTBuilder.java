@@ -118,13 +118,13 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         String identifier = ctx.Identifier().getText();
         ArrayList<ParameterNode> parameterList = new ArrayList<>();
         if (ctx.parameterList() != null)
-            parameterList.add((ParameterNode) visit(ctx.parameterList()));
+            parameterList =  ((ParameterListNode) visit(ctx.parameterList())).getParameterList();
         BlockNode funcBody = (BlockNode) visit(ctx.block());
         return new FunctionDeclNode(new Location(ctx.getStart()), type, identifier, parameterList, funcBody);
     }
 
     @Override public Node visitParameterList(MxstarParser.ParameterListContext ctx) {
-        List<ParameterNode> parameterList = new ArrayList<>();
+        ArrayList<ParameterNode> parameterList = new ArrayList<>();
         for (var parameter : ctx.parameter())
             parameterList.add((ParameterNode) visit(parameter));
         return new ParameterListNode(new Location(ctx.getStart()), parameterList);
@@ -137,9 +137,11 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
     }
 
     @Override public Node visitConstructorDef(MxstarParser.ConstructorDefContext ctx) {
+        TypeNode type = new NonArrayTypeNode(new Location(ctx.getStart()), "Void");
         String identifier = ctx.Identifier().getText();
+        ArrayList<ParameterNode> parameterList = new ArrayList<>();
         BlockNode block = (BlockNode) visit(ctx.block());
-        return new ConstructorNode(new Location(ctx.getStart()), identifier, block);
+        return new FunctionDeclNode(new Location(ctx.getStart()), type, identifier, parameterList, block);
     }
 
     @Override public Node visitBlock(MxstarParser.BlockContext ctx) {
@@ -164,7 +166,11 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
     @Override public Node visitIfStmt(MxstarParser.IfStmtContext ctx) {
         ExprNode cond = (ExprNode) visit(ctx.expression());
         StmtNode thenStmt = (StmtNode) visit(ctx.statement(0));
-        StmtNode elseStmt = (StmtNode) visit(ctx.statement(1));
+        StmtNode elseStmt;
+        if (ctx.statement(1) != null)
+            elseStmt = (StmtNode) visit(ctx.statement(1));
+        else
+            elseStmt = null;
         return new IfNode(new Location(ctx.getStart()), cond, thenStmt, elseStmt);
     }
 
@@ -175,9 +181,9 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
     }
 
     @Override public Node visitForStmt(MxstarParser.ForStmtContext ctx) {
-        ExprNode init = ctx.init == null ? null : (ExprNode) visit(ctx.expression(0));
-        ExprNode cond = ctx.cond == null ? null : (ExprNode) visit(ctx.expression(1));
-        ExprNode step = ctx.step == null ? null : (ExprNode) visit(ctx.expression(2));
+        ExprNode init = ctx.init == null ? null : (ExprNode) visit(ctx.init);
+        ExprNode cond = ctx.cond == null ? null : (ExprNode) visit(ctx.cond);
+        ExprNode step = ctx.step == null ? null : (ExprNode) visit(ctx.step);
         StmtNode body = (StmtNode) visit(ctx.statement());
         if (body == null)
             body = new BlockNode(new Location(ctx.getStart()), new ArrayList<>());
