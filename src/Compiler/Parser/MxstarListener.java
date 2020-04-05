@@ -58,15 +58,29 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitVariable(MxstarParser.VariableContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MxstarParser#type}.
+	 * Enter a parse tree produced by the {@code arrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
 	 * @param ctx the parse tree
 	 */
-	void enterType(MxstarParser.TypeContext ctx);
+	void enterArrayType(MxstarParser.ArrayTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MxstarParser#type}.
+	 * Exit a parse tree produced by the {@code arrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
 	 * @param ctx the parse tree
 	 */
-	void exitType(MxstarParser.TypeContext ctx);
+	void exitArrayType(MxstarParser.ArrayTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code narrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void enterNarrayType(MxstarParser.NarrayTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code narrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void exitNarrayType(MxstarParser.NarrayTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MxstarParser#nonArrayType}.
 	 * @param ctx the parse tree

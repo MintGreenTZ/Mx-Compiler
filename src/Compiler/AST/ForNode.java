@@ -15,6 +15,22 @@ public class ForNode extends StmtNode{
         this.loopBody = loopBody;
     }
 
+    public ExprNode getInit() {
+        return init;
+    }
+
+    public ExprNode getCond() {
+        return cond;
+    }
+
+    public ExprNode getStep() {
+        return step;
+    }
+
+    public StmtNode getLoopBody() {
+        return loopBody;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

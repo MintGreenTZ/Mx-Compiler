@@ -13,6 +13,10 @@ public class ProgramNode extends Node {
         this.decl = decl;
     }
 
+    public List<DeclNode> getDecl() {
+        return decl;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

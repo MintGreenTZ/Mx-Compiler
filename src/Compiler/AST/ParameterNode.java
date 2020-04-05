@@ -13,6 +13,14 @@ public class ParameterNode extends Node {
         this.variable = variable;
     }
 
+    public TypeNode getType() {
+        return type;
+    }
+
+    public VariableNode getVariable() {
+        return variable;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

@@ -11,6 +11,10 @@ public class ReturnNode extends StmtNode{
         this.retValue = retValue;
     }
 
+    public ExprNode getRetValue() {
+        return retValue;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

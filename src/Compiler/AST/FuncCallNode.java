@@ -16,6 +16,10 @@ public class FuncCallNode extends ExprNode {
         this.exprList = exprList;
     }
 
+    public ExprNode getFuncObj() {
+        return funcObj;
+    }
+
     public ArrayList<ExprNode> getExprList() {
         return exprList;
     }

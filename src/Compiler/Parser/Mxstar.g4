@@ -21,8 +21,8 @@ variable
     ;
 
 type
-    : type '[' ']'
-    | nonArrayType
+    : type '[' ']' # arrayType
+    | nonArrayType # narrayType
     ;
 
 nonArrayType

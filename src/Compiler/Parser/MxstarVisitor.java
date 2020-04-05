@@ -42,11 +42,19 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVariable(MxstarParser.VariableContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MxstarParser#type}.
+	 * Visit a parse tree produced by the {@code arrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitType(MxstarParser.TypeContext ctx);
+	T visitArrayType(MxstarParser.ArrayTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code narrayType}
+	 * labeled alternative in {@link MxstarParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNarrayType(MxstarParser.NarrayTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MxstarParser#nonArrayType}.
 	 * @param ctx the parse tree

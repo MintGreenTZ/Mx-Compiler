@@ -91,20 +91,23 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         return new VariableNode(new Location(ctx.getStart()), identifier, init);
     }
 
-    @Override public Node visitType(MxstarParser.TypeContext ctx) {
-        if (ctx.nonArrayType() != null)
-            return visit(ctx.nonArrayType());
-        else
-            return new ArrayTypeNode(new Location(ctx.getStart()), (TypeNode) visit(ctx.type()));
+    @Override
+    public Node visitNarrayType(MxstarParser.NarrayTypeContext ctx) {
+        return visit(ctx.nonArrayType());
+    }
+
+    @Override
+    public Node visitArrayType(MxstarParser.ArrayTypeContext ctx) {
+        return new ArrayTypeNode(new Location(ctx.getStart()), (TypeNode) visit(ctx.type()));
     }
 
     @Override public Node visitNonArrayType(MxstarParser.NonArrayTypeContext ctx) {
         if (ctx.Bool() != null)
-            return new NonArrayTypeNode(new Location(ctx.getStart()), "Bool");
+            return new NonArrayTypeNode(new Location(ctx.getStart()), "bool");
         else if (ctx.Int() != null)
-            return new NonArrayTypeNode(new Location(ctx.getStart()), "Int");
+            return new NonArrayTypeNode(new Location(ctx.getStart()), "int");
         else if (ctx.String() != null)
-            return new NonArrayTypeNode(new Location(ctx.getStart()), "String");
+            return new NonArrayTypeNode(new Location(ctx.getStart()), "string");
         else
             return new NonArrayTypeNode(new Location(ctx.getStart()), ctx.Identifier().getText());
     }
@@ -114,7 +117,7 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         if (ctx.type() != null)
             type = (TypeNode) visit(ctx.type());
         else
-            type = new NonArrayTypeNode(new Location(ctx.Void().getSymbol()), "VOID");
+            type = new NonArrayTypeNode(new Location(ctx.Void().getSymbol()), "void");
         String identifier = ctx.Identifier().getText();
         ArrayList<ParameterNode> parameterList = new ArrayList<>();
         if (ctx.parameterList() != null)
@@ -160,7 +163,7 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
 
     @Override public Node visitVariableDeclStmt(MxstarParser.VariableDeclStmtContext ctx) {
         VariableDeclNode variableDecl = (VariableDeclNode) visit(ctx.variableDecl());
-        return new VariableDeclStmtNode(new Location(ctx.getStart()), variableDecl.getType(), variableDecl.getVariableNames());
+        return new VariableDeclStmtNode(new Location(ctx.getStart()), variableDecl);
     }
 
     @Override public Node visitIfStmt(MxstarParser.IfStmtContext ctx) {

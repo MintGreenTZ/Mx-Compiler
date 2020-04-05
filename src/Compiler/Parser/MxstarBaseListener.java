@@ -76,13 +76,25 @@ public class MxstarBaseListener implements MxstarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(MxstarParser.TypeContext ctx) { }
+	@Override public void enterArrayType(MxstarParser.ArrayTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(MxstarParser.TypeContext ctx) { }
+	@Override public void exitArrayType(MxstarParser.ArrayTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNarrayType(MxstarParser.NarrayTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNarrayType(MxstarParser.NarrayTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

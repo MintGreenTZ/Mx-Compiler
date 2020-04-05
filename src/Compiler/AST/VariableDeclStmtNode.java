@@ -3,16 +3,16 @@ package Compiler.AST;
 import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
-import java.util.List;
+public class VariableDeclStmtNode extends StmtNode{
+    private VariableDeclNode variableDecl;
 
-public class VariableDeclStmtNode extends StmtNode {
-    private TypeNode type;
-    private List<VariableNode> variableNames;
-
-    public VariableDeclStmtNode(Location location, TypeNode type, List<VariableNode> variableNames) {
+    public VariableDeclStmtNode(Location location, VariableDeclNode variableDecl) {
         super(location);
-        this.type = type;
-        this.variableNames = variableNames;
+        this.variableDecl = variableDecl;
+    }
+
+    public VariableDeclNode getVariableDecl() {
+        return variableDecl;
     }
 
     public void accept(ASTVisitor visitor) {

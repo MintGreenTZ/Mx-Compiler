@@ -13,6 +13,14 @@ public class WhileNode extends StmtNode {
         this.loop = loop;
     }
 
+    public ExprNode getCond() {
+        return cond;
+    }
+
+    public StmtNode getLoop() {
+        return loop;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

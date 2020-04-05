@@ -12,6 +12,14 @@ public class AssignNode extends ExprNode {
         this.rhs = rhs;
     }
 
+    public ExprNode getLhs() {
+        return lhs;
+    }
+
+    public ExprNode getRhs() {
+        return rhs;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

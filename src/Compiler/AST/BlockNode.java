@@ -13,6 +13,10 @@ public class BlockNode extends StmtNode {
         this.stmtList = stmtList;
     }
 
+    public List<StmtNode> getStmtList() {
+        return stmtList;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }
