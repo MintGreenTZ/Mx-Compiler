@@ -19,6 +19,14 @@ public class ArrayTypeNode extends TypeNode{
         }
     }
 
+    public TypeNode getBaseType() {
+        return baseType;
+    }
+
+    public int getDim() {
+        return dim;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

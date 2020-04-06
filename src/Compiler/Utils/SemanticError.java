@@ -10,6 +10,7 @@ public class SemanticError extends RuntimeException {
 
     public SemanticError(String message, Location location) {
         super(message);
+        this.msg = message;
         this.location = location;
     }
 

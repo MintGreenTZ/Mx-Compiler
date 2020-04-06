@@ -9,11 +9,9 @@ import Compiler.SymbolTable.Type.Type;
 import Compiler.Utils.Location;
 import Compiler.Utils.SemanticError;
 
-import static Compiler.SemanticAnalysis.GlobalVisitor.intType;
-import static Compiler.SemanticAnalysis.GlobalVisitor.boolType;
-import static Compiler.SemanticAnalysis.GlobalVisitor.voidType;
-import static Compiler.SemanticAnalysis.GlobalVisitor.nullType;
-import static Compiler.SemanticAnalysis.GlobalVisitor.StringType;
+import java.util.Iterator;
+
+import static Compiler.SemanticAnalysis.GlobalVisitor.*;
 
 public class SemanticChecker extends ASTBaseVisitor {
     private static GlobalScope globalScope;
@@ -54,9 +52,16 @@ public class SemanticChecker extends ASTBaseVisitor {
     }
 
     @Override
+    public void visit(VariableDeclStmtNode node) {
+        node.getVariableDecl().accept(this);
+    }
+
+    @Override
     public void visit(VariableDeclNode node) {
-        for (var variable: node.getVariables())
+        for (var variable: node.getVariables()) {
+            variable.setType(typeResolver(node.getType(), globalScope));
             variable.accept(this);
+        }
     }
 
     @Override
@@ -70,8 +75,8 @@ public class SemanticChecker extends ASTBaseVisitor {
 
     @Override
     public void visit(WhileNode node) {
-        preAssign(boolType, node.getCond().getType(), node.getLocation());
         node.getCond().accept(this);
+        preAssign(boolType, node.getCond().getType(), node.getLocation());
         node.getLoop().accept(this);
     }
 
@@ -79,17 +84,23 @@ public class SemanticChecker extends ASTBaseVisitor {
     public void visit(ForNode node) {
         if (node.getInit() != null) node.getInit().accept(this);
         if (node.getCond() != null) {
+            node.getCond().accept(this);
             preAssign(boolType, node.getCond().getType(), node.getLocation());
-            node.getInit().accept(this);
         }
-        if (node.getStep() != null) node.getInit().accept(this);
+        if (node.getStep() != null) node.getStep().accept(this);
         node.getLoopBody().accept(this);
     }
 
     @Override
     public void visit(ReturnNode node) {
-        if (node.getRetValue() != null)
+        Type returnType = node.getFunctionSymbol().getType();
+        if (node.getRetValue() != null) {
+            if (returnType == null || returnType == voidType)
+                throw new SemanticError("Unexpected return value.", node.getLocation());
             node.getRetValue().accept(this);
+            preAssign(returnType, node.getRetValue().getType(), node.getLocation());
+        } else if (returnType != null && returnType != voidType)
+            throw new SemanticError("Missing return value.", node.getLocation());
     }
 
     @Override
@@ -112,9 +123,11 @@ public class SemanticChecker extends ASTBaseVisitor {
             node.setCategory(ExprNode.Category.LVALUE);
             node.setType(symbol.getType());
         } else if (symbol instanceof FunctionSymbol) {
+            node.setCategory(ExprNode.Category.FUNCTION);
             node.setType(symbol.getType());
             node.setFunctionSymbol((FunctionSymbol) symbol);
         } else if (symbol instanceof  ClassSymbol) {
+            node.setCategory(ExprNode.Category.CLASS);
             node.setType((ClassSymbol) symbol);
         } else
             throw new SemanticError("Unexpected identifier " + symbol.getName(), node.getLocation());
@@ -126,6 +139,7 @@ public class SemanticChecker extends ASTBaseVisitor {
         preAssign(intType, node.getExpr().getType(), node.getLocation());
         if (!node.getExpr().isLvalue())
             throw new SemanticError(node.getExpr().getType().getTypeName() + "is not Lvalue", node.getLocation());
+        node.setType(intType);
     }
 
     @Override
@@ -135,14 +149,19 @@ public class SemanticChecker extends ASTBaseVisitor {
         if (type instanceof ClassSymbol) {
             Symbol memberSymbol = ((ClassSymbol) node.getObj().getType()).accessMember(node.getMember(), node.getLocation());
             node.setType(memberSymbol.getType());
-            if (memberSymbol instanceof FunctionSymbol)
-                node.setSymbol(memberSymbol);
+            node.setSymbol(memberSymbol);
+            if (memberSymbol instanceof FunctionSymbol) {
+                node.setCategory(ExprNode.Category.FUNCTION);
+                node.setFunctionSymbol((FunctionSymbol) memberSymbol);
+            }
             else
                 node.setCategory(ExprNode.Category.LVALUE);
         } else if (type instanceof ArrayType) {
             if (!node.getMember().equals("size"))
                 throw new SemanticError("Array has no such a member.", node.getLocation());
             node.setType(intType);
+            node.setCategory(ExprNode.Category.FUNCTION);
+            node.setFunctionSymbol(getArraySizeSymbol);
         } else
             throw new SemanticError("Invalid type to member access.", node.getLocation());
     }
@@ -155,14 +174,30 @@ public class SemanticChecker extends ASTBaseVisitor {
             throw new SemanticError("Non-Array type cannot be indexed.", node.getLocation());
         if (!node.getSubscript().isInt())
             throw new SemanticError("Index should be int.", node.getLocation());
+        ArrayType type = (ArrayType) node.getBody().getType();
+        if (type.getDim() == 1)
+            node.setType(type.getBaseType());
+        else
+            node.setType(new ArrayType(type.getBaseType(), type.getDim() - 1));
         node.setCategory(ExprNode.Category.LVALUE);
     }
 
     @Override
     public void visit(FuncCallNode node) {
-        node.getFuncObj().accept(this);
+        ExprNode function = node.getFuncObj();
+        function.accept(this);
         for (var expr: node.getExprList())
             expr.accept(this);
+        if (function.getCategory() != ExprNode.Category.FUNCTION)
+            throw new SemanticError("No such a function.", node.getLocation());
+        if (node.getExprList().size() != function.getFunctionSymbol().getArguments().size())
+            throw new SemanticError("The number of arguments not matched.", node.getLocation());
+        Iterator<ExprNode> exprNodeIterator = node.getExprList().iterator();
+        for (var entry: function.getFunctionSymbol().getArguments().entrySet()) {
+            ExprNode exprNode = exprNodeIterator.next();
+            VariableSymbol variableSymbol = entry.getValue();
+            preAssign(variableSymbol.getType(), exprNode.getType(), node.getLocation());
+        }
         node.setFunctionSymbol(node.getFuncObj().getFunctionSymbol());
         node.setType(node.getFunctionSymbol().getType());
     }
@@ -183,14 +218,28 @@ public class SemanticChecker extends ASTBaseVisitor {
                 preAssign(intType, node.getExpr().getType(), node.getLocation());
                 if (!node.getExpr().isLvalue())
                     throw new SemanticError(node.getExpr().getType().getTypeName() + "is not Lvalue", node.getLocation());
+                node.setType(intType);
+                node.setCategory(ExprNode.Category.LVALUE);
                 break;
         }
     }
 
     @Override
     public void visit(NewNode node) {
-        for (var expr: node.getExprList())
+        for (var expr: node.getExprList()) {
             expr.accept(this);
+            if (!expr.isInt())
+                throw new SemanticError("Index should be int.", node.getLocation());
+        }
+        Type type = node.getDetailedBaseType();
+        if (node.getDim() == 0) {
+            if (type instanceof ClassSymbol) {
+                if (((ClassSymbol) type).getConstructor() != null)
+                    node.setFunctionSymbol(((ClassSymbol) type).getConstructor());
+            }
+            node.setType(type);
+        } else
+            node.setType(new ArrayType(type, node.getDim()));
     }
 
     @Override
@@ -236,16 +285,33 @@ public class SemanticChecker extends ASTBaseVisitor {
     }
 
     @Override
-    public void visit(AssignNode node) {
-        node.getLhs().accept(this);
-        node.getRhs().accept(this);
-        if (node.getLhs().getCategory() == ExprNode.Category.RVALUE)
-            throw new SemanticError("RVALUE can not be assigned.", node.getLocation());
+    public void visit(VariableNode node) {
+        Type type = node.getType();
+        if (node.getInitExpr() != null) {
+            node.getInitExpr().setType(type);
+            node.getInitExpr().accept(this);
+            preAssign(type, node.getInitExpr().getType(), node.getLocation());
+        }
     }
 
     @Override
-    public void visit(VariableNode node) {
+    public void visit(ConstBoolNode node) {
+        node.setType(boolType);
+    }
 
+    @Override
+    public void visit(ConstIntNode node) {
+        node.setType(intType);
+    }
+
+    @Override
+    public void visit(ConstStringNode node) {
+        node.setType(StringType);
+    }
+
+    @Override
+    public void visit(ConstNullNode node) {
+        node.setType(nullType);
     }
 
     /**************************Expression End*****************************/

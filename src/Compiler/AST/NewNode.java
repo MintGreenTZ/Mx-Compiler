@@ -12,7 +12,7 @@ public class NewNode extends ExprNode {
     private int dim;
     private List<ExprNode> exprList;
 
-    public NewNode(Location location, TypeNode type, int dim, List<ExprNode> exprList) {
+    public NewNode(Location location, TypeNode baseType, int dim, List<ExprNode> exprList) {
         super(location);
         this.baseType = baseType;
         this.dim = dim;
@@ -21,6 +21,10 @@ public class NewNode extends ExprNode {
 
     public TypeNode getBaseType() {
         return baseType;
+    }
+
+    public int getDim() {
+        return dim;
     }
 
     public void setDetailedBaseType(Type detailedBaseType) {

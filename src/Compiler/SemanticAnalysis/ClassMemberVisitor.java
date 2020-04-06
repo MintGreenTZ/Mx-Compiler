@@ -38,8 +38,7 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
     @Override
     public void visit(ClassDeclNode node) {
         ClassSymbol classSymbol = (ClassSymbol) scope.resolveSymbol(node.getIdentifier(), node.getLocation());
-        scope = new LocalScope(classSymbol.getTypeName(), scope);
-        classSymbol.setScope(scope);
+        scope = classSymbol;
         for (var funcDecl: node.getFunctionDecl())
             funcDecl.accept(this);
         constructorCheckerAndSetter(node, classSymbol);
@@ -68,18 +67,15 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
 
 
     private void constructorCheckerAndSetter(ClassDeclNode node, ClassSymbol classSymbol) {
-        FunctionSymbol constructor = null;
-        try {
-            constructor = (FunctionSymbol) scope.resolveSymbol(classSymbol.getTypeName(), node.getLocation());
-        }
-        catch (SemanticError e) {
-            classSymbol.setConstructor(null);
+        Symbol constructor = scope.resolveSymbol(classSymbol.getTypeName(), node.getLocation());
+        if (constructor instanceof ClassSymbol) {
+            //classSymbol.setConstructor(new FunctionSymbol(classSymbol.getTypeName(), classSymbol, null, classSymbol));
             return;
         }
         if (constructor.getType() != nullType)
             throw new SemanticError("Return value of constructor is forbidden.", node.getLocation());
         if (!((FunctionDeclNode) constructor.getDefinition()).getParameterList().isEmpty())
             throw new SemanticError("Parameter of constructor is forbidden", node.getLocation());
-        classSymbol.setConstructor(constructor);
+        classSymbol.setConstructor((FunctionSymbol) constructor);
     }
 }

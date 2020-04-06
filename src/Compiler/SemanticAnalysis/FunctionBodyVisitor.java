@@ -50,6 +50,8 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
 
     @Override
     public void visit(FunctionDeclNode node) {
+        if (node.getFunctionSymbol() == null)
+            node.setFunctionSymbol(new FunctionSymbol(node.getIdentifier(), typeResolver(node.getType(), globalScope), node, curScope));
         FunctionSymbol functionSymbol = node.getFunctionSymbol();
         curFunctionSymbol = functionSymbol;
         curScope = functionSymbol;
@@ -83,7 +85,15 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
         node.setDetailedType(typeResolver(node.getType(), globalScope));
         for (var variable: node.getVariables()) {
             variable.setDetailedType(typeResolver(node.getType(), globalScope));
+            variable.accept(this);
             curScope.defineVariable(new VariableSymbol(variable.getIdentifier(), typeResolver(node.getType(), globalScope), variable));
+        }
+    }
+
+    @Override
+    public void visit(VariableNode node) {
+        if (node.getInitExpr() != null) {
+            node.getInitExpr().accept(this);
         }
     }
 
@@ -107,8 +117,8 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
     public void visit(ForNode node) {
         LoopDepth++;
         if (node.getInit() != null) node.getInit().accept(this);
-        if (node.getCond() != null) node.getInit().accept(this);
-        if (node.getStep() != null) node.getInit().accept(this);
+        if (node.getCond() != null) node.getCond().accept(this);
+        if (node.getStep() != null) node.getStep().accept(this);
         node.getLoopBody().accept(this);
         LoopDepth--;
     }
@@ -119,6 +129,7 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
             throw new SemanticError("No function to return.", node.getLocation());
         if (node.getRetValue() != null)
             node.getRetValue().accept(this);
+        node.setFunctionSymbol(curFunctionSymbol);
     }
 
     @Override
@@ -145,7 +156,6 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
         if (curClassSymbol == null)
             throw new SemanticError("This should be in a class.", node.getLocation());
         node.setScope(curClassSymbol);
-        curScope = curClassSymbol;
     }
 
     @Override
@@ -195,11 +205,14 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
     }
 
     @Override
-    public void visit(AssignNode node) {
-        node.getLhs().accept(this);
-        node.getRhs().accept(this);
+    public void visit(ArrayTypeNode node) {
+
     }
 
+    @Override
+    public void visit(NonArrayTypeNode node) {
+        super.visit(node);
+    }
     /**************************Expression End*****************************/
 
 }

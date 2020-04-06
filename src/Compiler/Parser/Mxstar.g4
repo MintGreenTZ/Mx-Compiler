@@ -1,5 +1,9 @@
 grammar Mxstar;
 
+@header {
+package Compiler.Parser;
+}
+
 program
     : decl*
     ;
@@ -74,6 +78,7 @@ expression
     | This                                                           # thisExpr
     | Identifier                                                     # idExpr
     | '(' expression ')'                                             # subExpr
+    | <assoc = right> 'new' creator                                  # newExpr
     // Second Priority Level
     | expression op = ('++' | '--')                                  # suffixExpr
     | expression '.' Identifier                                      # memberExpr
@@ -82,7 +87,6 @@ expression
     // Third Priority Level
     | <assoc = right> op = ('~' | '!' | '++' | '--') expression      # prefixExpr
     | <assoc = right> op = ('+' | '-')               expression      # prefixExpr
-    | 'new' creator                                                  # newExpr
     // Binary Operator
     | lhs = expression op=('*' | '/' | '%') rhs = expression         # binaryOpExpr
     | lhs = expression op=('+' | '-') rhs = expression               # binaryOpExpr
@@ -94,7 +98,7 @@ expression
     | lhs = expression op='|' rhs = expression                       # binaryOpExpr
     | lhs = expression op='&&' rhs = expression                      # binaryOpExpr
     | lhs = expression op='||' rhs = expression                      # binaryOpExpr
-    | <assoc = right> lhs = expression op='=' rhs = expression       # assignOpExpr
+    | <assoc = right> lhs = expression op='=' rhs = expression       # binaryOpExpr
     ;
 
 expressionList
@@ -109,9 +113,10 @@ constant
     ;
 
 creator
-    : (Void | nonArrayType)                                     # naryCreator
-    | (Void | nonArrayType) ('[' expression ']')+ ('[' ']') *   # arrayCreator
-    | (Void | nonArrayType) '(' ')'                             # classCreator
+    : (Void | nonArrayType) ('[' expression ']')+ ('[' ']')+ ('[' expression ']')+  # errorCreator
+    | (Void | nonArrayType) ('[' expression ']')+ ('[' ']')*                        # arrayCreator
+    | (Void | nonArrayType) '(' ')'                                                 # classCreator
+    | (Void | nonArrayType)                                                         # naryCreator
     ;
 
 // ------------------------------------------ Parser above, Lexer below
@@ -120,10 +125,7 @@ creator
 Int         : 'int';
 Bool        : 'bool';
 String      : 'string';
-Null        : 'null';
 Void        : 'void';
-True        : 'true';
-False       : 'false';
 If          : 'if';
 Else        : 'else';
 For         : 'for';
@@ -134,6 +136,9 @@ Return      : 'return';
 New         : 'new';
 Class       : 'class';
 This        : 'this';
+fragment Null   : 'null';
+fragment True   : 'true';
+fragment False  : 'false';
 
 // -------------- const
 

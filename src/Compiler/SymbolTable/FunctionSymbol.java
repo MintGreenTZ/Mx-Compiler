@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class FunctionSymbol extends Symbol implements Scope {
     private Scope upperScope;
-    private Map<String, Symbol> arguments;
+    private Map<String, VariableSymbol> arguments;
 
     public FunctionSymbol(String name, Type type, FunctionDeclNode definition, Scope upperScope) {
         super(name, type, definition);
@@ -27,6 +27,10 @@ public class FunctionSymbol extends Symbol implements Scope {
     @Override
     public Scope getUpperScope() {
         return upperScope;
+    }
+
+    public Map<String, VariableSymbol> getArguments() {
+        return arguments;
     }
 
     @Override

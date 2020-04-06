@@ -6,7 +6,7 @@ import Compiler.Utils.Location;
 
 abstract public class ExprNode extends Node {
     public enum Category{
-        LVALUE, RVALUE
+        LVALUE, RVALUE, CLASS, FUNCTION
     }
 
     private Location location;
@@ -23,10 +23,6 @@ abstract public class ExprNode extends Node {
 
     public boolean isInt() {
         return type.getTypeName().equals("int");
-    }
-
-    public boolean inBool() {
-        return type.getTypeName().equals("bool");
     }
 
     public boolean isString() {

@@ -4,10 +4,9 @@ import Compiler.AST.*;
 import Compiler.Parser.MxstarBaseVisitor;
 import Compiler.Parser.MxstarParser;
 import Compiler.Utils.Location;
+import Compiler.Utils.SyntaxError;
 
-import java.lang.reflect.Parameter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /* -------------------------------------- Interface with MxstarParser ---------------------------------------------
@@ -222,12 +221,6 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         return new MemberAccessNode(new Location(ctx.getStart()), obj, member);
     }
 
-    @Override public Node visitAssignOpExpr(MxstarParser.AssignOpExprContext ctx) {
-        ExprNode lhs = (ExprNode) visit(ctx.expression(0));
-        ExprNode rhs = (ExprNode) visit(ctx.expression(1));
-        return new AssignNode(new Location(ctx.getStart()), lhs, rhs);
-    }
-
     @Override public Node visitFuncCallExpr(MxstarParser.FuncCallExprContext ctx) {
         ExprNode funcObj = (ExprNode) visit(ctx.expression());
         if (ctx.expressionList() != null) {
@@ -340,11 +333,11 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
     }
 
     @Override public Node visitConstNull(MxstarParser.ConstNullContext ctx) {
-        return new VoidNode(new Location(ctx.getStart()));
+        return new ConstNullNode(new Location(ctx.getStart()));
     }
 
     @Override public Node visitNaryCreator(MxstarParser.NaryCreatorContext ctx) {
-        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, null);
+        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, new ArrayList<>());
     }
 
     @Override public Node visitArrayCreator(MxstarParser.ArrayCreatorContext ctx) {
@@ -356,6 +349,11 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
     }
 
     @Override public Node visitClassCreator(MxstarParser.ClassCreatorContext ctx) {
-        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, null);
+        return new NewNode(new Location(ctx.getStart()), (TypeNode)visit(ctx.nonArrayType()), 0, new ArrayList<>());
+    }
+
+    @Override
+    public Node visitErrorCreator(MxstarParser.ErrorCreatorContext ctx) {
+        throw new SyntaxError("Invalid new expression.", new Location(ctx.getStart()));
     }
 }

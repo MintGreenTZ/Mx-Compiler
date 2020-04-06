@@ -28,11 +28,14 @@ public class GlobalVisitor extends ASTBaseVisitor {
     @Override
     public void visit(ProgramNode node) {
         for (DeclNode decl: node.getDecl())
+            if (decl instanceof ClassDeclNode)
+                decl.accept(this);
+        for (DeclNode decl: node.getDecl())
             if (decl instanceof FunctionDeclNode)
                 decl.accept(this);
         mainFunctionChecker();
         for (DeclNode decl: node.getDecl())
-            if (!(decl instanceof FunctionDeclNode))
+            if (decl instanceof VariableDeclNode)
                 decl.accept(this);
     }
 
@@ -69,6 +72,7 @@ public class GlobalVisitor extends ASTBaseVisitor {
     public static PrimitiveSymbol voidType = new PrimitiveSymbol("void");
     public static NullType nullType = new NullType();
     public static ClassSymbol StringType = new ClassSymbol("string", null, globalScope);
+    public static FunctionSymbol getArraySizeSymbol = new FunctionSymbol("size", intType, null, globalScope);
 
     private void initializer() {
         globalScope.defineType(intType);

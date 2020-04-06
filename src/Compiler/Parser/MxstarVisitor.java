@@ -1,6 +1,7 @@
-package Compiler.Parser;
 // Generated from Mxstar.g4 by ANTLR 4.7.1
-import Compiler.Parser.MxstarParser;
+
+package Compiler.Parser;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -169,13 +170,6 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMemberExpr(MxstarParser.MemberExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code assignOpExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignOpExpr(MxstarParser.AssignOpExprContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code funcCallExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
@@ -183,19 +177,19 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFuncCallExpr(MxstarParser.FuncCallExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code newExpr}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNewExpr(MxstarParser.NewExprContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code prefixExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPrefixExpr(MxstarParser.PrefixExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code newExpr}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNewExpr(MxstarParser.NewExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code subExpr}
 	 * labeled alternative in {@link MxstarParser#expression}.
@@ -280,12 +274,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConstNull(MxstarParser.ConstNullContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code naryCreator}
+	 * Visit a parse tree produced by the {@code errorCreator}
 	 * labeled alternative in {@link MxstarParser#creator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNaryCreator(MxstarParser.NaryCreatorContext ctx);
+	T visitErrorCreator(MxstarParser.ErrorCreatorContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code arrayCreator}
 	 * labeled alternative in {@link MxstarParser#creator}.
@@ -300,4 +294,11 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitClassCreator(MxstarParser.ClassCreatorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code naryCreator}
+	 * labeled alternative in {@link MxstarParser#creator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNaryCreator(MxstarParser.NaryCreatorContext ctx);
 }

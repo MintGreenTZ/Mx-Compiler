@@ -4,7 +4,6 @@ import Compiler.AST.*;
 
 public interface ASTVisitor {
     void visit(ArrayTypeNode node);
-    void visit(AssignNode node);
     void visit(BinaryOpNode node);
     void visit(BlockNode node);
     void visit(BreakNode node);
@@ -35,6 +34,6 @@ public interface ASTVisitor {
     void visit(VariableDeclNode node);
     void visit(VariableDeclStmtNode node);
     void visit(VariableNode node);
-    void visit(VoidNode node);
+    void visit(ConstNullNode node);
     void visit(WhileNode node);
 }

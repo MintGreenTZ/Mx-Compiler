@@ -4,15 +4,15 @@ import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.SymbolTable.Type.Type;
 import Compiler.Utils.Location;
 
-public class VariableNode extends Node {
+public class VariableNode extends ExprNode {
     private Type detailedType;
     private String identifier;
-    private ExprNode init;
+    private ExprNode initExpr;
 
-    public VariableNode(Location location, String identifier, ExprNode init) {
+    public VariableNode(Location location, String identifier, ExprNode initExpr) {
         super(location);
         this.identifier = identifier;
-        this.init = init;
+        this.initExpr = initExpr;
     }
 
     public void setDetailedType(Type detailedType) {
@@ -27,8 +27,8 @@ public class VariableNode extends Node {
         return identifier;
     }
 
-    public ExprNode getInit() {
-        return init;
+    public ExprNode getInitExpr() {
+        return initExpr;
     }
 
     @Override

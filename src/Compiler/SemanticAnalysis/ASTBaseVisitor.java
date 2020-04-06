@@ -12,11 +12,6 @@ public class ASTBaseVisitor implements ASTVisitor {
     }
 
     @Override
-    public void visit(AssignNode node) {
-
-    }
-
-    @Override
     public void visit(BinaryOpNode node) {
 
     }
@@ -167,7 +162,7 @@ public class ASTBaseVisitor implements ASTVisitor {
     }
 
     @Override
-    public void visit(VoidNode node) {
+    public void visit(ConstNullNode node) {
 
     }
 
@@ -178,8 +173,8 @@ public class ASTBaseVisitor implements ASTVisitor {
 
     protected Type typeResolver(TypeNode typeNode, GlobalScope globleScope) {
         Type type = globleScope.resolveType(typeNode.getIdentifier(), typeNode.getLocation());
-        if (type instanceof ArrayType)
-            return new ArrayType(((ArrayType) type).getBaseType(), ((ArrayType) type).getDim());
+        if (typeNode instanceof ArrayTypeNode)
+            return new ArrayType(type, ((ArrayTypeNode) typeNode).getDim());
         else
             return type;
         // No need to create a independent type for ArrayType
