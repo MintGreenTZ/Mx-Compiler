@@ -66,9 +66,10 @@ public class SemanticChecker extends ASTBaseVisitor {
 
     @Override
     public void visit(IfNode node) {
-        preAssign(boolType, node.getCond().getType(), node.getLocation());
         node.getCond().accept(this);
-        node.getThenStmt().accept(this);
+        preAssign(boolType, node.getCond().getType(), node.getLocation());
+        if (node.getThenStmt() != null)
+            node.getThenStmt().accept(this);
         if (node.getElseStmt() != null)
             node.getElseStmt().accept(this);
     }
@@ -77,7 +78,8 @@ public class SemanticChecker extends ASTBaseVisitor {
     public void visit(WhileNode node) {
         node.getCond().accept(this);
         preAssign(boolType, node.getCond().getType(), node.getLocation());
-        node.getLoop().accept(this);
+        if (node.getLoop() != null)
+            node.getLoop().accept(this);
     }
 
     @Override
@@ -274,13 +276,14 @@ public class SemanticChecker extends ASTBaseVisitor {
                 break;
             case EQ: case NEQ:
                 preEqual(LHS.getType(), RHS.getType(), node.getLocation());
-                preEqual(LHS.getType(), RHS.getType(), node.getLocation());
                 node.setType(boolType);
+                break;
             case ASS:
                 preAssign(LHS.getType(), RHS.getType(), node.getLocation());
                 if (!LHS.isLvalue())
                     throw new SemanticError("Cannot assign to Rvalue " + LHS.getType().getTypeName(), node.getLocation());
                 node.setType(LHS.getType());
+                break;
         }
     }
 
@@ -322,8 +325,9 @@ public class SemanticChecker extends ASTBaseVisitor {
         if (RHS.getTypeName().equals("null")) {
             if (LHS.getTypeName().equals("string"))
                 throw new SemanticError("Null cannot assigned to string.", location);
-            else
-                return;
+            if (LHS instanceof PrimitiveSymbol)
+                throw new SemanticError("Null cannot assigned to primitive type.", location);
+            return;
         }
         if (LHS instanceof NullType) {
             throw new SemanticError("Null is not assignable.", location);
@@ -341,26 +345,19 @@ public class SemanticChecker extends ASTBaseVisitor {
     }
 
     private void preEqual(Type LHS, Type RHS, Location location) {
-        if (RHS.getTypeName().equals("void"))
-            throw new SemanticError("Void cannot be assigned.", location);
-        if (RHS.getTypeName().equals("null")) {
-            if (LHS.getTypeName().equals("string"))
-                throw new SemanticError("Null cannot assigned to string.", location);
-            else
-                return;
-        }
-        if (LHS instanceof NullType) {
-            throw new SemanticError("Null is not assignable.", location);
-        } else if (LHS instanceof PrimitiveSymbol || LHS instanceof ClassSymbol) {
+        if (LHS instanceof NullType || RHS instanceof NullType) return;
+        if (LHS.getTypeName().equals("void") || RHS.getTypeName().equals("void"))
+            throw new SemanticError("Void cannot be compared.", location);
+        if (LHS instanceof PrimitiveSymbol || LHS instanceof ClassSymbol) {
             if (!LHS.getTypeName().equals(RHS.getTypeName()))
                 throw new SemanticError(RHS.getTypeName() + " cannot be assign to " + LHS.getTypeName(), location);
         } else if (LHS instanceof ArrayType) {
             if (RHS instanceof ArrayType) {
                 preAssign(((ArrayType) LHS).getBaseType(), ((ArrayType) RHS).getBaseType(), location);
                 if (((ArrayType) LHS).getDim() != ((ArrayType) RHS).getDim())
-                    throw new SemanticError("Array dimensions don't match, get " + ((ArrayType) RHS).getDim() + " but expect " + ((ArrayType) LHS).getDim(), location);
+                    throw new SemanticError("Array dimensions don't match, get " + ((ArrayType) RHS).getDim() + " and " + ((ArrayType) LHS).getDim(), location);
             } else
-                throw new SemanticError("Array type " + LHS.getTypeName() + " cannot be assigned by non-array type " + RHS.getTypeName(), location);
+                throw new SemanticError("Array type " + LHS.getTypeName() + " cannot be compared to non-array type " + RHS.getTypeName(), location);
         }
     }
 }

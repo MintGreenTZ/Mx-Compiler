@@ -2,73 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarErrorListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Utils/SyntaxError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ArrayTypeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ArrayTypeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode$Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode$Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/NewNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/NewNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ReturnNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ReturnNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/VariableNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/VariableNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarBaseVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ClassDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ClassDeclNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ArrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ArrayCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ArrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ArrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BinaryOpExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BinaryOpExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BlockStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BlockStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BreakStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$BreakStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ClassCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ClassCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ClassDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ClassDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstBoolContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstBoolContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstIntegerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstIntegerContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstNullContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstNullContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstStringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstStringContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstantContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstantContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstructorDefContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ConstructorDefContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ContinueStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ContinueStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$CreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$CreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$DeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$EmptyStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$EmptyStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExprStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExprStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExpressionListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ExpressionListContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ForStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ForStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$FuncCallExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$FuncCallExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$FunctionDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$FunctionDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$IdExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$IdExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$IfStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$IfStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$MemberExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$MemberExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NarrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NarrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NaryCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NaryCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NewExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NewExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NonArrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$NonArrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ParameterContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ParameterContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ParameterListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ParameterListContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$PrefixExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$PrefixExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ProgramContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$RetStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$RetStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$StatementContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SubExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SubExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SubscriptExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SubscriptExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SuffixExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$SuffixExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ThisExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$ThisExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$TypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$TypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableDeclStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$VariableDeclStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$WhileStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser$WhileStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBaseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
@@ -81,81 +18,13 @@
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/FunctionSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/FunctionSymbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Utils/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Utils/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Utils/SemanticError.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Utils/SemanticError.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ArrayTypeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ArrayTypeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/AssignNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ExprNode$Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ExprNode$Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ExprNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ExprNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/NewNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/NewNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ReturnNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ReturnNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/VariableNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/VariableNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/VoidNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ClassDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ClassDeclNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarBaseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ArrayCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ArrayCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ArrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ArrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$AssignOpExprContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BinaryOpExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BinaryOpExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BlockStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BlockStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BreakStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$BreakStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ClassCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ClassCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ClassDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ClassDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstBoolContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstBoolContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstIntegerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstIntegerContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstNullContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstNullContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstStringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstStringContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstantContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstantContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstructorDefContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ConstructorDefContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ContinueStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ContinueStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$CreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$CreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$DeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$EmptyStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$EmptyStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExprStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExprStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExpressionListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ExpressionListContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ForStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ForStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$FuncCallExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$FuncCallExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$FunctionDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$FunctionDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$IdExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$IdExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$IfStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$IfStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$MemberExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$MemberExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NarrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NarrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NaryCreatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NaryCreatorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NewExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NewExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NonArrayTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$NonArrayTypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ParameterContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ParameterContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ParameterListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ParameterListContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$PrefixExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$PrefixExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ProgramContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$RetStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$RetStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$StatementContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SubExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SubExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SubscriptExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SubscriptExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SuffixExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$SuffixExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ThisExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$ThisExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$TypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$TypeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableDeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableDeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableDeclStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$VariableDeclStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$WhileStmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser$WhileStmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBaseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ClassMemberVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ClassMemberVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
@@ -168,38 +37,16 @@
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SymbolTable/FunctionSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SymbolTable/FunctionSymbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Utils/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Utils/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Utils/SemanticError.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Utils/SemanticError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ArrayTypeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ArrayTypeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/AssignNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ExprNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ExprNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/NewNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/NewNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ReturnNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ReturnNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/VoidNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstNullNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ClassDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ClassDeclNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/FunctionSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/FunctionSymbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Utils/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Utils/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Utils/SemanticError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Utils/SemanticError.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,10 +133,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750583405" />
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1586163103670">
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1586172006094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1586163103670" />
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1586172006094" />
     <state x="488" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585671637009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -310,42 +157,42 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="491" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1586106556984" />
-    <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1586144495569">
+    <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1586165174259">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586144495569" />
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1586164520269">
+    <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586165174259" />
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1586175912667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1586164520269">
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
+    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1586175912667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1586164520269">
+    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
+    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1586175912666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1586164520269">
+    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586175912666" />
+    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1586175912667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1586164520270">
+    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1586175392966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586164520270" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1586164520269">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586175392966" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1586175392966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1586164520269">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1586175392966" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1586175392966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1586164520269">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1586175392966" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1586175392966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1586164520269" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1586175392966" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1585798964070">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -363,33 +210,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java</url>
-          <line>183</line>
+          <line>202</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
-          <line>319</line>
+          <line>322</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
-          <line>78</line>
+          <line>79</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java</url>
-          <line>195</line>
+          <line>214</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
-          <line>170</line>
+          <line>172</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -402,6 +244,16 @@
           <line>61</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="java-exception" />
@@ -411,6 +263,9 @@
       <configuration name="Application">
         <watch expression="this" />
         <watch expression="node" />
+        <watch expression="node.retValue" />
+        <watch expression="((LocalScope)curScope).upperScope" custom="Compiler.SymbolTable.Scope.LocalScope" />
+        <watch expression="((LocalScope)curScope).upperScope" language="JAVA" custom="Compiler.SymbolTable.Scope.LocalScope" />
       </configuration>
     </watches-manager>
   </component>

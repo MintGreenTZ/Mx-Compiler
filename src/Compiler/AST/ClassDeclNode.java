@@ -41,6 +41,10 @@ public class ClassDeclNode extends DeclNode {
         return functionDecl;
     }
 
+    public FunctionDeclNode getConstructorDecl() {
+        return constructorDecl;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

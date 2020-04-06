@@ -10,6 +10,7 @@ import Compiler.SymbolTable.Symbol;
 import Compiler.SymbolTable.Type.NullType;
 import Compiler.SymbolTable.Type.Type;
 import Compiler.SymbolTable.VariableSymbol;
+import Compiler.Utils.Location;
 import Compiler.Utils.SemanticError;
 
 import static Compiler.SemanticAnalysis.GlobalVisitor.nullType;
@@ -39,9 +40,9 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
     public void visit(ClassDeclNode node) {
         ClassSymbol classSymbol = (ClassSymbol) scope.resolveSymbol(node.getIdentifier(), node.getLocation());
         scope = classSymbol;
+        constructorCheckerAndSetter(node, classSymbol);
         for (var funcDecl: node.getFunctionDecl())
             funcDecl.accept(this);
-        constructorCheckerAndSetter(node, classSymbol);
         for (var varDecl: node.getVariableDecl())
             varDecl.accept(this);
         scope = scope.getUpperScope();
@@ -49,6 +50,8 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
 
     @Override
     public void visit(FunctionDeclNode node) {
+        if (node.getIdentifier().equals(((ClassSymbol) scope).getName()))
+            throw new SemanticError("Constructor shouldn't have return value.", node.getLocation());
         FunctionSymbol functionSymbol = new FunctionSymbol(node.getIdentifier(), typeResolver(node.getType(), globalScope), node, scope);
         for (var varDecl: node.getParameterList()) {
             String name = varDecl.getVariable().getIdentifier();
@@ -67,7 +70,7 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
 
 
     private void constructorCheckerAndSetter(ClassDeclNode node, ClassSymbol classSymbol) {
-        Symbol constructor = scope.resolveSymbol(classSymbol.getTypeName(), node.getLocation());
+        /*Symbol constructor = scope.resolveSymbol(classSymbol.getTypeName(), node.getLocation());
         if (constructor instanceof ClassSymbol) {
             //classSymbol.setConstructor(new FunctionSymbol(classSymbol.getTypeName(), classSymbol, null, classSymbol));
             return;
@@ -75,7 +78,15 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
         if (constructor.getType() != nullType)
             throw new SemanticError("Return value of constructor is forbidden.", node.getLocation());
         if (!((FunctionDeclNode) constructor.getDefinition()).getParameterList().isEmpty())
-            throw new SemanticError("Parameter of constructor is forbidden", node.getLocation());
-        classSymbol.setConstructor((FunctionSymbol) constructor);
+            throw new SemanticError("Parameter of constructor is forbidden", node.getLocation());*/
+        if (node.getConstructorDecl() != null) {
+            String identifier = node.getConstructorDecl().getIdentifier();
+            if (!identifier.equals(classSymbol.getTypeName()))
+                throw new SemanticError("Name of constructor is not match the class.", node.getLocation());
+            FunctionSymbol constructor = new FunctionSymbol(identifier, null, node.getConstructorDecl(), classSymbol);
+            classSymbol.setConstructor(constructor);
+            scope.defineFunction(constructor);
+            node.getConstructorDecl().setFunctionSymbol(constructor);
+        }
     }
 }

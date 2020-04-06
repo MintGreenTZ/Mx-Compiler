@@ -9,6 +9,7 @@ import Compiler.SymbolTable.Scope.GlobalScope;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.LexerNoViableAltException;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -24,6 +25,8 @@ public class Main {
             MxstarLexer lexer = new MxstarLexer(input);
             CommonTokenStream token = new CommonTokenStream(lexer);
             MxstarParser parser = new MxstarParser(token);
+            lexer.removeErrorListeners();
+            lexer.addErrorListener(new MxstarErrorListener());
             parser.removeErrorListeners();
             parser.addErrorListener(new MxstarErrorListener());
             ASTBuilder astBuilder = new ASTBuilder();

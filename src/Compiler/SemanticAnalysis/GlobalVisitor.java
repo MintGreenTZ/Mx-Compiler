@@ -12,7 +12,7 @@ import Compiler.Utils.Location;
 import Compiler.Utils.SemanticError;
 
 /* This Class is used to deal with everything in global scope
- * · add definition of global class, func, var to globalScope
+ * · add definition of global class, func to globalScope
  * · initialize built-in Type
  * · check main Function
  */
@@ -56,15 +56,6 @@ public class GlobalVisitor extends ASTBaseVisitor {
         }
         globalScope.defineFunction(functionSymbol);
         node.setFunctionSymbol(functionSymbol);
-    }
-
-    @Override
-    public void visit(VariableDeclNode node) {
-        for (var varDecl: node.getVariables()) {
-            String name = varDecl.getIdentifier();
-            Type type = typeResolver(node.getType(), globalScope);
-            globalScope.defineVariable(new VariableSymbol(name, type, varDecl));
-        }
     }
 
     public static PrimitiveSymbol intType = new PrimitiveSymbol("int");

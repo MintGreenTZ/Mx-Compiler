@@ -161,7 +161,7 @@ ConstNull
 
 // -------------- other
 Identifier
-    : [_A-Za-z] [_A-Za-z0-9]*
+    : [A-Za-z] [_A-Za-z0-9]*
     ;
 
 WhiteSpace

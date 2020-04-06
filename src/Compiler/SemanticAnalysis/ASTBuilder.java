@@ -4,6 +4,7 @@ import Compiler.AST.*;
 import Compiler.Parser.MxstarBaseVisitor;
 import Compiler.Parser.MxstarParser;
 import Compiler.Utils.Location;
+import Compiler.Utils.SemanticError;
 import Compiler.Utils.SyntaxError;
 
 import java.util.ArrayList;
@@ -64,8 +65,11 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         FunctionDeclNode constructor = null;
         List<VariableDeclNode> variableDeclList = new ArrayList<>();
         List<FunctionDeclNode> functionDeclList = new ArrayList<>();
-        for (var constructorDecl : ctx.constructorDef())
+        for (var constructorDecl : ctx.constructorDef()) {
+            if (constructor != null)
+                throw new SemanticError("Multiply constructors.", new Location(ctx.getStart()));
             constructor = (FunctionDeclNode) visit(constructorDecl);
+        }
         for (var variableDecl : ctx.variableDecl())
             variableDeclList.add((VariableDeclNode) visit(variableDecl));
         for (var functionDecl : ctx.functionDecl())
@@ -265,13 +269,13 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
 
     @Override public Node visitSuffixExpr(MxstarParser.SuffixExprContext ctx) {
         ExprNode expr = (ExprNode) visit(ctx.expression());
-        PrefixExprNode.Op op;
+        SuffixExprNode.Op op;
         switch (ctx.op.getText()) {
-            case "++": op = PrefixExprNode.Op.SelfADD; break;
-            case "--": op = PrefixExprNode.Op.SelfSUB; break;
+            case "++": op = SuffixExprNode.Op.SelfADD; break;
+            case "--": op = SuffixExprNode.Op.SelfSUB; break;
             default: op = null;
         }
-        return new PrefixExprNode(new Location(ctx.getStart()), op, expr);
+        return new SuffixExprNode(new Location(ctx.getStart()), op, expr);
     }
 
     @Override public Node visitThisExpr(MxstarParser.ThisExprContext ctx) {

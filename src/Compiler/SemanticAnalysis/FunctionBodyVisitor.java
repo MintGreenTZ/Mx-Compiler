@@ -14,6 +14,7 @@ import Compiler.Utils.SemanticError;
  * · this check by curClassSymbol
  * · return check by curFunctionSymbol
  * · break & continue check by LoopDepth
+ * · global var declaration
  */
 
 public class FunctionBodyVisitor extends ASTBaseVisitor{
@@ -22,6 +23,7 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
     private ClassSymbol curClassSymbol;
     private FunctionSymbol curFunctionSymbol;
     private int LoopDepth;
+    private boolean inConstructor = false; // used for ban constructor's return value
 
     public FunctionBodyVisitor(GlobalScope globalScope) {
         this.globalScope = globalScope;
@@ -34,8 +36,7 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
     @Override
     public void visit(ProgramNode node) {
         for (DeclNode decl: node.getDecl())
-            if (decl instanceof ClassDeclNode || decl instanceof FunctionDeclNode)
-                decl.accept(this);
+            decl.accept(this);
     }
 
     @Override
@@ -45,6 +46,10 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
         curScope = classSymbol;
         for (var funcDeclNode: node.getFunctionDecl())
             funcDeclNode.accept(this);
+        inConstructor = true;
+        if (node.getConstructorDecl() != null)
+            node.getConstructorDecl().accept(this);
+        inConstructor = false;
         curScope = curScope.getUpperScope();
     }
 
@@ -100,31 +105,45 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
     @Override
     public void visit(IfNode node) {
         node.getCond().accept(this);
-        node.getThenStmt().accept(this);
-        if (node.getElseStmt() != null)
+        if (node.getThenStmt() != null) {
+            curScope = new LocalScope("if scope", curScope);
+            node.getThenStmt().accept(this);
+            curScope = curScope.getUpperScope();
+        }
+        if (node.getElseStmt() != null) {
+            curScope = new LocalScope("else scope", curScope);
             node.getElseStmt().accept(this);
+            curScope = curScope.getUpperScope();
+        }
     }
 
     @Override
     public void visit(WhileNode node) {
         LoopDepth++;
+        curScope = new LocalScope("while scope", curScope);
         node.getCond().accept(this);
-        node.getLoop().accept(this);
+        if (node.getLoop() != null)
+            node.getLoop().accept(this);
+        curScope = curScope.getUpperScope();
         LoopDepth--;
     }
 
     @Override
     public void visit(ForNode node) {
         LoopDepth++;
+        curScope = new LocalScope("for scope", curScope);
         if (node.getInit() != null) node.getInit().accept(this);
         if (node.getCond() != null) node.getCond().accept(this);
         if (node.getStep() != null) node.getStep().accept(this);
         node.getLoopBody().accept(this);
+        curScope = curScope.getUpperScope();
         LoopDepth--;
     }
 
     @Override
     public void visit(ReturnNode node) {
+        if (inConstructor && node.getRetValue() != null)
+            throw new SemanticError("Cannot return value in constructor.", node.getLocation());
         if (curFunctionSymbol == null)
             throw new SemanticError("No function to return.", node.getLocation());
         if (node.getRetValue() != null)
