@@ -2,51 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ClassDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ClassDeclNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Parser/MxstarLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ClassDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/AST/ClassDeclNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/Mxstar.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ClassMemberVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/ClassMemberVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/SemanticChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ClassDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ClassDeclNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarErrorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarErrorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +47,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Git Projects\Ubuntu\Mx-Compiler\generated\Parser" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -124,6 +98,42 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Git Projects/Ubuntu/Mx-Compiler/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Project_Structure" timestamp="1585750931328">
       <screen x="0" y="0" width="1280" height="680" />
@@ -161,22 +171,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586165174259" />
-    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1586175912667">
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom" timestamp="1586176472434">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
-    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1586175912667">
+    <state width="1237" height="127" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586176472434" />
+    <state width="1237" height="127" key="GridCell.Tab.0.center" timestamp="1586176472434">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
-    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1586175912666">
+    <state width="1237" height="127" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586176472434" />
+    <state width="1237" height="127" key="GridCell.Tab.0.left" timestamp="1586176472434">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586175912666" />
-    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1586175912667">
+    <state width="1237" height="127" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586176472434" />
+    <state width="1237" height="127" key="GridCell.Tab.0.right" timestamp="1586176472434">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586175912667" />
+    <state width="1237" height="127" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586176472434" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1586175392966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -197,6 +207,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585798964070" />
+    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586176727573">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1586176727573" />
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585750882006">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
