@@ -64,8 +64,12 @@ public class ClassMemberVisitor extends ASTBaseVisitor {
 
     @Override
     public void visit(VariableDeclNode node) {
-        for (var variable: node.getVariables())
-            scope.defineVariable(new VariableSymbol(variable.getIdentifier(), typeResolver(node.getType(), globalScope), variable));
+        for (var variable: node.getVariables()) {
+            VariableSymbol variableSymbol = new VariableSymbol(variable.getIdentifier(), typeResolver(node.getType(), globalScope), variable);
+            scope.defineVariable(variableSymbol);
+            // for IR
+            variable.setVariableSymbol(variableSymbol);
+        }
     }
 
 

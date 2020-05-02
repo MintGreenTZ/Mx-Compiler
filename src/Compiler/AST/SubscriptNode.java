@@ -4,16 +4,16 @@ import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
 public class SubscriptNode extends ExprNode {
-    private ExprNode body, subscript;
+    private ExprNode array, subscript;
 
-    public SubscriptNode(Location location, ExprNode body, ExprNode subscript) {
+    public SubscriptNode(Location location, ExprNode array, ExprNode subscript) {
         super(location);
-        this.body = body;
+        this.array = array;
         this.subscript = subscript;
     }
 
-    public ExprNode getBody() {
-        return body;
+    public ExprNode getArray() {
+        return array;
     }
 
     public ExprNode getSubscript() {

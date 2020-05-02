@@ -10,6 +10,8 @@ import Compiler.Utils.SemanticError;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static Compiler.Configuration.POINTER_SIZE;
+
 public class ClassSymbol extends Symbol implements Type, Scope {
     private Map<String, VariableSymbol> variableSymbolMap;
     private Map<String, FunctionSymbol> functionSymbolMap;
@@ -68,6 +70,7 @@ public class ClassSymbol extends Symbol implements Type, Scope {
         if (variableSymbolMap.containsKey(symbol.getName()) || functionSymbolMap.containsKey(symbol.getName()))
             throw new SemanticError("Duplicate Identifier.", symbol.getDefinition().getLocation());
         functionSymbolMap.put(symbol.getName(), symbol);
+        symbol.markMemberFunction();
         symbol.setScope(this);
     }
 
@@ -86,5 +89,15 @@ public class ClassSymbol extends Symbol implements Type, Scope {
         if (variableSymbol != null) return variableSymbol;
         if (functionSymbol != null) return functionSymbol;
         throw new SemanticError("No such a member.", location);
+    }
+
+    @Override
+    public boolean isReferenceType() {
+        return true;
+    }
+
+    @Override
+    public int getTypeSize() {
+        return POINTER_SIZE;
     }
 }

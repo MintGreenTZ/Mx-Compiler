@@ -11,6 +11,10 @@ public class ConstBoolNode extends ConstantNode {
         this.value = value;
     }
 
+    public boolean isValue() {
+        return value;
+    }
+
     public void accept(ASTVisitor visitor) {
         visitor.visit(this);
     }

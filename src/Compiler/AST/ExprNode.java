@@ -1,5 +1,7 @@
 package Compiler.AST;
 
+import Compiler.IR.BasicBlock;
+import Compiler.IR.Operand.Operand;
 import Compiler.SymbolTable.FunctionSymbol;
 import Compiler.SymbolTable.Type.Type;
 import Compiler.Utils.Location;
@@ -13,6 +15,8 @@ abstract public class ExprNode extends Node {
     private Category category;
     private Type type;
     private FunctionSymbol functionSymbol;
+    // for IR
+    private Operand IRResult;
 
     public ExprNode(Location location) {
         super(location);
@@ -55,5 +59,13 @@ abstract public class ExprNode extends Node {
 
     public boolean isLvalue() {
         return category == Category.LVALUE;
+    }
+
+    public void setIRResult(Operand IRResult) {
+        this.IRResult = IRResult;
+    }
+
+    public Operand getIRResult() {
+        return IRResult;
     }
 }

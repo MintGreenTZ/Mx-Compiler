@@ -170,13 +170,13 @@ public class SemanticChecker extends ASTBaseVisitor {
 
     @Override
     public void visit(SubscriptNode node) {
-        node.getBody().accept(this);
+        node.getArray().accept(this);
         node.getSubscript().accept(this);
-        if (!(node.getBody().getType() instanceof ArrayType))
+        if (!(node.getArray().getType() instanceof ArrayType))
             throw new SemanticError("Non-Array type cannot be indexed.", node.getLocation());
         if (!node.getSubscript().isInt())
             throw new SemanticError("Index should be int.", node.getLocation());
-        ArrayType type = (ArrayType) node.getBody().getType();
+        ArrayType type = (ArrayType) node.getArray().getType();
         if (type.getDim() == 1)
             node.setType(type.getBaseType());
         else
@@ -208,7 +208,7 @@ public class SemanticChecker extends ASTBaseVisitor {
     public void visit(PrefixExprNode node) {
         node.getExpr().accept(this);
         switch (node.getOp()) {
-            case INV: case ADD: case SUB:
+            case INV: case POS: case NEG:
                 preAssign(intType, node.getExpr().getType(), node.getLocation());
                 node.setType(intType);
                 break;
@@ -216,7 +216,7 @@ public class SemanticChecker extends ASTBaseVisitor {
                 preAssign(boolType, node.getExpr().getType(), node.getLocation());
                 node.setType(boolType);
                 break;
-            case SelfADD: case SelfSUB:
+            case preADD: case preSUB:
                 preAssign(intType, node.getExpr().getType(), node.getLocation());
                 if (!node.getExpr().isLvalue())
                     throw new SemanticError(node.getExpr().getType().getTypeName() + "is not Lvalue", node.getLocation());

@@ -194,7 +194,7 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
 
     @Override
     public void visit(SubscriptNode node) {
-        node.getBody().accept(this);
+        node.getArray().accept(this);
         node.getSubscript().accept(this);
     }
 

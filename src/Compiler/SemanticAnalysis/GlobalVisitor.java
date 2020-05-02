@@ -52,7 +52,10 @@ public class GlobalVisitor extends ASTBaseVisitor {
         for (var varDecl: node.getParameterList()) {
             String name = varDecl.getVariable().getIdentifier();
             Type type = typeResolver(varDecl.getType(), globalScope);
-            functionSymbol.defineVariable(new VariableSymbol(name, type, varDecl.getVariable()));
+            VariableSymbol variableSymbol = new VariableSymbol(name, type, varDecl.getVariable());
+            functionSymbol.defineVariable(variableSymbol);
+            // for IR
+            varDecl.getVariable().setVariableSymbol(variableSymbol);
         }
         globalScope.defineFunction(functionSymbol);
         node.setFunctionSymbol(functionSymbol);

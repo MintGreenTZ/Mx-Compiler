@@ -4,7 +4,7 @@ import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
 public class SuffixExprNode extends ExprNode {
-    public enum Op{SelfADD, SelfSUB};
+    public enum Op{sufADD, sufSUB};
     private Op op;
     private ExprNode expr;
 
@@ -12,6 +12,10 @@ public class SuffixExprNode extends ExprNode {
         super(location);
         this.op = op;
         this.expr = expr;
+    }
+
+    public Op getOp() {
+        return op;
     }
 
     public ExprNode getExpr() {

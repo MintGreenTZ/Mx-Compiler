@@ -8,4 +8,14 @@ public class NullType implements Type {
     public String getTypeName() {
         return "null";
     }
+
+    @Override
+    public boolean isReferenceType() {
+        return false;
+    }
+
+    @Override
+    public int getTypeSize() {
+        return 0;
+    }
 }

@@ -246,10 +246,10 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         switch (ctx.op.getText()) {
             case "~":  op = PrefixExprNode.Op.INV; break;
             case "!":  op = PrefixExprNode.Op.LogicINV; break;
-            case "++": op = PrefixExprNode.Op.SelfADD; break;
-            case "--": op = PrefixExprNode.Op.SelfSUB; break;
-            case "+":  op = PrefixExprNode.Op.ADD; break;
-            case "-":  op = PrefixExprNode.Op.SUB; break;
+            case "++": op = PrefixExprNode.Op.preADD; break;
+            case "--": op = PrefixExprNode.Op.preSUB; break;
+            case "+":  op = PrefixExprNode.Op.POS; break;
+            case "-":  op = PrefixExprNode.Op.NEG; break;
             default: op = null;
         }
         return new PrefixExprNode(new Location(ctx.getStart()), op, expr);
@@ -271,8 +271,8 @@ public class ASTBuilder extends MxstarBaseVisitor<Node> {
         ExprNode expr = (ExprNode) visit(ctx.expression());
         SuffixExprNode.Op op;
         switch (ctx.op.getText()) {
-            case "++": op = SuffixExprNode.Op.SelfADD; break;
-            case "--": op = SuffixExprNode.Op.SelfSUB; break;
+            case "++": op = SuffixExprNode.Op.sufADD; break;
+            case "--": op = SuffixExprNode.Op.sufSUB; break;
             default: op = null;
         }
         return new SuffixExprNode(new Location(ctx.getStart()), op, expr);

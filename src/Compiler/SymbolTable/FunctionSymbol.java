@@ -2,6 +2,7 @@ package Compiler.SymbolTable;
 
 import Compiler.AST.FunctionDeclNode;
 import Compiler.AST.Node;
+import Compiler.IR.Function;
 import Compiler.SymbolTable.Scope.Scope;
 import Compiler.SymbolTable.Type.Type;
 import Compiler.Utils.Location;
@@ -13,6 +14,8 @@ import java.util.Map;
 public class FunctionSymbol extends Symbol implements Scope {
     private Scope upperScope;
     private Map<String, VariableSymbol> arguments;
+    private Function function;
+    private boolean isMemberFunction = false;
 
     public FunctionSymbol(String name, Type type, FunctionDeclNode definition, Scope upperScope) {
         super(name, type, definition);
@@ -59,5 +62,21 @@ public class FunctionSymbol extends Symbol implements Scope {
             return symbol;
         else
             return upperScope.resolveSymbol(identifier, location);
+    }
+
+    public void setFunction(Function function) {
+        this.function = function;
+    }
+
+    public Function getFunction() {
+        return function;
+    }
+
+    public void markMemberFunction() {
+        isMemberFunction = true;
+    }
+
+    public boolean isMemberFunction() {
+        return isMemberFunction;
     }
 }

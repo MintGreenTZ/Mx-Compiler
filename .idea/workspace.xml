@@ -2,20 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mx-Compiler.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/BasicBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Function.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/IR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/IRVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/BinaryOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/FuncCall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/HeapAlloc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/IRInst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Jump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Load.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Return.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/UnaryOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/ConstStr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Imm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Operand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegPtr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/Mxstar.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarErrorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Parser/MxstarErrorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Parser/MxstarVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ConstBoolNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstBoolNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ConstIntNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ConstIntNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/ExprNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/ExprNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/PrefixExprNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/PrefixExprNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/SubscriptNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/SubscriptNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/SuffixExprNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/SuffixExprNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/AST/VariableNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ASTBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/FunctionSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/FunctionSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/PrimitiveSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/PrimitiveSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/ArrayType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/NullType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/NullType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/Type/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/VariableSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/VariableSymbol.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,22 +174,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750583405" />
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1586172006094">
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1588436622260">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1586172006094" />
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588436622260" />
     <state x="488" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585671637009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="488" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1585671637009" />
-    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585671565763">
+    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587984054023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1585671565763" />
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585999635613">
+    <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1587984054023" />
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588334483040">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1585999635613" />
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1588334483040" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586142006617">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -211,14 +242,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1586176727573" />
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585750882006">
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1588331192425">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585750882006" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1588331192425" />
     <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586155893969">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1586155893969" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1588047991977">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1588047991977" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -250,18 +285,13 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SymbolTable/Type/ArrayType.java</url>
-          <line>18</line>
+          <line>21</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
           <line>61</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/SemanticChecker.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/FunctionBodyVisitor.java</url>

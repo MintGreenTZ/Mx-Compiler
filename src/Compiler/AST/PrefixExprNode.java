@@ -4,7 +4,7 @@ import Compiler.SemanticAnalysis.ASTVisitor;
 import Compiler.Utils.Location;
 
 public class PrefixExprNode extends ExprNode {
-    public enum Op{INV, LogicINV, SelfADD, SelfSUB, ADD, SUB};
+    public enum Op{INV, LogicINV, preADD, preSUB, POS, NEG};
     private Op op;
     private ExprNode expr;
 
