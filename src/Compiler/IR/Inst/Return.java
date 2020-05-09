@@ -14,7 +14,7 @@ public class Return extends IRInst {
         return ret;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

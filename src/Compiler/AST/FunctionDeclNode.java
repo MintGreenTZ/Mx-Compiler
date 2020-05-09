@@ -5,7 +5,6 @@ import Compiler.SymbolTable.FunctionSymbol;
 import Compiler.Utils.Location;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FunctionDeclNode extends DeclNode{
     private TypeNode type;
@@ -20,6 +19,8 @@ public class FunctionDeclNode extends DeclNode{
         this.identifier = identifier;
         this.parameterList = parameterList;
         this.funcBody = funcNode;
+        for (ParameterNode parameterNode: parameterList)
+            parameterNode.getVariable().markParameter();
     }
 
     public String getIdentifier() {

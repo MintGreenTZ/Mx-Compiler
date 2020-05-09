@@ -3,6 +3,7 @@ package Compiler.IR.Inst;
 import Compiler.IR.Function;
 import Compiler.IR.IRVisitor;
 import Compiler.IR.Operand.Operand;
+import Compiler.Utils.IRError;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class FuncCall extends IRInst {
     private Operand dest;
 
     public FuncCall(Function function, Operand obj, ArrayList<Operand> paralist, Operand dest) {
+        if (function == null) throw new IRError("null pointer when construct funcCall");
         this.function = function;
         this.obj = obj;
         this.paralist = paralist;
@@ -34,7 +36,7 @@ public class FuncCall extends IRInst {
         return dest;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

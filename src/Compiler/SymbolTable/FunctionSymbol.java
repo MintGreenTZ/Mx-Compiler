@@ -1,7 +1,6 @@
 package Compiler.SymbolTable;
 
 import Compiler.AST.FunctionDeclNode;
-import Compiler.AST.Node;
 import Compiler.IR.Function;
 import Compiler.SymbolTable.Scope.Scope;
 import Compiler.SymbolTable.Type.Type;
@@ -13,14 +12,14 @@ import java.util.Map;
 
 public class FunctionSymbol extends Symbol implements Scope {
     private Scope upperScope;
-    private Map<String, VariableSymbol> arguments;
+    private Map<String, VariableSymbol> variableMap;
     private Function function;
     private boolean isMemberFunction = false;
 
     public FunctionSymbol(String name, Type type, FunctionDeclNode definition, Scope upperScope) {
         super(name, type, definition);
         this.upperScope = upperScope;
-        this.arguments = new LinkedHashMap<>();
+        this.variableMap = new LinkedHashMap<>();
     }
 
     public void setUpperScope(Scope scope) {
@@ -32,16 +31,16 @@ public class FunctionSymbol extends Symbol implements Scope {
         return upperScope;
     }
 
-    public Map<String, VariableSymbol> getArguments() {
-        return arguments;
+    public Map<String, VariableSymbol> getVariableMap() {
+        return variableMap;
     }
 
     @Override
     public void defineVariable(VariableSymbol symbol) {
-        if (arguments.containsKey(symbol.getName()))
+        if (variableMap.containsKey(symbol.getName()))
             throw new SemanticError("Duplicate identifiers.", symbol.getDefinition().getLocation());
         else
-            arguments.put(symbol.getName(), symbol);
+            variableMap.put(symbol.getName(), symbol);
         symbol.setScope(this);
     }
 
@@ -57,7 +56,7 @@ public class FunctionSymbol extends Symbol implements Scope {
 
     @Override
     public Symbol resolveSymbol(String identifier, Location location) {
-        Symbol symbol = arguments.get(identifier);
+        Symbol symbol = variableMap.get(identifier);
         if (symbol != null)
             return symbol;
         else

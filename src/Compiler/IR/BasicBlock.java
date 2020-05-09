@@ -8,6 +8,7 @@ public class BasicBlock {
     private String name;
     private ArrayList<BasicBlock> successors = new ArrayList<>();
     private IRInst firstInst, lastInst;
+    private boolean terminated = false;
 
     public BasicBlock() {
     }
@@ -41,6 +42,7 @@ public class BasicBlock {
     }
 
     public void addInst(IRInst inst) {
+        if (terminated) return;
         if (firstInst == null) {
             firstInst = lastInst = inst;
             inst.setPreInst(null);
@@ -51,5 +53,11 @@ public class BasicBlock {
             inst.setSucInst(null);
             lastInst = inst;
         }
+        inst.setCurBlock(this);
+    }
+
+    public void addLastInst(IRInst inst) {
+        addInst(inst);
+        terminated = true;
     }
 }

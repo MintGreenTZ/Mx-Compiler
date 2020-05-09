@@ -2,6 +2,7 @@ package Compiler.IR.Inst;
 
 import Compiler.IR.IRVisitor;
 import Compiler.IR.Operand.Operand;
+import Compiler.Utils.IRError;
 
 public class Store extends IRInst {
 
@@ -12,6 +13,7 @@ public class Store extends IRInst {
     public Store(Operand src, Operand ptr) {
         this.src = src;
         this.ptr = ptr;
+        if (ptr == null) throw new IRError("Store without ptr");
     }
 
     public Operand getSrc() {
@@ -21,7 +23,7 @@ public class Store extends IRInst {
         return ptr;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

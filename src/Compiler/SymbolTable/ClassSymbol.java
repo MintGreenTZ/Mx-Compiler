@@ -1,7 +1,6 @@
 package Compiler.SymbolTable;
 
 import Compiler.AST.ClassDeclNode;
-import Compiler.AST.Node;
 import Compiler.SymbolTable.Scope.Scope;
 import Compiler.SymbolTable.Type.Type;
 import Compiler.Utils.Location;
@@ -17,6 +16,9 @@ public class ClassSymbol extends Symbol implements Type, Scope {
     private Map<String, FunctionSymbol> functionSymbolMap;
     private Scope upperScope;
     private FunctionSymbol constructor;
+
+    // for IR
+    private int size;
 
     public ClassSymbol(String name, ClassDeclNode definition, Scope upperScope) {
         super(name, null, definition);
@@ -58,6 +60,8 @@ public class ClassSymbol extends Symbol implements Type, Scope {
             throw new SemanticError("Duplicate Identifier.", symbol.getDefinition().getLocation());
         variableSymbolMap.put(symbol.getName(), symbol);
         symbol.setScope(this);
+        symbol.setOffset(size);
+        size += symbol.getType().getTypeSize();
     }
 
     @Override
@@ -72,6 +76,11 @@ public class ClassSymbol extends Symbol implements Type, Scope {
         functionSymbolMap.put(symbol.getName(), symbol);
         symbol.markMemberFunction();
         symbol.setScope(this);
+    }
+
+    // for IR use, don't need to give location to mark error
+    public Symbol resolveSymbol(String identifier) {
+        return  resolveSymbol(identifier, new Location(0, 0));
     }
 
     @Override

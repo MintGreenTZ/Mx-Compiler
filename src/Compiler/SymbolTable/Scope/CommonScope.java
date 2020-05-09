@@ -1,6 +1,5 @@
 package Compiler.SymbolTable.Scope;
 
-import Compiler.SymbolTable.ClassSymbol;
 import Compiler.SymbolTable.FunctionSymbol;
 import Compiler.SymbolTable.Symbol;
 import Compiler.SymbolTable.VariableSymbol;
@@ -30,6 +29,7 @@ public abstract class CommonScope implements Scope {
         if (symbolMap.containsKey(symbol.getName()))
             throw new SemanticError("Duplicate identifiers.", symbol.getDefinition().getLocation());
         symbolMap.put(symbol.getName(), symbol);
+        symbol.setScope(this);
     }
 
     @Override
@@ -37,10 +37,16 @@ public abstract class CommonScope implements Scope {
         if (symbolMap.containsKey(symbol.getName()))
             throw new SemanticError("Duplicate identifiers.", symbol.getDefinition().getLocation());
         symbolMap.put(symbol.getName(), symbol);
+        symbol.setScope(this);
     }
 
     @Override
     public Symbol resolveSymbol(String identifier, Location location) {
         return null;
+    }
+
+    // for IR use, don't need to give location to mark error
+    public Symbol resolveSymbol(String identifier) {
+        return resolveSymbol(identifier, new Location(0, 0));
     }
 }

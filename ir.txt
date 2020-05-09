@@ -1,0 +1,16 @@
+func __global_init {
+b_0:
+	@x_1 = alloc 4
+	store 10 @x_1
+	call main
+	ret
+}
+
+func main {
+entry_2:
+	%t_3 = load @x_1
+	store 20 @x_1
+	%t_4 = load @x_1
+	ret %t_4
+}
+

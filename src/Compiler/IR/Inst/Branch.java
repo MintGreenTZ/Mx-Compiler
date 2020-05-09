@@ -24,7 +24,7 @@ public class Branch extends IRInst {
         return elseBB;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

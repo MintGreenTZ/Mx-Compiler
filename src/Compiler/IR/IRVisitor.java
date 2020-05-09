@@ -6,7 +6,7 @@ public interface IRVisitor {
     void visit(BinaryOp inst);
     void visit(Branch inst);
     void visit(FuncCall inst);
-    void visit(HeapAlloc inst);
+    void visit(Alloc inst);
     void visit(Jump inst);
     void visit(Load inst);
     void visit(Move inst);

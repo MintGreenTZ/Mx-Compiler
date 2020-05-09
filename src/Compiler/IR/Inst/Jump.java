@@ -14,7 +14,7 @@ public class Jump extends IRInst {
         return BB;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

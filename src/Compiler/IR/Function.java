@@ -11,9 +11,8 @@ public class Function {
     private BasicBlock entryBB, exitBB;
     private ArrayList<Register> args = new ArrayList<>();
     private ArrayList<Return> returns = new ArrayList<>();
-    private Register referenceToCurClass;
     private boolean isBuiltin = false;
-    private Operand memberObj;
+    private Operand referenceToThisClass;
 
     public Function(String identifier) {
         this.identifier = identifier;
@@ -25,24 +24,21 @@ public class Function {
     public void setExitBB(BasicBlock exitBB) {
         this.exitBB = exitBB;
     }
-    public void setReferenceToCurClass(Register referenceToCurClass) {
-        this.referenceToCurClass = referenceToCurClass;
-    }
     public void addArg(Register arg) {args.add(arg);}
     public void addReturnInst(Return inst) {returns.add(inst);}
     public void markBuiltin() {isBuiltin = true;}
-    public void setMemberObj(Operand memberObj) {
-        this.memberObj = memberObj;
+    public void setReferenceToThisClass(Operand referenceToThisClass) {
+        this.referenceToThisClass = referenceToThisClass;
     }
 
+    public String getIdentifier() {
+        return identifier;
+    }
     public BasicBlock getEntryBB() {
         return entryBB;
     }
     public BasicBlock getExitBB() {
         return exitBB;
-    }
-    public Register getReferenceToCurClass() {
-        return referenceToCurClass;
     }
     public ArrayList<Return> getReturns() {
         return returns;
@@ -50,7 +46,10 @@ public class Function {
     public boolean isBuiltin() {
         return isBuiltin;
     }
-    public Operand getMemberObj() {
-        return memberObj;
+    public Operand getReferenceToThisClass() {
+        return referenceToThisClass;
+    }
+    public ArrayList<Register> getArgs() {
+        return args;
     }
 }

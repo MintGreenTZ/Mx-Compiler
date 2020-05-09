@@ -192,10 +192,10 @@ public class SemanticChecker extends ASTBaseVisitor {
             expr.accept(this);
         if (function.getCategory() != ExprNode.Category.FUNCTION)
             throw new SemanticError("No such a function.", node.getLocation());
-        if (node.getExprList().size() != function.getFunctionSymbol().getArguments().size())
+        if (node.getExprList().size() != function.getFunctionSymbol().getVariableMap().size())
             throw new SemanticError("The number of arguments not matched.", node.getLocation());
         Iterator<ExprNode> exprNodeIterator = node.getExprList().iterator();
-        for (var entry: function.getFunctionSymbol().getArguments().entrySet()) {
+        for (var entry: function.getFunctionSymbol().getVariableMap().entrySet()) {
             ExprNode exprNode = exprNodeIterator.next();
             VariableSymbol variableSymbol = entry.getValue();
             preAssign(variableSymbol.getType(), exprNode.getType(), node.getLocation());

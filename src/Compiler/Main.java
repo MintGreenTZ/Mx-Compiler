@@ -1,6 +1,9 @@
 package Compiler;
 
 import Compiler.AST.ProgramNode;
+import Compiler.IR.IRBuilder;
+import Compiler.IR.IRPrinter;
+import Compiler.IRInterpreter.IRInterpreter;
 import Compiler.Parser.MxstarErrorListener;
 import Compiler.Parser.MxstarLexer;
 import Compiler.Parser.MxstarParser;
@@ -12,6 +15,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,11 +35,18 @@ public class Main {
             ASTBuilder astBuilder = new ASTBuilder();
             ProgramNode astRoot = (ProgramNode) astBuilder.visit(parser.program());
 
+            // Semantic Analysis
             GlobalScope globalScope = new GlobalScope("globalScope", null);
             new GlobalVisitor(globalScope).visit(astRoot);
             new ClassMemberVisitor(globalScope).visit(astRoot);
             new FunctionBodyVisitor(globalScope).visit(astRoot);
             new SemanticChecker(globalScope).visit(astRoot);
+
+            // IR
+            IRBuilder irBuilder = new IRBuilder(globalScope);
+            irBuilder.visit(astRoot);
+            new IRPrinter().print(irBuilder.getIr(), new PrintStream("ir.txt"));
+            IRInterpreter.main("ir.txt", System.out, new FileInputStream("in.txt"), false);
         }
         catch (Exception error) {
             error.printStackTrace();

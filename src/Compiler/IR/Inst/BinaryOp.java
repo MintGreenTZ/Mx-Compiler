@@ -2,6 +2,7 @@ package Compiler.IR.Inst;
 
 import Compiler.IR.IRVisitor;
 import Compiler.IR.Operand.Operand;
+import Compiler.Utils.IRError;
 
 public class BinaryOp extends IRInst {
     public enum Op {
@@ -17,6 +18,7 @@ public class BinaryOp extends IRInst {
     private Op op;
 
     public BinaryOp(Operand lhs, Operand rhs, Operand dest, Op op) {
+        if (lhs == null) throw new IRError("Binary inst lhs is null.");
         this.lhs = lhs;
         this.rhs = rhs;
         this.dest = dest;
@@ -36,7 +38,7 @@ public class BinaryOp extends IRInst {
         return op;
     }
 
-    public void visit(IRVisitor visitor) {
+    public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }
 }

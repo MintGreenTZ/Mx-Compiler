@@ -36,7 +36,8 @@ public class GlobalVisitor extends ASTBaseVisitor {
         mainFunctionChecker();
         for (DeclNode decl: node.getDecl())
             if (decl instanceof VariableDeclNode)
-                decl.accept(this);
+                for (VariableNode variableNode: ((VariableDeclNode) decl).getVariables())
+                    variableNode.markGlobal();
     }
 
     @Override

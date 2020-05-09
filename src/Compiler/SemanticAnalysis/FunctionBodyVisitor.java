@@ -60,8 +60,15 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
         FunctionSymbol functionSymbol = node.getFunctionSymbol();
         curFunctionSymbol = functionSymbol;
         curScope = functionSymbol;
+        for (ParameterNode parameterNode: node.getParameterList())
+            parameterNode.accept(this);
         node.getFuncBody().accept(this);
         curScope = curScope.getUpperScope();
+    }
+
+    @Override
+    public void visit(ParameterNode node) {
+        node.getVariable().accept(this);
     }
 
     /*
@@ -92,6 +99,9 @@ public class FunctionBodyVisitor extends ASTBaseVisitor{
             variable.setDetailedType(typeResolver(node.getType(), globalScope));
             variable.accept(this);
             curScope.defineVariable(new VariableSymbol(variable.getIdentifier(), typeResolver(node.getType(), globalScope), variable));
+            // for IR
+            VariableSymbol variableSymbol = new VariableSymbol(variable.getIdentifier(), typeResolver(node.getType(), globalScope), variable);
+            variable.setVariableSymbol(variableSymbol);
         }
     }
 

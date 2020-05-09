@@ -38,5 +38,5 @@ public abstract class IRInst {
             sucInst.setPreInst(preInst);
     }
 
-    public abstract void visit(IRVisitor visitor);
+    public abstract void accept(IRVisitor visitor);
 }
