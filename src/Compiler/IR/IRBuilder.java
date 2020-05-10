@@ -18,6 +18,8 @@ import java.util.Stack;
 
 import static Compiler.Configuration.POINTER_SIZE;
 import static Compiler.Configuration.REGISTER_SIZE;
+import static Compiler.SemanticAnalysis.GlobalVisitor.StringType;
+import static Compiler.SemanticAnalysis.GlobalVisitor.getArraySizeSymbol;
 
 public class IRBuilder extends ASTBaseVisitor {
     private GlobalScope globalScope;
@@ -194,7 +196,7 @@ public class IRBuilder extends ASTBaseVisitor {
 
         curBB = loopBB;
         node.getLoop().accept(this);
-        condBB.addInst(new Jump(condBB));
+        curBB.addInst(new Jump(condBB));
 
         curBB = exitBB;
 
@@ -212,26 +214,24 @@ public class IRBuilder extends ASTBaseVisitor {
         breakStack.push(exitBB);
         continueStack.push(stepBB);
 
+        node.getInit().accept(this);
+
         curBB.addInst(new Jump(condBB));
 
+        curBB = condBB;
         if (node.getCond() != null) {
-            curBB = condBB;
             node.getCond().accept(this);
             curBB.addInst(new Branch(operand2Val(node.getCond().getIRResult()), loopBB, exitBB));
-        } else {
-            curBB = condBB;
+        } else
             curBB.addInst(new Branch(new Imm(1), loopBB, exitBB));
-        }
 
         curBB = loopBB;
         node.getLoopBody().accept(this);
         curBB.addInst(new Jump(stepBB));
 
-        if (node.getStep() != null) {
-            curBB = stepBB;
-            node.getStep().accept(this);
-            curBB.addInst(new Jump(condBB));
-        }
+        curBB = stepBB;
+        if (node.getStep() != null) node.getStep().accept(this);
+        curBB.addInst(new Jump(condBB));
 
         curBB = exitBB;
 
@@ -291,7 +291,7 @@ public class IRBuilder extends ASTBaseVisitor {
     @Override
     public void visit(SuffixExprNode node) {
         node.getExpr().accept(this);
-        Operand exprResult = node.getIRResult();
+        Operand exprResult = node.getExpr().getIRResult();
         Operand dest = new RegValue();
         BinaryOp.Op op = node.getOp() == SuffixExprNode.Op.sufADD ? BinaryOp.Op.ADD : BinaryOp.Op.SUB;
         if (exprResult instanceof RegValue) {
@@ -300,7 +300,7 @@ public class IRBuilder extends ASTBaseVisitor {
         } else {
             curBB.addInst(new Load(dest, exprResult));
             RegValue valueAfterOp = new RegValue();
-            curBB.addInst(new BinaryOp(exprResult, new Imm(1), valueAfterOp, op));
+            curBB.addInst(new BinaryOp(dest, new Imm(1), valueAfterOp, op));
             curBB.addInst(new Store(valueAfterOp, exprResult));
         }
         node.setIRResult(dest);
@@ -309,14 +309,11 @@ public class IRBuilder extends ASTBaseVisitor {
     @Override
     public void visit(MemberAccessNode node) {
         node.getObj().accept(this);
-         if (node.getSymbol() instanceof ClassSymbol) {
-            // class member access
-             if (node.getSymbol() instanceof VariableSymbol) { // if (true), just for Type use
-                 RegValue base_addr = (RegValue) operand2Val(node.getObj().getIRResult());
-                 int offset = ((VariableSymbol) node.getSymbol()).getOffset();
-                 node.setIRResult(new RegPtr());
-                 curBB.addInst(new BinaryOp(base_addr, new Imm(offset), node.getIRResult(), BinaryOp.Op.ADD));
-             }
+         if (node.getSymbol() instanceof VariableSymbol) { // class member access, in the case of Array.size() node.getSymbol() is null
+             RegValue base_addr = (RegValue) operand2Val(node.getObj().getIRResult());
+             int offset = ((VariableSymbol) node.getSymbol()).getOffset();
+             node.setIRResult(new RegPtr());
+             curBB.addInst(new BinaryOp(base_addr, new Imm(offset), node.getIRResult(), BinaryOp.Op.ADD));
          } else {
              // Array.size()
              node.setIRResult(node.getObj().getIRResult());
@@ -328,14 +325,14 @@ public class IRBuilder extends ASTBaseVisitor {
         node.getArray().accept(this);
         node.getSubscript().accept(this);
         ArrayType arrayType = (ArrayType) node.getArray().getType();
-        Operand arrayOpe = node.getArray().getIRResult();
-        Operand subscriptOpe = node.getSubscript().getIRResult();
+        Operand arrayOpe = operand2Val(node.getArray().getIRResult());
+        Operand subscriptOpe = operand2Val(node.getSubscript().getIRResult());
         RegValue dest_det_num = new RegValue();
         RegValue dest_det_addr = new RegValue();
-        RegValue dest = new RegValue();
+        RegPtr dest = new RegPtr();
         node.setIRResult(dest);
         curBB.addInst(new BinaryOp(subscriptOpe, new Imm(1), dest_det_num, BinaryOp.Op.ADD));
-        curBB.addInst(new BinaryOp(subscriptOpe, new Imm(arrayType.getDim() == 1 ? arrayType.getBaseType().getTypeSize() : POINTER_SIZE), dest_det_addr, BinaryOp.Op.MUL));
+        curBB.addInst(new BinaryOp(dest_det_num, new Imm(arrayType.getDim() == 1 ? arrayType.getBaseType().getTypeSize() : POINTER_SIZE), dest_det_addr, BinaryOp.Op.MUL));
         curBB.addInst(new BinaryOp(arrayOpe, dest_det_addr, dest, BinaryOp.Op.ADD));
     }
 
@@ -416,9 +413,9 @@ public class IRBuilder extends ASTBaseVisitor {
         node.setIRResult(new RegValue());
         if (node.getType() instanceof ClassSymbol) {
             curBB.addInst(new Alloc(new Imm(node.getType().getTypeSize()), node.getIRResult()));
-            Function constructor = ((ClassSymbol) node.getType()).getConstructor().getFunction();
-            if (constructor != null)
-                curBB.addInst(new FuncCall(constructor, node.getIRResult(), new ArrayList<>(), null));
+            FunctionSymbol constructorFunctionSymbol = ((ClassSymbol) node.getType()).getConstructor();
+            if (constructorFunctionSymbol != null)
+                curBB.addInst(new FuncCall(constructorFunctionSymbol.getFunction(), node.getIRResult(), new ArrayList<>(), null));
         } else { // ArrayType
             for (ExprNode exprNode: node.getExprList())
                 exprNode.accept(this);
@@ -545,11 +542,11 @@ public class IRBuilder extends ASTBaseVisitor {
                 Operand dest = node.getLhs().getIRResult();
                 Operand src = node.getRhs().getIRResult();
                 operand2Val(dest);
-                operand2Val(src);
-                if (src instanceof RegValue)
-                    curBB.addInst(new Move(operand2Val(src), dest));
+                Operand srcVal = operand2Val(src);
+                if (dest instanceof RegValue)
+                    curBB.addInst(new Move(srcVal, dest));
                 else
-                    curBB.addInst(new Store(operand2Val(src), dest));
+                    curBB.addInst(new Store(srcVal, dest));
                 break;
             }
         }
@@ -627,6 +624,7 @@ public class IRBuilder extends ASTBaseVisitor {
     public static Function builtinStrLT        = new Function("string.lt");
     public static Function builtinStrLE        = new Function("string.le");
     public static Function builtinStrGE        = new Function("string.ge");
+    public static Function builtinArraySize    = new Function("array.size");
 
     private void builtinFunctionInitializer() {
         builtinPrint.markBuiltin();
@@ -647,6 +645,7 @@ public class IRBuilder extends ASTBaseVisitor {
         builtinStrLT.markBuiltin();
         builtinStrLE.markBuiltin();
         builtinStrGE.markBuiltin();
+        builtinArraySize.markBuiltin();
 
         ir.addFunction(builtinPrint);
         ir.addFunction(builtinPrintln);
@@ -666,6 +665,7 @@ public class IRBuilder extends ASTBaseVisitor {
         ir.addFunction(builtinStrLT);
         ir.addFunction(builtinStrLE);
         ir.addFunction(builtinStrGE);
+        ir.addFunction(builtinArraySize);
 
         ((FunctionSymbol)globalScope.resolveSymbol("print")).setFunction(builtinPrint);
         ((FunctionSymbol)globalScope.resolveSymbol("println")).setFunction(builtinPrintln);
@@ -674,13 +674,26 @@ public class IRBuilder extends ASTBaseVisitor {
         ((FunctionSymbol)globalScope.resolveSymbol("getString")).setFunction(builtinGetString);
         ((FunctionSymbol)globalScope.resolveSymbol("getInt")).setFunction(builtinGetInt);
         ((FunctionSymbol)globalScope.resolveSymbol("toString")).setFunction(builtinToString);
+        ((FunctionSymbol)StringType.resolveSymbol("length")).setFunction(builtinStrLength);
+        ((FunctionSymbol)StringType.resolveSymbol("substring")).setFunction(builtinStrSubString);
+        ((FunctionSymbol)StringType.resolveSymbol("parseInt")).setFunction(builtinStrParseInt);
+        ((FunctionSymbol)StringType.resolveSymbol("ord")).setFunction(builtinStrOrd);
+
+        RegValue ret = new RegValue(), obj = new RegValue();
+        BasicBlock BB = new BasicBlock(); //{{addInst(new Load(ret, obj)); addInst(new Return(ret));}}; //strange
+        BB.addInst(new Load(ret, obj));
+        BB.addInst(new Return(ret));
+        builtinArraySize.setReferenceToThisClass(obj);
+        builtinArraySize.setEntryBB(BB);
+        builtinArraySize.setExitBB(BB);
+        getArraySizeSymbol.setFunction(builtinArraySize);
     }
 
     // new array [expr_1][expr_2]...[expr_k][][]...[] recursively
     private void newArray(NewNode node, int depth, Operand basePtr) {
         if (depth == node.getExprList().size()) return;
         ExprNode curExpr = node.getExprList().get(depth);
-        Operand size_num = curExpr.getIRResult();
+        Operand size_num = operand2Val(curExpr.getIRResult());
         Operand size = new RegValue();
         Operand size_plus_1 = new RegValue();
 
@@ -694,11 +707,11 @@ public class IRBuilder extends ASTBaseVisitor {
         // Allocation
         if (basePtr instanceof RegValue) {
             curBB.addInst(new Alloc(size_plus_1, basePtr));
-            curBB.addInst(new Store(size, basePtr));
+            curBB.addInst(new Store(size_num, basePtr));
         } else {
             Operand allocatedMemoryPtr = new RegValue();
             curBB.addInst(new Alloc(size_plus_1, allocatedMemoryPtr));
-            curBB.addInst(new Store(size, allocatedMemoryPtr));
+            curBB.addInst(new Store(size_num, allocatedMemoryPtr));
             curBB.addInst(new Store(allocatedMemoryPtr, basePtr));
         }
 

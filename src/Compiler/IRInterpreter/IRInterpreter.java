@@ -1,7 +1,5 @@
 package Compiler.IRInterpreter;
 
-import org.apache.commons.text.StringEscapeUtils;
-
 import java.io.*;
 import java.util.*;
 
@@ -230,8 +228,8 @@ public class IRInterpreter {
             String name = words[0].trim();
             words[1] = words[1].trim();
             String tmp = words[1].substring(1, words[1].length() - 1);
-            String val = StringEscapeUtils.unescapeJava(tmp);
-//			String val = tmp;
+//            String val = StringEscapeUtils.unescapeJava(tmp);
+			String val = tmp;
             Register reg = new Register();
             reg.value = staticStringCnt;
             reg.timestamp = 0;

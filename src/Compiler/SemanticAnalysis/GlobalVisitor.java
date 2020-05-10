@@ -67,7 +67,7 @@ public class GlobalVisitor extends ASTBaseVisitor {
     public static PrimitiveSymbol voidType = new PrimitiveSymbol("void");
     public static NullType nullType = new NullType();
     public static ClassSymbol StringType = new ClassSymbol("string", null, globalScope);
-    public static FunctionSymbol getArraySizeSymbol = new FunctionSymbol("size", intType, null, globalScope);
+    public static FunctionSymbol getArraySizeSymbol = new FunctionSymbol("size", intType, null, globalScope) {{markMemberFunction();}};
 
     private void initializer() {
         globalScope.defineType(intType);
