@@ -1,104 +1,124 @@
 /*
 Test Package: Codegen
-Author: Yunwei Ren
+Author: 14' Rongyu You
+Time: 2020-02-03
 Input:
 === input ===
 === end ===
 Output:
 === output ===
-Passed tests.
-
+vector x: ( 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 )
+excited!
+vector y: ( 9, 8, 7, 817, 5, 4, 3, 2, 1, 0 )
+x + y: ( 18, 16, 14, 823, 10, 8, 6, 4, 2, 0 )
+x * y: 0
+(1 << 3) * y: ( 72, 64, 56, 6536, 40, 32, 24, 16, 8, 0 )
 === end ===
 ExitCode: 0
 InstLimit: -1
+Origin Package: Codegen Pretest-900
 */
+//
+// Naive vector class for Mx*.
+// Without any guarantee for robustness.
+//
+class vector{
+	int[] data;
+	void init(int[] vec){
+		// init the vector from an array
+		if (vec == null) return;
+		data = new int[vec.size()];
+		int i;
+		for (i = 0; i < vec.size(); ++i)
+		{
+			data[i] = vec[i];
+		}
+	}
 
-class Queue_int {
-  Queue_int() {
-    beg = 0;
-    end = 0;
-    storage = new int[16];
-  }
+	int getDim(){
+		if (data == null) return 0;
+		return data.size();
+	}
 
-  void push(int v) {
-    if (size() == storage.size() - 1) {
-      doubleStorage();
-    }
-    storage[end] = v;
-    end = (end + 1) % storage.size();
-  }
+	int dot(vector rhs){
+		int i = 0;
+		int result = 0;
+		while(i < getDim()){
+			//result = data[i] * rhs[i];
+			result = data[i] * rhs.data[i];
+			++i;
+		}
+		return result;
+	}
 
-  int top() {
-    return storage[beg];
-  }
+	vector scalarInPlaceMultiply(int c){
+		if (data == null) return null;
+		int i;
+		for (i = 0; i < getDim(); ++i) {
+			this.data[i] = c * this.data[i];
+		}
+		return this;
+	}
 
-  int pop() {
-    if (size() == 0) {
-      println("Warning: Queue_int::pop: empty queue");
-    }
-    int res = top();
-    beg = (beg + 1) % storage.size();
-    return res;
-  }
+	vector add(vector rhs){
+		if (getDim() != rhs.getDim() || getDim() == 0)
+			return null;
+		vector temp = new vector;
+		int i;
+		temp.data = new int[getDim()];
+		for (i = 0; i < getDim(); ++i){
+			temp.data[i] = data[i] + rhs.data[i];
+		}
+		return temp;
+	}
 
-  int size() {
-    return (end + storage.size() - beg) % storage.size();
-  }
+	bool set(int idx, int value){
+		if (getDim() < idx) return false;
+		data[idx] = value;
+		return true;
+	}
 
-  void doubleStorage() {
-    int[] copy = storage;
-    int begCopy = beg;
-    int endCopy = end;
+	string tostring(){
+		string temp = "( ";
+		if (getDim() > 0) {
+			temp = temp + toString(data[0]);
+		}
+		int i;
+		for (i = 1; i < getDim(); ++i) {
+			temp = temp + ", " + toString(data[i]);
+		}
+		temp = temp + " )";
+		return temp;
+	}
 
-    storage = new int[copy.size() * 2];
-    beg = 0;
-    end = 0;
-
-    int i = begCopy;
-    while (i != endCopy) {
-      storage[end] = copy[i];
-      end++;
-      i = (i + 1) % copy.size();
-    }
-  }
-
-
-  int[] storage;
-  int beg;
-  int end;
+	bool copy(vector rhs){
+		if (rhs == null) return false;
+		if (rhs.getDim() == 0) {
+			data = null;
+		} else {
+			data = new int[rhs.getDim()];
+			int i;
+			for (i = 0; i < getDim(); ++i) {
+				data[i] = rhs.data[i];
+			}
+		}
+		return true;
+	}
 };
 
-int main() {
-  Queue_int q = new Queue_int();
+int main(){
+	vector x = new vector;
+	int[] a = new int[10];
+	int i;
+	for (i = 0; i < 10; ++i){
+		a[i] = 9 - i;
+	}
+	x.init(a);
+	vector y = new vector;
+	y.copy(x);
+	y.set(3, 817);
+	println((x.add(y)).tostring());
 
-  int i;
-  int N = 100;
-  for (i = 0; i < N; ++i)
-    q.push(i);
-  if (q.size() != N) {
-    println("q.size() != N after pushes");
-    return 1;
-  }
-
-  for (i = 0; i < N; ++i) {
-    int head = q.top();
-    if (head != i) {
-      println("Head != i");
-      return 1;
-    }
-
-    if (q.pop() != i) {
-      println("Failed: q.pop() != i");
-      return 1;
-    }
-    if (q.size() != N - i - 1) {
-      println("q.size() != N - i - 1");
-      return 1;
-    }
-  }
-
-  // TODO: stronger tests
-
-  println("Passed tests.");
-  return 0;
+	return 0;
 }
+

@@ -1,245 +1,369 @@
-@unnamed_33(0) = "Warning: Queue_int::pop: empty queue"
-@unnamed_98(1) = "q.size() != N after pushes"
-@unnamed_102(2) = "Head != i"
-@unnamed_105(3) = "Failed: q.pop() != i"
-@unnamed_110(4) = "q.size() != N - i - 1"
-@unnamed_111(5) = "Passed tests."
-func array.size %unnamed_1(6) {
-b(7):
-	%unnamed_0(8) = load %unnamed_1(6)
-	ret %unnamed_0(8)
+@unnamed_100(0) = "( "
+@unnamed_113(1) = ", "
+@unnamed_123(2) = " )"
+func array.size %unnamed_1(3) {
+b(4):
+	%unnamed_0(5) = load %unnamed_1(3)
+	ret %unnamed_0(5)
 }
 
 func __global_init {
-b(9):
-	%__init_ret(10) = call main
-	ret %__init_ret(10)
+b(6):
+	%__init_ret(7) = call main
+	ret %__init_ret(7)
 }
 
-func Queue_int_push %this(11) %v(12) {
-entry(13):
-	%unnamed_2(14) = call Queue_int_size %this(11)
-	%unnamed_3(15) = add %this(11) 0
-	%unnamed_4(16) = load %unnamed_3(15)
-	%unnamed_5(17) = call array.size %unnamed_4(16)
-	%unnamed_6(18) = sub %unnamed_5(17) 1
-	%unnamed_7(19) = eq %unnamed_2(14) %unnamed_6(18)
-	br %unnamed_7(19) if_then(20) if_exit(21)
-if_then(20):
-	call Queue_int_doubleStorage %this(11)
-	jump if_exit(21)
-if_exit(21):
-	%unnamed_8(22) = add %this(11) 0
-	%unnamed_9(23) = add %this(11) 8
-	%unnamed_10(24) = load %unnamed_8(22)
-	%unnamed_11(25) = load %unnamed_9(23)
-	%unnamed_12(26) = add %unnamed_11(25) 1
-	%unnamed_13(27) = mul %unnamed_12(26) 4
-	%unnamed_14(28) = add %unnamed_10(24) %unnamed_13(27)
-	store %v(12) %unnamed_14(28)
-	%unnamed_15(29) = add %this(11) 8
-	%unnamed_16(30) = add %this(11) 8
-	%unnamed_17(31) = load %unnamed_16(30)
-	%unnamed_18(32) = add %unnamed_17(31) 1
-	%unnamed_19(33) = add %this(11) 0
-	%unnamed_20(34) = load %unnamed_19(33)
-	%unnamed_21(35) = call array.size %unnamed_20(34)
-	%unnamed_22(36) = mod %unnamed_18(32) %unnamed_21(35)
-	store %unnamed_22(36) %unnamed_15(29)
+func vector_init %this(8) %vec(9) {
+entry(10):
+	%unnamed_2(11) = eq %vec(9) 0
+	br %unnamed_2(11) if_then(12) if_exit(13)
+if_then(12):
+	jump func_exit(14)
+func_exit(14):
 	ret
+if_exit(13):
+	%unnamed_3(15) = add %this(8) 0
+	%unnamed_5(16) = call array.size %vec(9)
+	%unnamed_6(17) = mul %unnamed_5(16) 4
+	%unnamed_7(18) = add %unnamed_6(17) 4
+	%unnamed_4(19) = alloc %unnamed_7(18)
+	store %unnamed_5(16) %unnamed_4(19)
+	store %unnamed_4(19) %unnamed_3(15)
+	%i(20) = move 0
+	jump for_cond(21)
+for_cond(21):
+	%unnamed_8(22) = call array.size %vec(9)
+	%unnamed_9(23) = lt %i(20) %unnamed_8(22)
+	br %unnamed_9(23) for_loop(24) for_exit(25)
+for_loop(24):
+	%unnamed_10(26) = add %this(8) 0
+	%unnamed_11(27) = load %unnamed_10(26)
+	%unnamed_12(28) = add %i(20) 1
+	%unnamed_13(29) = mul %unnamed_12(28) 4
+	%unnamed_14(30) = add %unnamed_11(27) %unnamed_13(29)
+	%unnamed_15(31) = add %i(20) 1
+	%unnamed_16(32) = mul %unnamed_15(31) 4
+	%unnamed_17(33) = add %vec(9) %unnamed_16(32)
+	%unnamed_18(34) = load %unnamed_17(33)
+	store %unnamed_18(34) %unnamed_14(30)
+	jump for_step(35)
+for_step(35):
+	%i(20) = add %i(20) 1
+	jump for_cond(21)
+for_exit(25):
+	jump func_exit(14)
 }
 
-func Queue_int_top %this(37) {
-entry(38):
-	%unnamed_23(39) = add %this(37) 0
-	%unnamed_24(40) = add %this(37) 4
-	%unnamed_25(41) = load %unnamed_23(39)
-	%unnamed_26(42) = load %unnamed_24(40)
-	%unnamed_27(43) = add %unnamed_26(42) 1
-	%unnamed_28(44) = mul %unnamed_27(43) 4
-	%unnamed_29(45) = add %unnamed_25(41) %unnamed_28(44)
-	%unnamed_30(46) = load %unnamed_29(45)
-	ret %unnamed_30(46)
+func vector_getDim %this(36) {
+entry(37):
+	%unnamed_19(38) = add %this(36) 0
+	%unnamed_20(39) = load %unnamed_19(38)
+	%unnamed_21(40) = eq %unnamed_20(39) 0
+	br %unnamed_21(40) if_then(41) if_exit(42)
+if_then(41):
+	%unnamed_25(43) = move 0
+	jump func_exit(44)
+func_exit(44):
+	ret %unnamed_25(43)
+if_exit(42):
+	%unnamed_22(45) = add %this(36) 0
+	%unnamed_23(46) = load %unnamed_22(45)
+	%unnamed_24(47) = call array.size %unnamed_23(46)
+	%unnamed_25(43) = move %unnamed_24(47)
+	jump func_exit(44)
 }
 
-func Queue_int_pop %this(47) {
-entry(48):
-	%unnamed_31(49) = call Queue_int_size %this(47)
-	%unnamed_32(50) = eq %unnamed_31(49) 0
-	br %unnamed_32(50) if_then(51) if_exit(52)
-if_then(51):
-	call println @unnamed_33(0)
-	jump if_exit(52)
-if_exit(52):
-	%unnamed_34(53) = call Queue_int_top %this(47)
-	%res(54) = move %unnamed_34(53)
-	%unnamed_35(55) = add %this(47) 4
-	%unnamed_36(56) = add %this(47) 4
-	%unnamed_37(57) = load %unnamed_36(56)
-	%unnamed_38(58) = add %unnamed_37(57) 1
-	%unnamed_39(59) = add %this(47) 0
-	%unnamed_40(60) = load %unnamed_39(59)
-	%unnamed_41(61) = call array.size %unnamed_40(60)
-	%unnamed_42(62) = mod %unnamed_38(58) %unnamed_41(61)
-	store %unnamed_42(62) %unnamed_35(55)
-	ret %res(54)
+func vector_dot %this(48) %rhs(49) {
+entry(50):
+	%i(51) = move 0
+	%result(52) = move 0
+	jump while_cond(53)
+while_cond(53):
+	%unnamed_26(54) = call vector_getDim %this(48)
+	%unnamed_27(55) = lt %i(51) %unnamed_26(54)
+	br %unnamed_27(55) while_loop(56) while_exit(57)
+while_loop(56):
+	%unnamed_28(58) = add %this(48) 0
+	%unnamed_29(59) = load %unnamed_28(58)
+	%unnamed_30(60) = add %i(51) 1
+	%unnamed_31(61) = mul %unnamed_30(60) 4
+	%unnamed_32(62) = add %unnamed_29(59) %unnamed_31(61)
+	%unnamed_33(63) = add %rhs(49) 0
+	%unnamed_34(64) = load %unnamed_33(63)
+	%unnamed_35(65) = add %i(51) 1
+	%unnamed_36(66) = mul %unnamed_35(65) 4
+	%unnamed_37(67) = add %unnamed_34(64) %unnamed_36(66)
+	%unnamed_38(68) = load %unnamed_32(62)
+	%unnamed_39(69) = load %unnamed_37(67)
+	%unnamed_40(70) = mul %unnamed_38(68) %unnamed_39(69)
+	%result(52) = move %unnamed_40(70)
+	%i(51) = add %i(51) 1
+	jump while_cond(53)
+while_exit(57):
+	ret %result(52)
 }
 
-func Queue_int_size %this(63) {
-entry(64):
-	%unnamed_43(65) = add %this(63) 8
-	%unnamed_44(66) = add %this(63) 0
-	%unnamed_45(67) = load %unnamed_44(66)
-	%unnamed_46(68) = call array.size %unnamed_45(67)
-	%unnamed_47(69) = load %unnamed_43(65)
-	%unnamed_48(70) = add %unnamed_47(69) %unnamed_46(68)
-	%unnamed_49(71) = add %this(63) 4
-	%unnamed_50(72) = load %unnamed_49(71)
-	%unnamed_51(73) = sub %unnamed_48(70) %unnamed_50(72)
-	%unnamed_52(74) = add %this(63) 0
-	%unnamed_53(75) = load %unnamed_52(74)
-	%unnamed_54(76) = call array.size %unnamed_53(75)
-	%unnamed_55(77) = mod %unnamed_51(73) %unnamed_54(76)
-	ret %unnamed_55(77)
+func vector_scalarInPlaceMultiply %this(71) %c(72) {
+entry(73):
+	%unnamed_41(74) = add %this(71) 0
+	%unnamed_42(75) = load %unnamed_41(74)
+	%unnamed_43(76) = eq %unnamed_42(75) 0
+	br %unnamed_43(76) if_then(77) if_exit(78)
+if_then(77):
+	%unnamed_58(79) = move 0
+	jump func_exit(80)
+func_exit(80):
+	ret %unnamed_58(79)
+if_exit(78):
+	%i(81) = move 0
+	jump for_cond(82)
+for_cond(82):
+	%unnamed_44(83) = call vector_getDim %this(71)
+	%unnamed_45(84) = lt %i(81) %unnamed_44(83)
+	br %unnamed_45(84) for_loop(85) for_exit(86)
+for_loop(85):
+	%unnamed_46(87) = add %this(71) 0
+	%unnamed_47(88) = load %unnamed_46(87)
+	%unnamed_48(89) = add %i(81) 1
+	%unnamed_49(90) = mul %unnamed_48(89) 4
+	%unnamed_50(91) = add %unnamed_47(88) %unnamed_49(90)
+	%unnamed_51(92) = add %this(71) 0
+	%unnamed_52(93) = load %unnamed_51(92)
+	%unnamed_53(94) = add %i(81) 1
+	%unnamed_54(95) = mul %unnamed_53(94) 4
+	%unnamed_55(96) = add %unnamed_52(93) %unnamed_54(95)
+	%unnamed_56(97) = load %unnamed_55(96)
+	%unnamed_57(98) = mul %c(72) %unnamed_56(97)
+	store %unnamed_57(98) %unnamed_50(91)
+	jump for_step(99)
+for_step(99):
+	%i(81) = add %i(81) 1
+	jump for_cond(82)
+for_exit(86):
+	%unnamed_58(79) = move %this(71)
+	jump func_exit(80)
 }
 
-func Queue_int_doubleStorage %this(78) {
-entry(79):
-	%unnamed_56(80) = add %this(78) 0
-	%unnamed_57(81) = load %unnamed_56(80)
-	%copy(82) = move %unnamed_57(81)
-	%unnamed_58(83) = add %this(78) 4
-	%unnamed_59(84) = load %unnamed_58(83)
-	%begCopy(85) = move %unnamed_59(84)
-	%unnamed_60(86) = add %this(78) 8
-	%unnamed_61(87) = load %unnamed_60(86)
-	%endCopy(88) = move %unnamed_61(87)
-	%unnamed_62(89) = add %this(78) 0
-	%unnamed_64(90) = call array.size %copy(82)
-	%unnamed_65(91) = mul %unnamed_64(90) 2
-	%unnamed_66(92) = mul %unnamed_65(91) 4
-	%unnamed_67(93) = add %unnamed_66(92) 4
-	%unnamed_63(94) = alloc %unnamed_67(93)
-	store %unnamed_65(91) %unnamed_63(94)
-	store %unnamed_63(94) %unnamed_62(89)
-	%unnamed_68(95) = add %this(78) 4
-	store 0 %unnamed_68(95)
-	%unnamed_69(96) = add %this(78) 8
-	store 0 %unnamed_69(96)
-	%i(97) = move %begCopy(85)
-	jump while_cond(98)
-while_cond(98):
-	%unnamed_70(99) = neq %i(97) %endCopy(88)
-	br %unnamed_70(99) while_loop(100) while_exit(101)
-while_loop(100):
-	%unnamed_71(102) = add %this(78) 0
-	%unnamed_72(103) = add %this(78) 8
-	%unnamed_73(104) = load %unnamed_71(102)
-	%unnamed_74(105) = load %unnamed_72(103)
-	%unnamed_75(106) = add %unnamed_74(105) 1
-	%unnamed_76(107) = mul %unnamed_75(106) 4
-	%unnamed_77(108) = add %unnamed_73(104) %unnamed_76(107)
-	%unnamed_78(109) = add %i(97) 1
-	%unnamed_79(110) = mul %unnamed_78(109) 4
-	%unnamed_80(111) = add %copy(82) %unnamed_79(110)
-	%unnamed_81(112) = load %unnamed_80(111)
-	store %unnamed_81(112) %unnamed_77(108)
-	%unnamed_82(113) = add %this(78) 8
-	%unnamed_83(114) = load %unnamed_82(113)
-	%unnamed_84(115) = add %unnamed_83(114) 1
-	store %unnamed_84(115) %unnamed_82(113)
-	%unnamed_85(116) = add %i(97) 1
-	%unnamed_86(117) = call array.size %copy(82)
-	%unnamed_87(118) = mod %unnamed_85(116) %unnamed_86(117)
-	%i(97) = move %unnamed_87(118)
-	jump while_cond(98)
-while_exit(101):
-	ret
+func vector_add %this(100) %rhs(101) {
+entry(102):
+	%unnamed_59(103) = call vector_getDim %this(100)
+	%unnamed_60(104) = call vector_getDim %rhs(101)
+	%unnamed_61(105) = neq %unnamed_59(103) %unnamed_60(104)
+	br %unnamed_61(105) or_true(106) or_false(107)
+or_true(106):
+	%unnamed_62(108) = move 1
+	jump or_exit(109)
+or_exit(109):
+	br %unnamed_62(108) if_then(110) if_exit(111)
+if_then(110):
+	%unnamed_91(112) = move 0
+	jump func_exit(113)
+func_exit(113):
+	ret %unnamed_91(112)
+if_exit(111):
+	%unnamed_65(114) = alloc 4
+	%temp(115) = move %unnamed_65(114)
+	%unnamed_66(116) = add %temp(115) 0
+	%unnamed_68(117) = call vector_getDim %this(100)
+	%unnamed_69(118) = mul %unnamed_68(117) 4
+	%unnamed_70(119) = add %unnamed_69(118) 4
+	%unnamed_67(120) = alloc %unnamed_70(119)
+	store %unnamed_68(117) %unnamed_67(120)
+	store %unnamed_67(120) %unnamed_66(116)
+	%i(121) = move 0
+	jump for_cond(122)
+for_cond(122):
+	%unnamed_71(123) = call vector_getDim %this(100)
+	%unnamed_72(124) = lt %i(121) %unnamed_71(123)
+	br %unnamed_72(124) for_loop(125) for_exit(126)
+for_loop(125):
+	%unnamed_73(127) = add %temp(115) 0
+	%unnamed_74(128) = load %unnamed_73(127)
+	%unnamed_75(129) = add %i(121) 1
+	%unnamed_76(130) = mul %unnamed_75(129) 4
+	%unnamed_77(131) = add %unnamed_74(128) %unnamed_76(130)
+	%unnamed_78(132) = add %this(100) 0
+	%unnamed_79(133) = load %unnamed_78(132)
+	%unnamed_80(134) = add %i(121) 1
+	%unnamed_81(135) = mul %unnamed_80(134) 4
+	%unnamed_82(136) = add %unnamed_79(133) %unnamed_81(135)
+	%unnamed_83(137) = add %rhs(101) 0
+	%unnamed_84(138) = load %unnamed_83(137)
+	%unnamed_85(139) = add %i(121) 1
+	%unnamed_86(140) = mul %unnamed_85(139) 4
+	%unnamed_87(141) = add %unnamed_84(138) %unnamed_86(140)
+	%unnamed_88(142) = load %unnamed_82(136)
+	%unnamed_89(143) = load %unnamed_87(141)
+	%unnamed_90(144) = add %unnamed_88(142) %unnamed_89(143)
+	store %unnamed_90(144) %unnamed_77(131)
+	jump for_step(145)
+for_step(145):
+	%i(121) = add %i(121) 1
+	jump for_cond(122)
+for_exit(126):
+	%unnamed_91(112) = move %temp(115)
+	jump func_exit(113)
+or_false(107):
+	%unnamed_63(146) = call vector_getDim %this(100)
+	%unnamed_64(147) = eq %unnamed_63(146) 0
+	%unnamed_62(108) = move %unnamed_64(147)
+	jump or_exit(109)
 }
 
-func Queue_int_constructor %this(119) {
-entry(120):
-	%unnamed_88(121) = add %this(119) 4
-	store 0 %unnamed_88(121)
-	%unnamed_89(122) = add %this(119) 8
-	store 0 %unnamed_89(122)
-	%unnamed_90(123) = add %this(119) 0
-	%unnamed_92(124) = mul 16 4
-	%unnamed_93(125) = add %unnamed_92(124) 4
-	%unnamed_91(126) = alloc %unnamed_93(125)
-	store 16 %unnamed_91(126)
-	store %unnamed_91(126) %unnamed_90(123)
-	ret
+func vector_set %this(148) %idx(149) %value(150) {
+entry(151):
+	%unnamed_92(152) = call vector_getDim %this(148)
+	%unnamed_93(153) = lt %unnamed_92(152) %idx(149)
+	br %unnamed_93(153) if_then(154) if_exit(155)
+if_then(154):
+	%unnamed_99(156) = move 0
+	jump func_exit(157)
+func_exit(157):
+	ret %unnamed_99(156)
+if_exit(155):
+	%unnamed_94(158) = add %this(148) 0
+	%unnamed_95(159) = load %unnamed_94(158)
+	%unnamed_96(160) = add %idx(149) 1
+	%unnamed_97(161) = mul %unnamed_96(160) 4
+	%unnamed_98(162) = add %unnamed_95(159) %unnamed_97(161)
+	store %value(150) %unnamed_98(162)
+	%unnamed_99(156) = move 1
+	jump func_exit(157)
+}
+
+func vector_tostring %this(163) {
+entry(164):
+	%temp(165) = move @unnamed_100(0)
+	%unnamed_101(166) = call vector_getDim %this(163)
+	%unnamed_102(167) = gt %unnamed_101(166) 0
+	br %unnamed_102(167) if_then(168) if_exit(169)
+if_then(168):
+	%unnamed_103(170) = add %this(163) 0
+	%unnamed_104(171) = load %unnamed_103(170)
+	%unnamed_105(172) = add 0 1
+	%unnamed_106(173) = mul %unnamed_105(172) 4
+	%unnamed_107(174) = add %unnamed_104(171) %unnamed_106(173)
+	%unnamed_108(175) = load %unnamed_107(174)
+	%unnamed_109(176) = call toString %unnamed_108(175)
+	%unnamed_110(177) = call string.add %temp(165) %unnamed_109(176)
+	%temp(165) = move %unnamed_110(177)
+	jump if_exit(169)
+if_exit(169):
+	%i(178) = move 1
+	jump for_cond(179)
+for_cond(179):
+	%unnamed_111(180) = call vector_getDim %this(163)
+	%unnamed_112(181) = lt %i(178) %unnamed_111(180)
+	br %unnamed_112(181) for_loop(182) for_exit(183)
+for_loop(182):
+	%unnamed_114(184) = call string.add %temp(165) @unnamed_113(1)
+	%unnamed_115(185) = add %this(163) 0
+	%unnamed_116(186) = load %unnamed_115(185)
+	%unnamed_117(187) = add %i(178) 1
+	%unnamed_118(188) = mul %unnamed_117(187) 4
+	%unnamed_119(189) = add %unnamed_116(186) %unnamed_118(188)
+	%unnamed_120(190) = load %unnamed_119(189)
+	%unnamed_121(191) = call toString %unnamed_120(190)
+	%unnamed_122(192) = call string.add %unnamed_114(184) %unnamed_121(191)
+	%temp(165) = move %unnamed_122(192)
+	jump for_step(193)
+for_step(193):
+	%i(178) = add %i(178) 1
+	jump for_cond(179)
+for_exit(183):
+	%unnamed_124(194) = call string.add %temp(165) @unnamed_123(2)
+	%temp(165) = move %unnamed_124(194)
+	ret %temp(165)
+}
+
+func vector_copy %this(195) %rhs(196) {
+entry(197):
+	%unnamed_125(198) = eq %rhs(196) 0
+	br %unnamed_125(198) if_then(199) if_exit(200)
+if_then(199):
+	%unnamed_147(201) = move 0
+	jump func_exit(202)
+func_exit(202):
+	ret %unnamed_147(201)
+if_exit(200):
+	%unnamed_126(203) = call vector_getDim %rhs(196)
+	%unnamed_127(204) = eq %unnamed_126(203) 0
+	br %unnamed_127(204) if_then(205) if_else(206)
+if_then(205):
+	%unnamed_128(207) = add %this(195) 0
+	store 0 %unnamed_128(207)
+	jump if_exit(208)
+if_exit(208):
+	%unnamed_147(201) = move 1
+	jump func_exit(202)
+if_else(206):
+	%unnamed_129(209) = add %this(195) 0
+	%unnamed_131(210) = call vector_getDim %rhs(196)
+	%unnamed_132(211) = mul %unnamed_131(210) 4
+	%unnamed_133(212) = add %unnamed_132(211) 4
+	%unnamed_130(213) = alloc %unnamed_133(212)
+	store %unnamed_131(210) %unnamed_130(213)
+	store %unnamed_130(213) %unnamed_129(209)
+	%i(214) = move 0
+	jump for_cond(215)
+for_cond(215):
+	%unnamed_134(216) = call vector_getDim %this(195)
+	%unnamed_135(217) = lt %i(214) %unnamed_134(216)
+	br %unnamed_135(217) for_loop(218) for_exit(219)
+for_loop(218):
+	%unnamed_136(220) = add %this(195) 0
+	%unnamed_137(221) = load %unnamed_136(220)
+	%unnamed_138(222) = add %i(214) 1
+	%unnamed_139(223) = mul %unnamed_138(222) 4
+	%unnamed_140(224) = add %unnamed_137(221) %unnamed_139(223)
+	%unnamed_141(225) = add %rhs(196) 0
+	%unnamed_142(226) = load %unnamed_141(225)
+	%unnamed_143(227) = add %i(214) 1
+	%unnamed_144(228) = mul %unnamed_143(227) 4
+	%unnamed_145(229) = add %unnamed_142(226) %unnamed_144(228)
+	%unnamed_146(230) = load %unnamed_145(229)
+	store %unnamed_146(230) %unnamed_140(224)
+	jump for_step(231)
+for_step(231):
+	%i(214) = add %i(214) 1
+	jump for_cond(215)
+for_exit(219):
+	jump if_exit(208)
 }
 
 func main {
-entry(127):
-	%unnamed_94(128) = alloc 12
-	call Queue_int_constructor %unnamed_94(128)
-	%q(129) = move %unnamed_94(128)
-	%N(130) = move 100
-	%i(131) = move 0
-	jump for_cond(132)
-for_cond(132):
-	%unnamed_95(133) = lt %i(131) %N(130)
-	br %unnamed_95(133) for_loop(134) for_exit(135)
-for_loop(134):
-	call Queue_int_push %q(129) %i(131)
-	jump for_step(136)
-for_step(136):
-	%i(131) = add %i(131) 1
-	jump for_cond(132)
-for_exit(135):
-	%unnamed_96(137) = call Queue_int_size %q(129)
-	%unnamed_97(138) = neq %unnamed_96(137) %N(130)
-	br %unnamed_97(138) if_then(139) if_exit(140)
-if_then(139):
-	call println @unnamed_98(1)
-	%unnamed_112(141) = move 1
-	jump func_exit(142)
-func_exit(142):
-	ret %unnamed_112(141)
-if_exit(140):
-	%i(131) = move 0
-	jump for_cond(143)
-for_cond(143):
-	%unnamed_99(144) = lt %i(131) %N(130)
-	br %unnamed_99(144) for_loop(145) for_exit(146)
-for_loop(145):
-	%unnamed_100(147) = call Queue_int_top %q(129)
-	%head(148) = move %unnamed_100(147)
-	%unnamed_101(149) = neq %head(148) %i(131)
-	br %unnamed_101(149) if_then(150) if_exit(151)
-if_then(150):
-	call println @unnamed_102(2)
-	%unnamed_112(141) = move 1
-	jump func_exit(142)
-if_exit(151):
-	%unnamed_103(152) = call Queue_int_pop %q(129)
-	%unnamed_104(153) = neq %unnamed_103(152) %i(131)
-	br %unnamed_104(153) if_then(154) if_exit(155)
-if_then(154):
-	call println @unnamed_105(3)
-	%unnamed_112(141) = move 1
-	jump func_exit(142)
-if_exit(155):
-	%unnamed_106(156) = call Queue_int_size %q(129)
-	%unnamed_107(157) = sub %N(130) %i(131)
-	%unnamed_108(158) = sub %unnamed_107(157) 1
-	%unnamed_109(159) = neq %unnamed_106(156) %unnamed_108(158)
-	br %unnamed_109(159) if_then(160) if_exit(161)
-if_then(160):
-	call println @unnamed_110(4)
-	%unnamed_112(141) = move 1
-	jump func_exit(142)
-if_exit(161):
-	jump for_step(162)
-for_step(162):
-	%i(131) = add %i(131) 1
-	jump for_cond(143)
-for_exit(146):
-	call println @unnamed_111(5)
-	%unnamed_112(141) = move 0
-	jump func_exit(142)
+entry(232):
+	%unnamed_148(233) = alloc 4
+	%x(234) = move %unnamed_148(233)
+	%unnamed_150(235) = mul 10 4
+	%unnamed_151(236) = add %unnamed_150(235) 4
+	%unnamed_149(237) = alloc %unnamed_151(236)
+	store 10 %unnamed_149(237)
+	%a(238) = move %unnamed_149(237)
+	%i(239) = move 0
+	jump for_cond(240)
+for_cond(240):
+	%unnamed_152(241) = lt %i(239) 10
+	br %unnamed_152(241) for_loop(242) for_exit(243)
+for_loop(242):
+	%unnamed_153(244) = add %i(239) 1
+	%unnamed_154(245) = mul %unnamed_153(244) 4
+	%unnamed_155(246) = add %a(238) %unnamed_154(245)
+	%unnamed_156(247) = sub 9 %i(239)
+	store %unnamed_156(247) %unnamed_155(246)
+	jump for_step(248)
+for_step(248):
+	%i(239) = add %i(239) 1
+	jump for_cond(240)
+for_exit(243):
+	call vector_init %x(234) %a(238)
+	%unnamed_157(249) = alloc 4
+	%y(250) = move %unnamed_157(249)
+	%unnamed_158(251) = call vector_copy %y(250) %x(234)
+	%unnamed_159(252) = call vector_set %y(250) 3 817
+	%unnamed_160(253) = call vector_add %x(234) %y(250)
+	%unnamed_161(254) = call vector_tostring %unnamed_160(253)
+	call println %unnamed_161(254)
+	ret 0
 }
 
