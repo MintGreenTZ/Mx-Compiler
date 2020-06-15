@@ -5,8 +5,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ir.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Codegen/Inst/AsmCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Codegen/Inst/AsmCall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmCall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.ans" beforeDir="false" afterPath="$PROJECT_DIR$/test.ans" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.in" beforeDir="false" afterPath="$PROJECT_DIR$/test.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.out" beforeDir="false" afterPath="$PROJECT_DIR$/test.out" afterDir="false" />
@@ -164,46 +174,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1586142006617" />
-    <state width="539" height="438" key="DebuggerActiveHint" timestamp="1592205426868">
+    <state width="541" height="438" key="DebuggerActiveHint" timestamp="1592220645366">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="539" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592205426868" />
+    <state width="541" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592220645366" />
     <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1592203554219">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592203554219" />
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592206802009">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592221634963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
-    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592206802009">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592221634963" />
+    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592221634963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
-    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592206802008">
+    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592221634963" />
+    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592221634963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592206802008" />
-    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592206802009">
+    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592221634963" />
+    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592221634963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592205652481">
+    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592221634963" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592220676633">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592205652481" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592205652480">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592220676633" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592220676633">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592205652480" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592205652480">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592220676633" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592220676633">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592205652480" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592205652481">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592220676633" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592220676633">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592205652481" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592220676633" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1589195646371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -220,10 +230,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1592134482670" />
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592203494862">
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592218347468">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592203494862" />
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592218347468" />
     <state x="383" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1591688405375">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -242,7 +252,7 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>556</line>
+          <line>562</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -252,17 +262,17 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>94</line>
+          <line>100</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>104</line>
+          <line>110</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>343</line>
+          <line>349</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -272,12 +282,12 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>336</line>
+          <line>342</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>540</line>
+          <line>546</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -287,7 +297,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>675</line>
+          <line>681</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -337,7 +347,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>66</line>
+          <line>71</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -350,30 +360,35 @@
           <line>40</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/Main.java</url>
           <line>64</line>
           <option name="timeStamp" value="133" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>155</line>
+          <line>161</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>113</line>
+          <line>119</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java</url>
           <line>67</line>
           <option name="timeStamp" value="137" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java</url>
           <line>34</line>
-          <option name="timeStamp" value="139" />
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

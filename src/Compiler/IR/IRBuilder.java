@@ -53,7 +53,12 @@ public class IRBuilder extends ASTBaseVisitor {
                 ((FunctionDeclNode) decl).getFunctionSymbol().setFunction(new Function(((FunctionDeclNode) decl).getFunctionSymbol().getName()));
             } else if (decl instanceof ClassDeclNode) {
                 for (FunctionDeclNode funcDecl : ((ClassDeclNode) decl).getFunctionDecl()) {
-                    funcDecl.getFunctionSymbol().setFunction(new Function(funcDecl.getFunctionSymbol().getName()));
+                    funcDecl.getFunctionSymbol().setFunction(new Function(((ClassDeclNode) decl).getIdentifier() + "_" + funcDecl.getFunctionSymbol().getName()));
+                }
+                FunctionDeclNode constructorDecl = ((ClassDeclNode) decl).getConstructorDecl();
+                if (constructorDecl != null) {
+                    Function constructorFunction = new Function(((ClassDeclNode) decl).getIdentifier() + "_constructor");
+                    constructorDecl.getFunctionSymbol().setFunction(constructorFunction);
                 }
             }
 
@@ -76,6 +81,7 @@ public class IRBuilder extends ASTBaseVisitor {
         curClassSymbol = node.getClassSymbol();
         for (FunctionDeclNode functionDeclNode: node.getFunctionDecl())
             functionDeclNode.accept(this);
+        if (node.getConstructorDecl() != null) node.getConstructorDecl().accept(this);
         curClassSymbol = null;
     }
 
@@ -103,7 +109,7 @@ public class IRBuilder extends ASTBaseVisitor {
 
         // add return in case of without return
         if (!(curBB.getLastInst() instanceof Return)) {
-            if (functionSymbol.getType().getTypeName().equals("void"))
+            if (functionSymbol.getType() == null || functionSymbol.getType().getTypeName().equals("void"))
                 curBB.addInst(new Return(null));
             else
                 curBB.addInst(new Return(new Imm(0)));

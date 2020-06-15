@@ -3,6 +3,7 @@ package Compiler.Codegen.Inst;
 import Compiler.Codegen.AsmFunction;
 import Compiler.Codegen.AsmVisitor;
 import Compiler.IR.Operand.Register;
+import Compiler.Utils.CodegenError;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +13,8 @@ public class AsmCall extends AsmInst{
     private AsmFunction asmFunction;
 
     public AsmCall(AsmFunction asmFunction) {
+        if (asmFunction == null)
+            throw new CodegenError("AsmFunction is null when created.");
         this.asmFunction = asmFunction;
     }
 

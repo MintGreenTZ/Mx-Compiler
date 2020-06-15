@@ -1,72 +1,40 @@
 	.section	.data
 
-	.globl	n
-n:
-	.zero	4
+	.globl	unnamed_100
+unnamed_100:
+	.string	"( "
 
-	.globl	h
-h:
-	.zero	4
+	.globl	unnamed_113
+unnamed_113:
+	.string	", "
 
-	.globl	now
-now:
-	.zero	4
+	.globl	unnamed_123
+unnamed_123:
+	.string	" )"
 
-	.globl	a
-a:
-	.zero	4
+	.globl	unnamed_157
+unnamed_157:
+	.string	"vector x: "
 
-	.globl	A
-A:
-	.zero	4
+	.globl	unnamed_162
+unnamed_162:
+	.string	"excited!"
 
-	.globl	M
-M:
-	.zero	4
-
-	.globl	Q
-Q:
-	.zero	4
-
-	.globl	R
-R:
-	.zero	4
-
-	.globl	seed
-seed:
-	.zero	4
-
-	.globl	unnamed_53
-unnamed_53:
-	.string	" "
-
-	.globl	unnamed_55
-unnamed_55:
-	.string	""
+	.globl	unnamed_163
+unnamed_163:
+	.string	"vector y: "
 
 	.globl	unnamed_165
 unnamed_165:
-	.string	"Sorry, the number n must be a number s.t. there exists i satisfying n=1+2+...+i"
+	.string	"x + y: "
 
-	.globl	unnamed_166
-unnamed_166:
-	.string	"Let's start!"
+	.globl	unnamed_168
+unnamed_168:
+	.string	"x * y: "
 
-	.globl	unnamed_213
-unnamed_213:
-	.string	"step "
-
-	.globl	unnamed_216
-unnamed_216:
-	.string	":"
-
-	.globl	unnamed_218
-unnamed_218:
-	.string	"Total: "
-
-	.globl	unnamed_221
-unnamed_221:
-	.string	" step(s)"
+	.globl	unnamed_171
+unnamed_171:
+	.string	"(1 << 3) * y: "
 
 	.text
 
@@ -122,48 +90,6 @@ main:
 	mv	s10, s10
 	mv	s11, s11
 	mv	s0, ra
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	t0, 48271
-	sw	t0, A, ra
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	t0, 2147483647
-	sw	t0, M, ra
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	t0, 1
-	sw	t0, seed, ra
 	call	_main
 	mv	a0, a0
 	mv	a0, a0
@@ -184,659 +110,9 @@ main:
 	addi	sp, sp, 16
 	ret
 
-	.globl	random
-random:
+	.globl	vector_init
+vector_init:
 .entry_2:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	lw	t1, seed
-	lw	t0, Q
-	rem	t1, t1, t0
-	lw	t0, A
-	mul	t2, t0, t1
-	lw	t1, seed
-	lw	t0, Q
-	div	t1, t1, t0
-	lw	t0, R
-	mul	t0, t0, t1
-	sub	t0, t2, t0
-	mv	t0, t0
-	slti	t1, t0, 0
-	xori	t1, t1, 1
-	bne	t1, zero, .if_then_3
-	j	.if_else_4
-.if_then_3:
-	sw	t0, seed, t1
-	j	.if_exit_5
-.if_exit_5:
-	lw	a0, seed
-	mv	a0, a0
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-.if_else_4:
-	lw	t1, M
-	add	t1, t0, t1
-	sw	t1, seed, t0
-	j	.if_exit_5
-
-	.globl	initialize
-initialize:
-.entry_6:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	mv	a0, a0
-	sw	a0, seed, t0
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-
-	.globl	swap
-swap:
-.entry_7:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	mv	a0, a0
-	mv	a1, a1
-	lw	t2, a
-	addi	t1, a0, 1
-	li	t0, 4
-	mul	t0, t1, t0
-	add	t0, t2, t0
-	lw	t0, 0(t0)
-	mv	t0, t0
-	lw	a2, a
-	addi	t2, a0, 1
-	li	t1, 4
-	mul	t1, t2, t1
-	add	a2, a2, t1
-	lw	a0, a
-	addi	t2, a1, 1
-	li	t1, 4
-	mul	t1, t2, t1
-	add	t1, a0, t1
-	lw	t1, 0(t1)
-	sw	t1, 0(a2)
-	lw	a0, a
-	addi	t2, a1, 1
-	li	t1, 4
-	mul	t1, t2, t1
-	add	t1, a0, t1
-	sw	t0, 0(t1)
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-
-	.globl	pd
-pd:
-.entry_8:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	mv	a0, a0
-	j	.for_cond_9
-.for_cond_9:
-	lw	t0, h
-	slt	t0, a0, t0
-	xori	t0, t0, 1
-	bne	t0, zero, .for_loop_10
-	j	.for_exit_11
-.for_loop_10:
-	lw	t0, h
-	addi	t1, t0, 1
-	lw	t0, h
-	mul	t1, t0, t1
-	li	t0, 2
-	div	t0, t1, t0
-	sub	t0, a0, t0
-	sltiu	t0, t0, 1
-	bne	t0, zero, .if_then_12
-	j	.if_exit_13
-.if_then_12:
-	li	a0, 1
-	mv	a0, a0
-	j	.func_exit_14
-.func_exit_14:
-	mv	a0, a0
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-.if_exit_13:
-	j	.for_step_15
-.for_step_15:
-	lw	t1, h
-	addi	t1, t1, 1
-	sw	t1, h, t0
-	j	.for_cond_9
-.for_exit_11:
-	mv	a0, zero
-	j	.func_exit_14
-
-	.globl	show
-show:
-.entry_16:
-	addi	sp, sp, -16
-	mv	s0, s0
-	sw	s0, 8(sp)
-	mv	s1, s1
-	sw	s1, 12(sp)
-	mv	s2, s2
-	sw	s2, 4(sp)
-	mv	s2, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	s0, ra
-	mv	s1, zero
-	j	.for_cond_17
-.for_cond_17:
-	lw	ra, now
-	slt	ra, s1, ra
-	bne	ra, zero, .for_loop_18
-	j	.for_exit_19
-.for_exit_19:
-	la	a0, unnamed_55
-	mv	a0, a0
-	call	println
-	mv	s3, s2
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, s0
-	mv	s11, s11
-	mv	s10, s10
-	lw	s0, 8(sp)
-	mv	s0, s0
-	lw	s1, 12(sp)
-	mv	s1, s1
-	lw	s2, 4(sp)
-	mv	s2, s2
-	addi	sp, sp, 16
-	ret
-.for_loop_18:
-	lw	t1, a
-	addi	t0, s1, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	a0, 0(ra)
-	mv	a0, a0
-	call	toString
-	mv	a0, a0
-	mv	a0, a0
-	la	a1, unnamed_53
-	mv	a1, a1
-	call	string_add
-	mv	a0, a0
-	mv	a0, a0
-	call	print
-	j	.for_step_20
-.for_step_20:
-	addi	s1, s1, 1
-	j	.for_cond_17
-
-	.globl	win
-win:
-.entry_21:
-	addi	sp, sp, -16
-	mv	s0, s0
-	sw	s0, 12(sp)
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	s0, ra
-	li	ra, 400
-	addi	a0, ra, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	ra, 100
-	sw	ra, 0(a0)
-	mv	a0, a0
-	lw	t0, now
-	lw	ra, h
-	sub	ra, t0, ra
-	sltu	ra, zero, ra
-	bne	ra, zero, .if_then_22
-	j	.if_exit_23
-.if_then_22:
-	mv	zero, zero
-	j	.func_exit_24
-.func_exit_24:
-	mv	a0, zero
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, s0
-	mv	s11, s11
-	mv	s10, s10
-	lw	s0, 12(sp)
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	addi	sp, sp, 16
-	ret
-.if_exit_23:
-	mv	t0, zero
-	j	.for_cond_25
-.for_cond_25:
-	lw	ra, now
-	slt	ra, t0, ra
-	bne	ra, zero, .for_loop_26
-	j	.for_exit_27
-.for_loop_26:
-	addi	t1, t0, 1
-	li	ra, 4
-	mul	ra, t1, ra
-	add	a1, a0, ra
-	lw	t2, a
-	addi	t1, t0, 1
-	li	ra, 4
-	mul	ra, t1, ra
-	add	ra, t2, ra
-	lw	ra, 0(ra)
-	sw	ra, 0(a1)
-	j	.for_step_28
-.for_step_28:
-	addi	t0, t0, 1
-	j	.for_cond_25
-.for_exit_27:
-	mv	t1, zero
-	j	.for_cond_29
-.for_cond_29:
-	lw	t0, now
-	li	ra, 1
-	sub	ra, t0, ra
-	slt	ra, t1, ra
-	bne	ra, zero, .for_loop_30
-	j	.for_exit_31
-.for_exit_31:
-	mv	t1, zero
-	j	.for_cond_32
-.for_cond_32:
-	lw	ra, now
-	slt	ra, t1, ra
-	bne	ra, zero, .for_loop_33
-	j	.for_exit_34
-.for_loop_33:
-	addi	t0, t1, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, a0, ra
-	addi	t0, t1, 1
-	lw	ra, 0(ra)
-	sub	ra, ra, t0
-	sltu	ra, zero, ra
-	bne	ra, zero, .if_then_35
-	j	.if_exit_36
-.if_exit_36:
-	j	.for_step_37
-.for_step_37:
-	addi	t1, t1, 1
-	j	.for_cond_32
-.if_then_35:
-	mv	zero, zero
-	j	.func_exit_24
-.for_exit_34:
-	li	zero, 1
-	mv	zero, zero
-	j	.func_exit_24
-.for_loop_30:
-	addi	t0, t1, 1
-	mv	t0, t0
-	j	.for_cond_38
-.for_cond_38:
-	lw	ra, now
-	slt	ra, t0, ra
-	bne	ra, zero, .for_loop_39
-	j	.for_exit_40
-.for_loop_39:
-	addi	t2, t1, 1
-	li	ra, 4
-	mul	ra, t2, ra
-	add	a1, a0, ra
-	addi	t2, t0, 1
-	li	ra, 4
-	mul	ra, t2, ra
-	add	ra, a0, ra
-	lw	t2, 0(a1)
-	lw	ra, 0(ra)
-	slt	ra, ra, t2
-	bne	ra, zero, .if_then_41
-	j	.if_exit_42
-.if_exit_42:
-	j	.for_step_43
-.for_step_43:
-	addi	t0, t0, 1
-	j	.for_cond_38
-.if_then_41:
-	addi	t2, t1, 1
-	li	ra, 4
-	mul	ra, t2, ra
-	add	ra, a0, ra
-	lw	ra, 0(ra)
-	mv	ra, ra
-	addi	a1, t1, 1
-	li	t2, 4
-	mul	t2, a1, t2
-	add	a2, a0, t2
-	addi	a1, t0, 1
-	li	t2, 4
-	mul	t2, a1, t2
-	add	t2, a0, t2
-	lw	t2, 0(t2)
-	sw	t2, 0(a2)
-	addi	a1, t0, 1
-	li	t2, 4
-	mul	t2, a1, t2
-	add	t2, a0, t2
-	sw	ra, 0(t2)
-	j	.if_exit_42
-.for_exit_40:
-	j	.for_step_44
-.for_step_44:
-	addi	t1, t1, 1
-	j	.for_cond_29
-
-	.globl	merge
-merge:
-.entry_45:
-	addi	sp, sp, -16
-	mv	s0, s0
-	sw	s0, 4(sp)
-	mv	s1, s1
-	sw	s1, 8(sp)
-	mv	s2, s2
-	sw	s2, 12(sp)
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	s0, ra
-	mv	s1, zero
-	j	.for_cond_46
-.for_cond_46:
-	lw	ra, now
-	slt	ra, s1, ra
-	bne	ra, zero, .for_loop_47
-	j	.for_exit_48
-.for_loop_47:
-	lw	t1, a
-	addi	t0, s1, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	ra, 0(ra)
-	sub	ra, ra, zero
-	sltiu	ra, ra, 1
-	bne	ra, zero, .if_then_49
-	j	.if_exit_50
-.if_exit_50:
-	j	.for_step_51
-.for_step_51:
-	addi	s1, s1, 1
-	j	.for_cond_46
-.if_then_49:
-	addi	ra, s1, 1
-	mv	s2, ra
-	j	.for_cond_52
-.for_cond_52:
-	lw	ra, now
-	slt	ra, s2, ra
-	bne	ra, zero, .for_loop_53
-	j	.for_exit_54
-.for_loop_53:
-	lw	t1, a
-	addi	t0, s2, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	ra, 0(ra)
-	sub	ra, ra, zero
-	sltu	ra, zero, ra
-	bne	ra, zero, .if_then_55
-	j	.if_exit_56
-.if_then_55:
-	mv	a0, s1
-	mv	a1, s2
-	call	swap
-	j	.for_exit_54
-	j	.if_exit_56
-.if_exit_56:
-	j	.for_step_57
-.for_step_57:
-	addi	s2, s2, 1
-	j	.for_cond_52
-.for_exit_54:
-	j	.if_exit_50
-.for_exit_48:
-	mv	s1, zero
-	j	.for_cond_58
-.for_cond_58:
-	lw	ra, now
-	slt	ra, s1, ra
-	bne	ra, zero, .for_loop_59
-	j	.for_exit_60
-.for_loop_59:
-	lw	t1, a
-	addi	t0, s1, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	ra, 0(ra)
-	sub	ra, ra, zero
-	sltiu	ra, ra, 1
-	bne	ra, zero, .if_then_61
-	j	.if_exit_62
-.if_exit_62:
-	j	.for_step_63
-.for_step_63:
-	addi	s1, s1, 1
-	j	.for_cond_58
-.if_then_61:
-	sw	s1, now, ra
-	j	.for_exit_60
-	j	.if_exit_62
-.for_exit_60:
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, s0
-	mv	s11, s11
-	mv	s10, s10
-	lw	s0, 4(sp)
-	mv	s0, s0
-	lw	s1, 8(sp)
-	mv	s1, s1
-	lw	s2, 12(sp)
-	mv	s2, s2
-	addi	sp, sp, 16
-	ret
-
-	.globl	move
-move:
-.entry_64:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	mv	t0, zero
-	j	.for_cond_65
-.for_cond_65:
-	lw	t1, now
-	slt	t1, t0, t1
-	bne	t1, zero, .for_loop_66
-	j	.for_exit_67
-.for_loop_66:
-	lw	a0, a
-	addi	t2, t0, 1
-	li	t1, 4
-	mul	t1, t2, t1
-	add	a0, a0, t1
-	lw	t2, 0(a0)
-	li	t1, 1
-	sub	t2, t2, t1
-	sw	t2, 0(a0)
-	addi	t0, t0, 1
-	mv	t0, t0
-	j	.for_step_68
-.for_step_68:
-	j	.for_cond_65
-.for_exit_67:
-	lw	t2, a
-	lw	t0, now
-	addi	t1, t0, 1
-	li	t0, 4
-	mul	t0, t1, t0
-	add	t1, t2, t0
-	lw	t0, now
-	sw	t0, 0(t1)
-	lw	t0, now
-	addi	t1, t0, 1
-	sw	t1, now, t0
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-
-	.globl	_main
-_main:
-.entry_69:
 	addi	sp, sp, -32
 	mv	s0, s0
 	sw	s0, 12(sp)
@@ -856,52 +132,15 @@ _main:
 	mv	s10, s10
 	mv	s11, s11
 	mv	s0, ra
-	mv	s2, zero
-	mv	s1, zero
-	mv	s3, zero
-	li	t0, 21
-	li	ra, 10
-	mul	t0, t0, ra
-	sw	t0, n, ra
-	sw	zero, h, ra
-	li	ra, 400
-	addi	a0, ra, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	ra, 100
-	sw	ra, 0(a0)
-	sw	a0, a, ra
-	lw	t0, M
-	lw	ra, A
-	div	t0, t0, ra
-	sw	t0, Q, ra
-	lw	t0, M
-	lw	ra, A
-	rem	t0, t0, ra
-	sw	t0, R, ra
-	lw	a0, n
-	mv	a0, a0
-	call	pd
-	mv	a0, a0
-	bne	a0, zero, .b_70
-	j	.b_71
-.b_71:
-	li	ra, 1
-	mv	ra, ra
-	j	.b_72
-.b_72:
-	bne	ra, zero, .if_then_73
-	j	.if_exit_74
-.if_then_73:
-	la	a0, unnamed_165
-	mv	a0, a0
-	call	println
-	li	a0, 1
-	mv	a0, a0
-	j	.func_exit_75
-.func_exit_75:
-	mv	a0, a0
+	mv	s3, a0
+	mv	s2, a1
+	sub	ra, s2, zero
+	sltiu	ra, ra, 1
+	bne	ra, zero, .if_then_3
+	j	.if_exit_4
+.if_then_3:
+	j	.func_exit_5
+.func_exit_5:
 	lw	s3, 24(sp)
 	mv	s3, s3
 	lw	s4, 28(sp)
@@ -922,154 +161,839 @@ _main:
 	mv	s2, s2
 	addi	sp, sp, 32
 	ret
-.if_exit_74:
-	la	a0, unnamed_166
+.if_exit_4:
+	addi	s4, s3, 0
+	mv	a0, s2
+	call	array.size
+	mv	s1, a0
+	li	ra, 4
+	mul	ra, s1, ra
+	addi	a0, ra, 4
 	mv	a0, a0
-	call	println
-	li	a0, 3654898
+	call	malloc
 	mv	a0, a0
-	call	initialize
-	call	random
+	sw	s1, 0(a0)
+	sw	a0, 0(s4)
+	mv	s1, zero
+	j	.for_cond_6
+.for_cond_6:
+	mv	a0, s2
+	call	array.size
 	mv	a0, a0
-	li	ra, 10
-	rem	ra, a0, ra
-	addi	t0, ra, 1
-	sw	t0, now, ra
-	lw	a0, now
-	mv	a0, a0
-	call	toString
-	mv	a0, a0
-	mv	a0, a0
-	call	println
-	j	.for_cond_76
-.for_cond_76:
-	lw	t0, now
-	li	ra, 1
-	sub	ra, t0, ra
-	slt	ra, s2, ra
-	bne	ra, zero, .for_loop_77
-	j	.for_exit_78
-.for_exit_78:
-	lw	t0, now
-	li	ra, 1
-	sub	ra, t0, ra
-	lw	t1, a
-	addi	t0, ra, 1
+	slt	ra, s1, a0
+	bne	ra, zero, .for_loop_7
+	j	.for_exit_8
+.for_exit_8:
+	j	.func_exit_5
+.for_loop_7:
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s1, 1
 	li	ra, 4
 	mul	ra, t0, ra
-	add	t0, t1, ra
-	lw	ra, n
-	sub	ra, ra, s1
-	sw	ra, 0(t0)
-	call	show
-	call	merge
-	j	.while_cond_79
-.while_cond_79:
-	call	win
+	add	t1, t1, ra
+	addi	t0, s1, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, s2, ra
+	lw	ra, 0(ra)
+	sw	ra, 0(t1)
+	j	.for_step_9
+.for_step_9:
+	addi	s1, s1, 1
+	j	.for_cond_6
+
+	.globl	vector_getDim
+vector_getDim:
+.entry_10:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 12(sp)
+	mv	s1, s1
+	mv	s2, s2
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
 	mv	a0, a0
-	bne	a0, zero, .b_80
-	j	.b_81
-.b_81:
+	addi	ra, a0, 0
+	lw	ra, 0(ra)
+	sub	ra, ra, zero
+	sltiu	ra, ra, 1
+	bne	ra, zero, .if_then_11
+	j	.if_exit_12
+.if_then_11:
+	mv	zero, zero
+	j	.func_exit_13
+.func_exit_13:
+	mv	a0, zero
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 12(sp)
+	mv	s0, s0
+	mv	s1, s1
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
+.if_exit_12:
+	addi	ra, a0, 0
+	lw	a0, 0(ra)
+	mv	a0, a0
+	call	array.size
+	mv	zero, a0
+	mv	zero, zero
+	j	.func_exit_13
+
+	.globl	vector_dot
+vector_dot:
+.entry_14:
+	addi	sp, sp, -32
+	mv	s0, s0
+	sw	s0, 12(sp)
+	mv	s1, s1
+	sw	s1, 16(sp)
+	mv	s2, s2
+	sw	s2, 20(sp)
+	mv	s3, s3
+	sw	s3, 24(sp)
+	mv	s4, s4
+	sw	s4, 28(sp)
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s3, a0
+	mv	s1, a1
+	mv	s4, zero
+	mv	s2, zero
+	j	.while_cond_15
+.while_cond_15:
+	mv	a0, s3
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, s4, a0
+	bne	ra, zero, .while_loop_16
+	j	.while_exit_17
+.while_loop_16:
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s4, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	t2, t1, ra
+	addi	ra, s1, 0
+	lw	t1, 0(ra)
+	addi	t0, s4, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	lw	t0, 0(t2)
+	lw	ra, 0(ra)
+	mul	ra, t0, ra
+	mv	s2, ra
+	addi	s4, s4, 1
+	j	.while_cond_15
+.while_exit_17:
+	mv	a0, s2
+	lw	s3, 24(sp)
+	mv	s3, s3
+	lw	s4, 28(sp)
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 12(sp)
+	mv	s0, s0
+	lw	s1, 16(sp)
+	mv	s1, s1
+	lw	s2, 20(sp)
+	mv	s2, s2
+	addi	sp, sp, 32
+	ret
+
+	.globl	vector_scalarInPlaceMultiply
+vector_scalarInPlaceMultiply:
+.entry_18:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 0(sp)
+	mv	s1, s1
+	sw	s1, 4(sp)
+	mv	s2, s2
+	sw	s2, 8(sp)
+	mv	s3, s3
+	sw	s3, 12(sp)
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s3, a0
+	mv	s2, a1
+	addi	ra, s3, 0
+	lw	ra, 0(ra)
+	sub	ra, ra, zero
+	sltiu	ra, ra, 1
+	bne	ra, zero, .if_then_19
+	j	.if_exit_20
+.if_then_19:
+	mv	zero, zero
+	j	.func_exit_21
+.func_exit_21:
+	mv	a0, zero
+	lw	s3, 12(sp)
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 0(sp)
+	mv	s0, s0
+	lw	s1, 4(sp)
+	mv	s1, s1
+	lw	s2, 8(sp)
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
+.if_exit_20:
+	mv	s1, zero
+	j	.for_cond_22
+.for_cond_22:
+	mv	a0, s3
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, s1, a0
+	bne	ra, zero, .for_loop_23
+	j	.for_exit_24
+.for_loop_23:
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s1, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	t2, t1, ra
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s1, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	lw	ra, 0(ra)
+	mul	ra, s2, ra
+	sw	ra, 0(t2)
+	j	.for_step_25
+.for_step_25:
+	addi	s1, s1, 1
+	j	.for_cond_22
+.for_exit_24:
+	mv	zero, s3
+	j	.func_exit_21
+
+	.globl	vector_add
+vector_add:
+.entry_26:
+	addi	sp, sp, -32
+	mv	s0, s0
+	sw	s0, 8(sp)
+	mv	s1, s1
+	sw	s1, 12(sp)
+	mv	s2, s2
+	sw	s2, 16(sp)
+	mv	s3, s3
+	sw	s3, 20(sp)
+	mv	s4, s4
+	sw	s4, 24(sp)
+	mv	s5, s5
+	sw	s5, 28(sp)
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s1, a0
+	mv	s2, a1
+	mv	a0, s1
+	call	vector_getDim
+	mv	s3, a0
+	mv	a0, s2
+	call	vector_getDim
+	mv	a0, a0
+	sub	ra, s3, a0
+	sltu	ra, zero, ra
+	bne	ra, zero, .or_true_27
+	j	.or_false_28
+.or_false_28:
+	mv	a0, s1
+	call	vector_getDim
+	mv	a0, a0
+	sub	ra, a0, zero
+	sltiu	ra, ra, 1
+	mv	ra, ra
+	j	.or_exit_29
+.or_exit_29:
+	bne	ra, zero, .if_then_30
+	j	.if_exit_31
+.if_exit_31:
+	li	a0, 4
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	mv	s3, a0
+	addi	s4, s3, 0
+	mv	a0, s1
+	call	vector_getDim
+	mv	s5, a0
+	li	ra, 4
+	mul	ra, s5, ra
+	addi	a0, ra, 4
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	sw	s5, 0(a0)
+	sw	a0, 0(s4)
+	mv	s4, zero
+	j	.for_cond_32
+.for_cond_32:
+	mv	a0, s1
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, s4, a0
+	bne	ra, zero, .for_loop_33
+	j	.for_exit_34
+.for_loop_33:
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s4, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	addi	t0, s1, 0
+	lw	t2, 0(t0)
+	addi	t1, s4, 1
+	li	t0, 4
+	mul	t0, t1, t0
+	add	a0, t2, t0
+	addi	t0, s2, 0
+	lw	t2, 0(t0)
+	addi	t1, s4, 1
+	li	t0, 4
+	mul	t0, t1, t0
+	add	t0, t2, t0
+	lw	t1, 0(a0)
+	lw	t0, 0(t0)
+	add	t0, t1, t0
+	sw	t0, 0(ra)
+	j	.for_step_35
+.for_step_35:
+	addi	s4, s4, 1
+	j	.for_cond_32
+.for_exit_34:
+	mv	a0, s3
+	j	.func_exit_36
+.func_exit_36:
+	mv	a0, a0
+	lw	s3, 20(sp)
+	mv	s3, s3
+	lw	s4, 24(sp)
+	mv	s4, s4
+	lw	s5, 28(sp)
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 8(sp)
+	mv	s0, s0
+	lw	s1, 12(sp)
+	mv	s1, s1
+	lw	s2, 16(sp)
+	mv	s2, s2
+	addi	sp, sp, 32
+	ret
+.if_then_30:
+	mv	a0, zero
+	j	.func_exit_36
+.or_true_27:
 	li	ra, 1
 	mv	ra, ra
-	j	.b_82
-.b_82:
-	bne	ra, zero, .while_loop_83
-	j	.while_exit_84
-.while_exit_84:
+	j	.or_exit_29
+
+	.globl	vector_set
+vector_set:
+.entry_37:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 0(sp)
+	mv	s1, s1
+	sw	s1, 4(sp)
+	mv	s2, s2
+	sw	s2, 8(sp)
+	mv	s3, s3
+	sw	s3, 12(sp)
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s2, a0
+	mv	s3, a1
+	mv	s1, a2
+	mv	a0, s2
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, a0, s3
+	bne	ra, zero, .if_then_38
+	j	.if_exit_39
+.if_then_38:
+	mv	zero, zero
+	j	.func_exit_40
+.func_exit_40:
+	mv	a0, zero
+	lw	s3, 12(sp)
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 0(sp)
+	mv	s0, s0
+	lw	s1, 4(sp)
+	mv	s1, s1
+	lw	s2, 8(sp)
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
+.if_exit_39:
+	addi	ra, s2, 0
+	lw	t1, 0(ra)
+	addi	t0, s3, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	sw	s1, 0(ra)
+	li	zero, 1
+	mv	zero, zero
+	j	.func_exit_40
+
+	.globl	vector_tostring
+vector_tostring:
+.entry_41:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 0(sp)
+	mv	s1, s1
+	sw	s1, 4(sp)
+	mv	s2, s2
+	sw	s2, 8(sp)
+	mv	s3, s3
+	sw	s3, 12(sp)
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s2, a0
+	la	ra, unnamed_100
+	mv	s3, ra
+	mv	a0, s2
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, zero, a0
+	bne	ra, zero, .if_then_42
+	j	.if_exit_43
+.if_exit_43:
+	li	ra, 1
+	mv	s1, ra
+	j	.for_cond_44
+.for_cond_44:
+	mv	a0, s2
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, s1, a0
+	bne	ra, zero, .for_loop_45
+	j	.for_exit_46
+.for_exit_46:
 	mv	a0, s3
+	la	a1, unnamed_123
+	mv	a1, a1
+	call	string_add
+	mv	a0, a0
+	mv	s3, a0
+	mv	a0, s3
+	lw	s3, 12(sp)
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 0(sp)
+	mv	s0, s0
+	lw	s1, 4(sp)
+	mv	s1, s1
+	lw	s2, 8(sp)
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
+.for_loop_45:
+	mv	a0, s3
+	la	a1, unnamed_113
+	mv	a1, a1
+	call	string_add
+	mv	s3, a0
+	addi	ra, s2, 0
+	lw	t1, 0(ra)
+	addi	t0, s1, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	lw	a0, 0(ra)
+	mv	a0, a0
 	call	toString
 	mv	a1, a0
-	la	a0, unnamed_218
-	mv	a0, a0
+	mv	a0, s3
 	mv	a1, a1
 	call	string_add
 	mv	a0, a0
+	mv	s3, a0
+	j	.for_step_47
+.for_step_47:
+	addi	s1, s1, 1
+	j	.for_cond_44
+.if_then_42:
+	addi	ra, s2, 0
+	lw	t1, 0(ra)
+	li	t0, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	lw	a0, 0(ra)
 	mv	a0, a0
-	la	a1, unnamed_221
+	call	toString
+	mv	a1, a0
+	mv	a0, s3
 	mv	a1, a1
 	call	string_add
+	mv	a0, a0
+	mv	s3, a0
+	j	.if_exit_43
+
+	.globl	vector_copy
+vector_copy:
+.entry_48:
+	addi	sp, sp, -32
+	mv	s0, s0
+	sw	s0, 12(sp)
+	mv	s1, s1
+	sw	s1, 16(sp)
+	mv	s2, s2
+	sw	s2, 20(sp)
+	mv	s3, s3
+	sw	s3, 24(sp)
+	mv	s4, s4
+	sw	s4, 28(sp)
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	mv	s1, a0
+	mv	s3, a1
+	sub	ra, s3, zero
+	sltiu	ra, ra, 1
+	bne	ra, zero, .if_then_49
+	j	.if_exit_50
+.if_then_49:
+	mv	zero, zero
+	j	.func_exit_51
+.func_exit_51:
+	mv	a0, zero
+	lw	s3, 24(sp)
+	mv	s3, s3
+	lw	s4, 28(sp)
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 12(sp)
+	mv	s0, s0
+	lw	s1, 16(sp)
+	mv	s1, s1
+	lw	s2, 20(sp)
+	mv	s2, s2
+	addi	sp, sp, 32
+	ret
+.if_exit_50:
+	mv	a0, s3
+	call	vector_getDim
+	mv	a0, a0
+	sub	ra, a0, zero
+	sltiu	ra, ra, 1
+	bne	ra, zero, .if_then_52
+	j	.if_else_53
+.if_else_53:
+	addi	s2, s1, 0
+	mv	a0, s3
+	call	vector_getDim
+	mv	s4, a0
+	li	ra, 4
+	mul	ra, s4, ra
+	addi	a0, ra, 4
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	sw	s4, 0(a0)
+	sw	a0, 0(s2)
+	mv	s2, zero
+	j	.for_cond_54
+.for_cond_54:
+	mv	a0, s1
+	call	vector_getDim
+	mv	a0, a0
+	slt	ra, s2, a0
+	bne	ra, zero, .for_loop_55
+	j	.for_exit_56
+.for_loop_55:
+	addi	ra, s1, 0
+	lw	t1, 0(ra)
+	addi	t0, s2, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	t2, t1, ra
+	addi	ra, s3, 0
+	lw	t1, 0(ra)
+	addi	t0, s2, 1
+	li	ra, 4
+	mul	ra, t0, ra
+	add	ra, t1, ra
+	lw	ra, 0(ra)
+	sw	ra, 0(t2)
+	j	.for_step_57
+.for_step_57:
+	addi	s2, s2, 1
+	j	.for_cond_54
+.for_exit_56:
+	j	.if_exit_58
+.if_exit_58:
+	li	zero, 1
+	mv	zero, zero
+	j	.func_exit_51
+.if_then_52:
+	addi	ra, s1, 0
+	sw	zero, 0(ra)
+	j	.if_exit_58
+
+	.globl	_main
+_main:
+.entry_59:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 4(sp)
+	mv	s1, s1
+	sw	s1, 8(sp)
+	mv	s2, s2
+	sw	s2, 12(sp)
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	li	a0, 4
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	mv	s1, a0
+	li	ra, 40
+	addi	a0, ra, 4
+	mv	a0, a0
+	call	malloc
+	mv	a1, a0
+	li	ra, 10
+	sw	ra, 0(a1)
+	mv	a1, a1
+	mv	ra, zero
+	j	.for_cond_60
+.for_cond_60:
+	slti	t0, ra, 10
+	bne	t0, zero, .for_loop_61
+	j	.for_exit_62
+.for_loop_61:
+	addi	t1, ra, 1
+	li	t0, 4
+	mul	t0, t1, t0
+	add	t1, a1, t0
+	li	t0, 9
+	sub	t0, t0, ra
+	sw	t0, 0(t1)
+	j	.for_step_63
+.for_step_63:
+	addi	ra, ra, 1
+	j	.for_cond_60
+.for_exit_62:
+	mv	a0, s1
+	mv	a1, a1
+	call	vector_init
+	la	a0, unnamed_157
+	mv	a0, a0
+	call	print
+	mv	a0, s1
+	call	vector_tostring
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	li	a0, 4
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	mv	s2, a0
+	mv	a0, s2
+	mv	a1, s1
+	call	vector_copy
+	mv	a0, a0
+	mv	a0, s2
+	li	a1, 3
+	mv	a1, a1
+	li	a2, 817
+	mv	a2, a2
+	call	vector_set
+	mv	a0, a0
+	bne	a0, zero, .if_then_64
+	j	.if_exit_65
+.if_exit_65:
+	la	a0, unnamed_163
+	mv	a0, a0
+	call	print
+	mv	a0, s2
+	call	vector_tostring
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	la	a0, unnamed_165
+	mv	a0, a0
+	call	print
+	mv	a0, s1
+	mv	a1, s2
+	call	vector_add
+	mv	a0, a0
+	mv	a0, a0
+	call	vector_tostring
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	la	a0, unnamed_168
+	mv	a0, a0
+	call	print
+	mv	a0, s1
+	mv	a1, s2
+	call	vector_dot
+	mv	a0, a0
+	mv	a0, a0
+	call	toString
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	la	a0, unnamed_171
+	mv	a0, a0
+	call	print
+	li	a1, 8
+	mv	a0, s2
+	mv	a1, a1
+	call	vector_scalarInPlaceMultiply
+	mv	a0, a0
+	mv	a0, a0
+	call	vector_tostring
 	mv	a0, a0
 	mv	a0, a0
 	call	println
 	mv	a0, zero
-	j	.func_exit_75
-.while_loop_83:
-	addi	s3, s3, 1
-	mv	a0, s3
-	call	toString
-	mv	a1, a0
-	la	a0, unnamed_213
-	mv	a0, a0
-	mv	a1, a1
-	call	string_add
-	mv	a0, a0
-	mv	a0, a0
-	la	a1, unnamed_216
-	mv	a1, a1
-	call	string_add
-	mv	a0, a0
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 4(sp)
+	mv	s0, s0
+	lw	s1, 8(sp)
+	mv	s1, s1
+	lw	s2, 12(sp)
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
+.if_then_64:
+	la	a0, unnamed_162
 	mv	a0, a0
 	call	println
-	call	move
-	call	merge
-	call	show
-	j	.while_cond_79
-.b_80:
-	mv	ra, zero
-	j	.b_82
-.for_loop_77:
-	lw	t1, a
-	addi	t0, s2, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	s4, t1, ra
-	call	random
-	mv	a0, a0
-	li	ra, 10
-	rem	ra, a0, ra
-	addi	ra, ra, 1
-	sw	ra, 0(s4)
-	j	.while_cond_85
-.while_cond_85:
-	lw	t1, a
-	addi	t0, s2, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	ra, 0(ra)
-	add	t0, ra, s1
-	lw	ra, n
-	slt	ra, ra, t0
-	bne	ra, zero, .while_loop_86
-	j	.while_exit_87
-.while_loop_86:
-	lw	t1, a
-	addi	t0, s2, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	s4, t1, ra
-	call	random
-	mv	a0, a0
-	li	ra, 10
-	rem	ra, a0, ra
-	addi	ra, ra, 1
-	sw	ra, 0(s4)
-	j	.while_cond_85
-.while_exit_87:
-	lw	t1, a
-	addi	t0, s2, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	ra, t1, ra
-	lw	ra, 0(ra)
-	add	ra, s1, ra
-	mv	s1, ra
-	j	.for_step_88
-.for_step_88:
-	addi	s2, s2, 1
-	j	.for_cond_76
-.b_70:
-	mv	ra, zero
-	j	.b_72
+	j	.if_exit_65
 
