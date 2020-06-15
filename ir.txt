@@ -1,87 +1,148 @@
-func array.size %t_0 {
-b_1:
-	%t_2 = load %t_0
-	ret %t_2
+func array.size %unnamed_1(0) {
+b(1):
+	%unnamed_0(2) = load %unnamed_1(0)
+	ret %unnamed_0(2)
 }
 
 func __global_init {
-b_3:
-	@n_4 = alloc 4
-	@r_5 = alloc 4
-	@c_6 = alloc 4
-	@i_7 = alloc 4
-	@j_8 = alloc 4
-	call main
-	ret
+b(3):
+	@n(4) = alloc 4
+	@a(5) = alloc 4
+	%unnamed_3(6) = mul 20 4
+	%unnamed_4(7) = add %unnamed_3(6) 4
+	%unnamed_2(8) = alloc %unnamed_4(7)
+	store 20 %unnamed_2(8)
+	store %unnamed_2(8) @a(5)
+	@i(9) = alloc 4
+	%__init_ret(10) = call main
+	ret %__init_ret(10)
 }
 
-func abs %c_9 {
-entry_10:
-	%t_11 = gt %c_9 0
-	br %t_11 if_then_12 if_exit_13
-if_then_12:
-	ret %c_9
-	jump if_exit_13
-if_exit_13:
-	%t_14 = neg %c_9
-	ret %t_14
+func jud %x(11) {
+entry(12):
+	%i(13) = move 0
+	jump for_cond(14)
+for_cond(14):
+	%unnamed_5(15) = load @n(4)
+	%unnamed_6(16) = div %unnamed_5(15) %x(11)
+	%unnamed_7(17) = lt %i(13) %unnamed_6(16)
+	br %unnamed_7(17) for_loop(18) for_exit(19)
+for_loop(18):
+	%flag(20) = move 0
+	%j(21) = move 0
+	jump for_cond(22)
+for_cond(22):
+	%unnamed_8(23) = sub %x(11) 1
+	%unnamed_9(24) = lt %j(21) %unnamed_8(23)
+	br %unnamed_9(24) for_loop(25) for_exit(26)
+for_loop(25):
+	%unnamed_10(27) = mul %i(13) %x(11)
+	%unnamed_11(28) = add %unnamed_10(27) %j(21)
+	%unnamed_12(29) = load @a(5)
+	%unnamed_13(30) = add %unnamed_11(28) 1
+	%unnamed_14(31) = mul %unnamed_13(30) 4
+	%unnamed_15(32) = add %unnamed_12(29) %unnamed_14(31)
+	%unnamed_16(33) = mul %i(13) %x(11)
+	%unnamed_17(34) = add %unnamed_16(33) %j(21)
+	%unnamed_18(35) = add %unnamed_17(34) 1
+	%unnamed_19(36) = load @a(5)
+	%unnamed_20(37) = add %unnamed_18(35) 1
+	%unnamed_21(38) = mul %unnamed_20(37) 4
+	%unnamed_22(39) = add %unnamed_19(36) %unnamed_21(38)
+	%unnamed_23(40) = load %unnamed_15(32)
+	%unnamed_24(41) = load %unnamed_22(39)
+	%unnamed_25(42) = gt %unnamed_23(40) %unnamed_24(41)
+	br %unnamed_25(42) if_then(43) if_exit(44)
+if_then(43):
+	%flag(20) = move 1
+	jump if_exit(44)
+if_exit(44):
+	jump for_step(45)
+for_step(45):
+	%unnamed_26(46) = move %j(21)
+	%j(21) = add %j(21) 1
+	jump for_cond(22)
+for_exit(26):
+	br %flag(20) b(47) b(48)
+b(47):
+	%unnamed_27(49) = move 0
+	jump b(50)
+b(50):
+	br %unnamed_27(49) if_then(51) if_exit(52)
+if_then(51):
+	%unnamed_29(53) = move 1
+	jump func_exit(54)
+func_exit(54):
+	ret %unnamed_29(53)
+if_exit(52):
+	jump for_step(55)
+for_step(55):
+	%unnamed_28(56) = move %i(13)
+	%i(13) = add %i(13) 1
+	jump for_cond(14)
+b(48):
+	%unnamed_27(49) = move 1
+	jump b(50)
+for_exit(19):
+	%unnamed_29(53) = move 0
+	jump func_exit(54)
 }
 
 func main {
-entry_15:
-	%t_16 = load @i_7
-	store 0 @i_7
-	jump for_cond_17
-for_cond_17:
-	%t_18 = load @i_7
-	%t_19 = lt %t_18 5
-	br %t_19 for_loop_20 for_exit_21
-for_loop_20:
-	%t_22 = load @j_8
-	store 0 @j_8
-	jump for_cond_23
-for_cond_23:
-	%t_24 = load @j_8
-	%t_25 = lt %t_24 5
-	br %t_25 for_loop_26 for_exit_27
-for_loop_26:
-	%t_28 = call getInt
-	%t_29 = load @n_4
-	store %t_28 @n_4
-	%t_30 = load @n_4
-	%t_31 = eq %t_30 1
-	br %t_31 if_then_32 if_exit_33
-if_then_32:
-	%t_34 = load @r_5
-	%t_35 = load @i_7
-	store %t_35 @r_5
-	%t_36 = load @c_6
-	%t_37 = load @j_8
-	store %t_37 @c_6
-	jump if_exit_33
-if_exit_33:
-	jump for_step_38
-for_step_38:
-	%t_39 = load @j_8
-	%t_40 = add %t_39 1
-	store %t_40 @j_8
-	jump for_cond_23
-for_exit_27:
-	jump for_step_41
-for_step_41:
-	%t_42 = load @i_7
-	%t_43 = add %t_42 1
-	store %t_43 @i_7
-	jump for_cond_17
-for_exit_21:
-	%t_44 = load @r_5
-	%t_45 = sub 2 %t_44
-	%t_46 = call abs %t_45
-	%t_47 = load @c_6
-	%t_48 = sub 2 %t_47
-	%t_49 = call abs %t_48
-	%t_50 = add %t_46 %t_49
-	call printInt %t_50
-	ret 0
+entry(57):
+	%unnamed_30(58) = call getInt
+	store %unnamed_30(58) @n(4)
+	store 0 @i(9)
+	jump for_cond(59)
+for_cond(59):
+	%unnamed_31(60) = load @i(9)
+	%unnamed_32(61) = load @n(4)
+	%unnamed_33(62) = lt %unnamed_31(60) %unnamed_32(61)
+	br %unnamed_33(62) for_loop(63) for_exit(64)
+for_loop(63):
+	%unnamed_34(65) = load @a(5)
+	%unnamed_35(66) = load @i(9)
+	%unnamed_36(67) = add %unnamed_35(66) 1
+	%unnamed_37(68) = mul %unnamed_36(67) 4
+	%unnamed_38(69) = add %unnamed_34(65) %unnamed_37(68)
+	%unnamed_39(70) = call getInt
+	store %unnamed_39(70) %unnamed_38(69)
+	jump for_step(71)
+for_step(71):
+	%unnamed_40(72) = load @i(9)
+	%unnamed_41(73) = add %unnamed_40(72) 1
+	store %unnamed_41(73) @i(9)
+	jump for_cond(59)
+for_exit(64):
+	%unnamed_42(74) = load @n(4)
+	store %unnamed_42(74) @i(9)
+	jump for_cond(75)
+for_cond(75):
+	%unnamed_43(76) = load @i(9)
+	%unnamed_44(77) = gt %unnamed_43(76) 0
+	br %unnamed_44(77) for_loop(78) for_exit(79)
+for_loop(78):
+	%unnamed_45(80) = load @i(9)
+	%unnamed_46(81) = call jud %unnamed_45(80)
+	%unnamed_47(82) = gt %unnamed_46(81) 0
+	br %unnamed_47(82) if_then(83) if_exit(84)
+if_then(83):
+	%unnamed_48(85) = load @i(9)
+	%unnamed_49(86) = call toString %unnamed_48(85)
+	call print %unnamed_49(86)
+	%unnamed_52(87) = move 0
+	jump func_exit(88)
+func_exit(88):
+	ret %unnamed_52(87)
+if_exit(84):
+	jump for_step(89)
+for_step(89):
+	%unnamed_50(90) = load @i(9)
+	%unnamed_51(91) = div %unnamed_50(90) 2
+	store %unnamed_51(91) @i(9)
+	jump for_cond(75)
+for_exit(79):
+	%unnamed_52(87) = move 0
+	jump func_exit(88)
 }
 

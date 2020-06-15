@@ -1,6 +1,6 @@
 package Compiler.IR.Operand;
 
-public class RegValue extends Register{
+public class RegValue extends VirtualRegister{
     public RegValue() {
     }
 

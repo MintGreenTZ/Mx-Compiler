@@ -5,8 +5,7 @@ import Compiler.IR.Operand.Operand;
 
 public class UnaryOp extends IRInst {
     public enum Op{
-        sufADD, sufSUB,
-        preADD, preSUB, LogicINV, INV, POS, NEG
+        INV, NEG
     }
 
     private Operand acted, dest;

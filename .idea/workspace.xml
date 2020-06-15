@@ -2,44 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmBasicBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Assembly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmCall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmInst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmJump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLoad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRegImm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRegReg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Operand/PhysicalRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/RegisterAllocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/VirtualRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/StackLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/StackPointer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler/Utils/CodegenError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ConstBoolNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ConstBoolNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ConstIntNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ConstIntNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ConstStringNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ConstStringNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode$Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode$Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/ExprNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/FunctionDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/FunctionDeclNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/PrefixExprNode$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/PrefixExprNode$Op.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/SubscriptNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/SubscriptNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/SuffixExprNode$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/SuffixExprNode$Op.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/SuffixExprNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/SuffixExprNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/AST/VariableNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/AST/VariableNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/BasicBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/BasicBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Function.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IR.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/BinaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/BinaryOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/FuncCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/FuncCall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp$Op.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Imm.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Imm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Operand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegPtr.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegPtr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ASTBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/ClassMemberVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/FunctionBodyVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SemanticAnalysis/SemanticChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/ClassSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/ClassSymbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/FunctionSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/FunctionSymbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/PrimitiveSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/PrimitiveSymbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Scope/CommonScope.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Scope/CommonScope.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/ArrayType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/ArrayType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/NullType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/NullType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/Type/Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/SymbolTable/VariableSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/SymbolTable/VariableSymbol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.bash" beforeDir="false" afterPath="$PROJECT_DIR$/build.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ir.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/BasicBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/BasicBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Function.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IR.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" afterDir="false" />
@@ -49,18 +68,33 @@
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/SemanticAnalysis/GlobalVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/BinaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/BinaryOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/FuncCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/FuncCall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp$Op.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Imm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Imm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Operand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegPtr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegPtr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semantic.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/semantic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/semantic.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/BasicBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/BasicBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IRInterpreter/IRInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IRInterpreter/IRInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/GlobalVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/BinaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/BinaryOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/FuncCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/FuncCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/UnaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/UnaryOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Imm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Imm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Operand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Operand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegPtr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegPtr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,10 +220,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1588810333894" />
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1588948469297">
+    <state x="388" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592144502686">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588948469297" />
+    <state x="388" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1592144502686" />
+    <state x="122" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1592134881512">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="68" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1592134881512" />
     <state x="371" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588810328610">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -202,74 +240,86 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="425" y="226" width="431" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1587984054023" />
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588334483040">
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591698719443">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1588334483040" />
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1591698719443" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586142006617">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1586142006617" />
-    <state width="491" height="438" key="DebuggerActiveHint" timestamp="1589082796007">
+    <state width="539" height="438" key="DebuggerActiveHint" timestamp="1592191649288">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="491" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1589082796007" />
+    <state width="539" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592191649288" />
     <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1589039702138">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589039702138" />
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1589117571568">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592193396753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589117571568" />
-    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1589117571568">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
+    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592193396753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1589117571568" />
-    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1589117571568">
+    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
+    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592193396753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1589117571568" />
-    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1589117571568">
+    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
+    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592193396753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1589117571568" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1589117571562">
+    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592191984446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589117571562" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1589117571562">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592191984446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1589117571562" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1589117571562">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592191984446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1589117571562" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1589117571562">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592191984446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1589117571562" />
-    <state x="121" y="0" key="SettingsEditor" timestamp="1588818452011">
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1589195646371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588818452011" />
-    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586176727573">
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589195646371" />
+    <state x="488" y="257" key="VCS.ChangelistChooser" timestamp="1591956517942">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1586176727573" />
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1589117615978">
+    <state x="488" y="257" key="VCS.ChangelistChooser/0.0.1280.680@0.0.1280.680" timestamp="1591956517942" />
+    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1592105945721">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1589117615978" />
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589048726618">
+    <state x="182" y="68" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1592105945721" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1592134482670">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1589048726618" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1592134482670" />
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592184014577">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592184014577" />
+    <state x="383" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1591688405375">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="383" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1591688405375" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1588047991977">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1588047991977" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1591883030093">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1591883030093" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -281,42 +331,37 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>44</line>
+          <line>43</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>103</line>
+          <line>104</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>342</line>
+          <line>343</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRPrinter.java</url>
-          <line>127</line>
+          <line>124</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>335</line>
+          <line>336</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>539</line>
+          <line>540</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -326,18 +371,83 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>676</line>
+          <line>675</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java</url>
           <line>56</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLoad.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/RegisterAllocation.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/RegisterAllocation.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/AsmPrinter.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/AsmPrinter.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Codegen/AsmPrinter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/Main.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
-          <line>231</line>
-          <option name="timeStamp" value="107" />
+          <line>155</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -347,15 +457,6 @@
     <watches-manager>
       <configuration name="Application">
         <watch expression="this" />
-        <watch expression="node" />
-        <watch expression="node.retValue" />
-        <watch expression="((LocalScope)curScope).upperScope" custom="Compiler.SymbolTable.Scope.LocalScope" />
-        <watch expression="((LocalScope)curScope).upperScope" language="JAVA" custom="Compiler.SymbolTable.Scope.LocalScope" />
-        <watch expression="curFunction" language="JAVA" />
-        <watch expression="((IdNode)node.lhs).symbol" custom="Compiler.AST.IdNode" />
-        <watch expression="inst.curBlock" />
-        <watch expression="curBB" language="JAVA" />
-        <watch expression="type" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

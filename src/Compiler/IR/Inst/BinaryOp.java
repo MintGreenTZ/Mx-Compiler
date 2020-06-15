@@ -38,6 +38,11 @@ public class BinaryOp extends IRInst {
         return op;
     }
 
+    // For the use of reverse op in case of swap order of Reg and Imm in codegen
+    public void setOp(Op op) {
+        this.op = op;
+    }
+
     public void accept(IRVisitor visitor) {
         visitor.visit(this);
     }

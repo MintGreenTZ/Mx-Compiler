@@ -7,4 +7,8 @@ public class Imm extends Operand {
         super(Integer.toString(value));
         this.value = value;
     }
+
+    public int getValue() {
+        return value;
+    }
 }

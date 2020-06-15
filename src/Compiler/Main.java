@@ -1,9 +1,12 @@
 package Compiler;
 
 import Compiler.AST.ProgramNode;
+import Compiler.Codegen.AsmPrinter;
+import Compiler.Codegen.Assembly;
+import Compiler.Codegen.InfiniteRegAsm;
+import Compiler.Codegen.RegisterAllocation;
 import Compiler.IR.IRBuilder;
 import Compiler.IR.IRPrinter;
-import Compiler.IRInterpreter.IRInterpreter;
 import Compiler.Parser.MxstarErrorListener;
 import Compiler.Parser.MxstarLexer;
 import Compiler.Parser.MxstarParser;
@@ -20,6 +23,15 @@ import java.io.PrintStream;
 public class Main {
     public static void main(String[] args) {
         try{
+            boolean semanticOnly = false;
+
+            for(String arg : args){
+                switch (arg){
+                    case "-semantic": semanticOnly = true; break;
+                    default: break;
+                }
+            }
+
             InputStream inputStream;
             CharStream input = null;
 
@@ -41,12 +53,19 @@ public class Main {
             new ClassMemberVisitor(globalScope).visit(astRoot);
             new FunctionBodyVisitor(globalScope).visit(astRoot);
             new SemanticChecker(globalScope).visit(astRoot);
+            if (semanticOnly) return;
 
             // IR
             IRBuilder irBuilder = new IRBuilder(globalScope);
             irBuilder.visit(astRoot);
             new IRPrinter().print(irBuilder.getIr(), new PrintStream("ir.txt"));
-            IRInterpreter.main("ir.txt", System.out, new FileInputStream("in.txt"), false);
+            //IRInterpreter.main("ir.txt", System.out, new FileInputStream("test.in"), false);
+
+            // codegen
+            InfiniteRegAsm infiniteRegAsm = new InfiniteRegAsm(irBuilder.getIr());
+            Assembly asm = infiniteRegAsm.getAsm();
+            new RegisterAllocation(asm);
+            new AsmPrinter(asm).run(new PrintStream("test.s"));
         }
         catch (Exception error) {
             error.printStackTrace();

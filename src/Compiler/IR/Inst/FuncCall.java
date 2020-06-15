@@ -11,14 +11,14 @@ public class FuncCall extends IRInst {
     // function(paralist) -> dest
 
     private Function function;
-    private Operand obj;
+    private Operand referenceToThisClass; // record class obj in case of class member function
     private ArrayList<Operand> paralist;
     private Operand dest;
 
-    public FuncCall(Function function, Operand obj, ArrayList<Operand> paralist, Operand dest) {
+    public FuncCall(Function function, Operand referenceToThisClass, ArrayList<Operand> paralist, Operand dest) {
         if (function == null) throw new IRError("null pointer when construct funcCall");
         this.function = function;
-        this.obj = obj;
+        this.referenceToThisClass = referenceToThisClass;
         this.paralist = paralist;
         this.dest = dest;
     }
@@ -26,8 +26,8 @@ public class FuncCall extends IRInst {
     public Function getFunction() {
         return function;
     }
-    public Operand getObj() {
-        return obj;
+    public Operand getReferenceToThisClass() {
+        return referenceToThisClass;
     }
     public ArrayList<Operand> getParalist() {
         return paralist;

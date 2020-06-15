@@ -1,10 +1,7 @@
 package Compiler.IR;
 
 import Compiler.IR.Inst.*;
-import Compiler.IR.Operand.Imm;
-import Compiler.IR.Operand.Operand;
-import Compiler.IR.Operand.Register;
-import Compiler.IR.Operand.StaticStr;
+import Compiler.IR.Operand.*;
 import Compiler.Utils.IRError;
 
 import java.io.PrintStream;
@@ -88,8 +85,8 @@ public class IRPrinter implements IRVisitor {
         if (inst.getDest() != null)
             output.print(operand2Str(inst.getDest()) + " = ");
         output.print("call " + inst.getFunction().getIdentifier());
-        if (inst.getObj() != null)
-            output.print(" " + operand2Str(inst.getObj()));
+        if (inst.getReferenceToThisClass() != null)
+            output.print(" " + operand2Str(inst.getReferenceToThisClass()));
         for (Operand operand : inst.getParalist())
             output.print(" " + operand2Str(operand));
         output.println();
@@ -137,10 +134,10 @@ public class IRPrinter implements IRVisitor {
         if (operand instanceof Imm) return operand.getIdentifier();
 
         if (operandNameMap.get(operand) == null)
-            operandNameMap.put(operand, (operand.getIdentifier() == null ? "t" : operand.getIdentifier()) + "_" + cnt++);
+            operandNameMap.put(operand, (operand.getIdentifier() == null ? "t" : operand.getIdentifier()) + "(" + cnt++ + ")");
 
-        if (operand instanceof Register) {
-            if (((Register) operand).isGlobal())
+        if (operand instanceof VirtualRegister) {
+            if (((VirtualRegister) operand).isGlobal())
                 return "@" + operandNameMap.get(operand);
             else
                 return "%" + operandNameMap.get(operand);
@@ -151,7 +148,7 @@ public class IRPrinter implements IRVisitor {
 
     public String basicBlock2Str(BasicBlock basicBlock) {
         if (basicBlockNameMap.get(basicBlock) == null)
-            basicBlockNameMap.put(basicBlock, (basicBlock.getName() == null ? "b" : basicBlock.getName()) + "_" + cnt++);
+            basicBlockNameMap.put(basicBlock, (basicBlock.getName() == null ? "b" : basicBlock.getName()) + "(" + cnt++ + ")");
         return basicBlockNameMap.get(basicBlock);
     }
 }

@@ -18,8 +18,7 @@ import java.util.Stack;
 
 import static Compiler.Configuration.POINTER_SIZE;
 import static Compiler.Configuration.REGISTER_SIZE;
-import static Compiler.SemanticAnalysis.GlobalVisitor.StringType;
-import static Compiler.SemanticAnalysis.GlobalVisitor.getArraySizeSymbol;
+import static Compiler.SemanticAnalysis.GlobalVisitor.*;
 
 public class IRBuilder extends ASTBaseVisitor {
     private GlobalScope globalScope;
@@ -62,8 +61,10 @@ public class IRBuilder extends ASTBaseVisitor {
             if (decl instanceof VariableDeclNode)
                 decl.accept(this);
 
-        curBB.addInst(new FuncCall(((FunctionSymbol) globalScope.resolveSymbol("main", new Location(0, 0))).getFunction(), null, new ArrayList<>(), null));
-        curBB.addInst(new Return(null));
+        RegValue initRet = new RegValue("__init_ret");
+        curBB.addInst(new FuncCall(((FunctionSymbol) globalScope.resolveSymbol("main", new Location(0, 0))).getFunction(), null, new ArrayList<>(), initRet));
+        curBB.addInst(new Return(initRet));
+        globalFunction.setExitBB(curBB);
 
         for (DeclNode decl: node.getDecl())
             if (!(decl instanceof VariableDeclNode))
@@ -108,7 +109,7 @@ public class IRBuilder extends ASTBaseVisitor {
                 curBB.addInst(new Return(new Imm(0)));
             curFuncReturnInsList.add((Return) curBB.getLastInst());
         }
-        /*
+
         // merge all return blocks to exitBB
         if (curFuncReturnInsList.size() == 0) throw new IRError("WTF");
         if (curFuncReturnInsList.size() > 1) {
@@ -119,12 +120,12 @@ public class IRBuilder extends ASTBaseVisitor {
             for (Return ret : curFuncReturnInsList) {
                 ret.removeSelf();
                 if (hasReturn)
-                    ret.getCurBlock().addInst(new Move(ret.getRet(), retValue));
-                ret.getCurBlock().addInst(new Jump(exitBlock));
+                    ret.getCurBlock().sudoAddInst(new Move(ret.getRet(), retValue));
+                ret.getCurBlock().sudoAddInst(new Jump(exitBlock));
             }
             exitBlock.addInst(new Return(retValue));
         } else
-            function.setExitBB(curFuncReturnInsList.get(0).getCurBlock());*/
+            function.setExitBB(curFuncReturnInsList.get(0).getCurBlock());
     }
 
     @Override
@@ -242,10 +243,10 @@ public class IRBuilder extends ASTBaseVisitor {
     @Override
     public void visit(ReturnNode node) {
         if (node.getRetValue() == null)
-            curBB.addInst(new Return(null));
+            curBB.addLastInst(new Return(null));
         else {
             node.getRetValue().accept(this);
-            curBB.addInst(new Return(operand2Val(node.getRetValue().getIRResult())));
+            curBB.addLastInst(new Return(operand2Val(node.getRetValue().getIRResult())));
         }
         if (curBB.getLastInst() instanceof Return)
             curFuncReturnInsList.add((Return) curBB.getLastInst());
@@ -346,9 +347,9 @@ public class IRBuilder extends ASTBaseVisitor {
         if (!functionSymbol.isMemberFunction())
             obj = null;
         else {
-            if (node.getFuncObj() instanceof MemberAccessNode)
+            if (node.getFuncObj() instanceof MemberAccessNode) // outside class
                 obj = operand2Val(((MemberAccessNode) node.getFuncObj()).getObj().getIRResult());
-            else
+            else // inside class
                 obj = curFunction.getReferenceToThisClass();
         }
 
@@ -541,7 +542,6 @@ public class IRBuilder extends ASTBaseVisitor {
                 node.getRhs().accept(this);
                 Operand dest = node.getLhs().getIRResult();
                 Operand src = node.getRhs().getIRResult();
-                operand2Val(dest);
                 Operand srcVal = operand2Val(src);
                 if (dest instanceof RegValue)
                     curBB.addInst(new Move(srcVal, dest));
@@ -645,7 +645,6 @@ public class IRBuilder extends ASTBaseVisitor {
         builtinStrLT.markBuiltin();
         builtinStrLE.markBuiltin();
         builtinStrGE.markBuiltin();
-        builtinArraySize.markBuiltin();
 
         ir.addFunction(builtinPrint);
         ir.addFunction(builtinPrintln);
@@ -739,5 +738,27 @@ public class IRBuilder extends ASTBaseVisitor {
 
             curBB = exitBB;
         }
+    }
+
+    public static int calc(BinaryOp.Op op, int a, int b) {
+        switch (op) {
+            case ADD:   return a + b;
+            case SUB:   return a - b;
+            case MUL:   return a * b;
+            case DIV:   return a / b;
+            case MOD:   return a % b;
+            case SHL:   return a << b;
+            case SHR:   return a >> b;
+            case GT:    return a > b ? 1 : 0;
+            case GE:    return a >= b ? 1 : 0;
+            case LT:    return a < b ? 1 : 0;
+            case LE:    return a <= b ? 1 : 0;
+            case EQ:    return a == b ? 1 : 0;
+            case NEQ:   return a != b ? 1 : 0;
+            case AND:   return a & b;
+            case OR:    return a | b;
+            case XOR:   return a ^ b;
+        }
+        return 19260817;
     }
 }

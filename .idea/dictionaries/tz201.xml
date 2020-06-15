@@ -1,9 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="tz201">
     <words>
+      <w>codegen</w>
       <w>decl</w>
       <w>equalable</w>
+      <w>liveness</w>
       <w>paralist</w>
+      <w>worklist</w>
     </words>
   </dictionary>
 </component>
