@@ -30,6 +30,8 @@ public class SemanticChecker extends ASTBaseVisitor {
     public void visit(ClassDeclNode node) {
         for (var funcDeclNode: node.getFunctionDecl())
             funcDeclNode.accept(this);
+        if (node.getConstructorDecl() != null)
+            visit(node.getConstructorDecl());
     }
 
     @Override

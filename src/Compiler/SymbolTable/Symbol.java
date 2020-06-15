@@ -32,6 +32,11 @@ public class Symbol{
         return definition;
     }
 
+    // for constructor
+    public void setType(Type type) {
+        this.type = type;
+    }
+
     public void setScope(Scope scope) {
         this.scope = scope;
     }
