@@ -2,99 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmBasicBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/AsmVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Assembly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/InfiniteRegAsm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmCall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmInst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmJump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRegImm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRegReg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmRet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Inst/AsmStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/Operand/PhysicalRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Codegen/RegisterAllocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/VirtualRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/StackLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/IR/StackPointer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compiler/Utils/CodegenError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tz201.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/BasicBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/BasicBlock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Function.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IR.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/IRPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/IRPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/BinaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/BinaryOp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/FuncCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/FuncCall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp$Op.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Inst/UnaryOp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Imm.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Imm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Operand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegPtr.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegPtr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/RegValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/IR/Operand/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.bash" beforeDir="false" afterPath="$PROJECT_DIR$/build.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builtin.s" beforeDir="false" afterPath="$PROJECT_DIR$/builtin.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ir.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/BasicBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/BasicBlock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Function.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/BinaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/BinaryOp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/FuncCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/FuncCall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp$Op.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Inst/UnaryOp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Imm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Imm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Operand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegPtr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegPtr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/RegValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/Operand/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semantic.bash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/semantic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/semantic.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/BasicBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/BasicBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/BinaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/BinaryOp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/FuncCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/FuncCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Inst/UnaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Inst/UnaryOp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Imm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Imm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Operand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Operand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegPtr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegPtr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/RegValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/IR/Operand/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/Operand/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.in" beforeDir="false" afterPath="$PROJECT_DIR$/test.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.out" beforeDir="false" afterPath="$PROJECT_DIR$/test.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.s" beforeDir="false" afterPath="$PROJECT_DIR$/test.s" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,22 +173,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589039702138" />
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592193396753">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592199928599">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
-    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592193396753">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
+    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592199928599">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
-    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592193396753">
+    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
+    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592199928599">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
-    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592193396753">
+    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
+    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592199928599">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592193396753" />
+    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592191984446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -376,7 +293,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java</url>
-          <line>56</line>
+          <line>58</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

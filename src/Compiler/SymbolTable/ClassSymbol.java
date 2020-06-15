@@ -9,6 +9,8 @@ import Compiler.Utils.SemanticError;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static Compiler.Configuration.POINTER_SIZE;
+
 public class ClassSymbol extends Symbol implements Type, Scope {
     private Map<String, VariableSymbol> variableSymbolMap;
     private Map<String, FunctionSymbol> functionSymbolMap;
@@ -105,6 +107,10 @@ public class ClassSymbol extends Symbol implements Type, Scope {
 
     @Override
     public int getTypeSize() {
+        return POINTER_SIZE;
+    }
+
+    public int getObjSize() {
         return size;
     }
 }

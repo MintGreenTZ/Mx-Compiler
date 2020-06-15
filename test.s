@@ -1,16 +1,48 @@
 	.section	.data
 
-	.globl	n
-n:
+	.globl	init_anger
+init_anger:
 	.zero	4
 
-	.globl	a
-a:
+	.globl	work_anger
+work_anger:
 	.zero	4
 
-	.globl	i
-i:
-	.zero	4
+	.globl	unnamed_5
+unnamed_5:
+	.string	", "
+
+	.globl	unnamed_10
+unnamed_10:
+	.string	" enjoys this work. XD"
+
+	.globl	unnamed_12
+unnamed_12:
+	.string	", "
+
+	.globl	unnamed_17
+unnamed_17:
+	.string	" wants to give up!!!!!"
+
+	.globl	unnamed_26
+unnamed_26:
+	.string	"the leading TA"
+
+	.globl	unnamed_30
+unnamed_30:
+	.string	"the striking TA"
+
+	.globl	unnamed_33
+unnamed_33:
+	.string	"MR"
+
+	.globl	unnamed_34
+unnamed_34:
+	.string	"Mars"
+
+	.globl	unnamed_35
+unnamed_35:
+	.string	"Mars"
 
 	.text
 
@@ -70,22 +102,14 @@ main:
 	mv	a0, a0
 	call	malloc
 	mv	a0, a0
+	li	t0, 100
+	sw	t0, init_anger, ra
 	li	a0, 4
 	mv	a0, a0
 	call	malloc
 	mv	a0, a0
-	li	ra, 80
-	addi	a0, ra, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
-	li	ra, 20
-	sw	ra, 0(a0)
-	sw	a0, a, ra
-	li	a0, 4
-	mv	a0, a0
-	call	malloc
-	mv	a0, a0
+	li	t0, 10
+	sw	t0, work_anger, ra
 	call	_main
 	mv	a0, a0
 	mv	a0, a0
@@ -106,118 +130,9 @@ main:
 	addi	sp, sp, 16
 	ret
 
-	.globl	jud
-jud:
+	.globl	work
+work:
 .entry_2:
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	s10, s10
-	mv	s11, s11
-	mv	ra, ra
-	mv	a0, a0
-	mv	t2, zero
-	j	.for_cond_3
-.for_cond_3:
-	lw	t0, n
-	div	t0, t0, a0
-	slt	t0, t2, t0
-	bne	t0, zero, .for_loop_4
-	j	.for_exit_5
-.for_exit_5:
-	mv	zero, zero
-	j	.func_exit_6
-.func_exit_6:
-	mv	a0, zero
-	mv	s3, s3
-	mv	s4, s4
-	mv	s5, s5
-	mv	s6, s6
-	mv	s7, s7
-	mv	s8, s8
-	mv	s9, s9
-	mv	ra, ra
-	mv	s11, s11
-	mv	s10, s10
-	mv	s0, s0
-	mv	s1, s1
-	mv	s2, s2
-	ret
-.for_loop_4:
-	mv	t1, zero
-	mv	t0, zero
-	j	.for_cond_7
-.for_cond_7:
-	li	a1, 1
-	sub	a1, a0, a1
-	slt	a1, t0, a1
-	bne	a1, zero, .for_loop_8
-	j	.for_exit_9
-.for_exit_9:
-	bne	t1, zero, .b_10
-	j	.b_11
-.b_10:
-	mv	t0, zero
-	j	.b_12
-.b_12:
-	bne	t0, zero, .if_then_13
-	j	.if_exit_14
-.if_then_13:
-	li	zero, 1
-	mv	zero, zero
-	j	.func_exit_6
-.if_exit_14:
-	j	.for_step_15
-.for_step_15:
-	mv	t2, t2
-	addi	t2, t2, 1
-	j	.for_cond_3
-.b_11:
-	li	t0, 1
-	mv	t0, t0
-	j	.b_12
-.for_loop_8:
-	mul	a1, t2, a0
-	add	a1, a1, t0
-	lw	a3, a
-	addi	a2, a1, 1
-	li	a1, 4
-	mul	a1, a2, a1
-	add	a4, a3, a1
-	mul	a1, t2, a0
-	add	a1, a1, t0
-	addi	a1, a1, 1
-	lw	a3, a
-	addi	a2, a1, 1
-	li	a1, 4
-	mul	a1, a2, a1
-	add	a1, a3, a1
-	lw	a2, 0(a4)
-	lw	a1, 0(a1)
-	slt	a1, a1, a2
-	bne	a1, zero, .if_then_16
-	j	.if_exit_17
-.if_then_16:
-	li	t1, 1
-	mv	t1, t1
-	j	.if_exit_17
-.if_exit_17:
-	j	.for_step_18
-.for_step_18:
-	mv	t0, t0
-	addi	t0, t0, 1
-	j	.for_cond_7
-
-	.globl	_main
-_main:
-.entry_19:
 	addi	sp, sp, -16
 	mv	s0, s0
 	sw	s0, 8(sp)
@@ -235,47 +150,42 @@ _main:
 	mv	s10, s10
 	mv	s11, s11
 	mv	s0, ra
-	call	getInt
 	mv	a0, a0
-	sw	a0, n, ra
-	sw	zero, i, ra
-	j	.for_cond_20
-.for_cond_20:
-	lw	t0, i
-	lw	ra, n
-	slt	ra, t0, ra
-	bne	ra, zero, .for_loop_21
-	j	.for_exit_22
-.for_loop_21:
-	lw	t1, a
-	lw	ra, i
-	addi	t0, ra, 1
-	li	ra, 4
-	mul	ra, t0, ra
-	add	s1, t1, ra
-	call	getInt
+	mv	s1, a1
+	addi	ra, s1, 4
+	lw	t0, 0(ra)
+	li	ra, 100
+	slt	ra, ra, t0
+	xori	ra, ra, 1
+	bne	ra, zero, .if_then_3
+	j	.if_else_4
+.if_then_3:
 	mv	a0, a0
-	sw	a0, 0(s1)
-	j	.for_step_23
-.for_step_23:
-	lw	ra, i
-	addi	t0, ra, 1
-	sw	t0, i, ra
-	j	.for_cond_20
-.for_exit_22:
-	lw	t0, n
-	sw	t0, i, ra
-	j	.for_cond_24
-.for_cond_24:
-	lw	ra, i
-	slt	ra, zero, ra
-	bne	ra, zero, .for_loop_25
-	j	.for_exit_26
-.for_exit_26:
-	mv	zero, zero
-	j	.func_exit_27
-.func_exit_27:
-	mv	a0, zero
+	la	a1, unnamed_5
+	mv	a1, a1
+	call	string_add
+	mv	a0, a0
+	addi	ra, s1, 0
+	lw	a1, 0(ra)
+	mv	a0, a0
+	mv	a1, a1
+	call	string_add
+	mv	a0, a0
+	mv	a0, a0
+	la	a1, unnamed_10
+	mv	a1, a1
+	call	string_add
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	j	.if_exit_5
+.if_exit_5:
+	addi	t1, s1, 4
+	addi	ra, s1, 4
+	lw	t0, 0(ra)
+	lw	ra, work_anger
+	add	ra, t0, ra
+	sw	ra, 0(t1)
 	mv	s3, s2
 	mv	s4, s4
 	mv	s5, s5
@@ -294,29 +204,97 @@ _main:
 	mv	s2, s2
 	addi	sp, sp, 16
 	ret
-.for_loop_25:
-	lw	a0, i
+.if_else_4:
 	mv	a0, a0
-	call	jud
+	la	a1, unnamed_12
+	mv	a1, a1
+	call	string_add
 	mv	a0, a0
-	slt	ra, zero, a0
-	bne	ra, zero, .if_then_28
-	j	.if_exit_29
-.if_exit_29:
-	j	.for_step_30
-.for_step_30:
-	lw	t0, i
-	li	ra, 2
-	div	t0, t0, ra
-	sw	t0, i, ra
-	j	.for_cond_24
-.if_then_28:
-	lw	a0, i
+	addi	ra, s1, 0
+	lw	a1, 0(ra)
 	mv	a0, a0
-	call	toString
+	mv	a1, a1
+	call	string_add
 	mv	a0, a0
 	mv	a0, a0
-	call	print
-	mv	zero, zero
-	j	.func_exit_27
+	la	a1, unnamed_17
+	mv	a1, a1
+	call	string_add
+	mv	a0, a0
+	mv	a0, a0
+	call	println
+	j	.if_exit_5
+
+	.globl	_main
+_main:
+.entry_6:
+	addi	sp, sp, -16
+	mv	s0, s0
+	sw	s0, 4(sp)
+	mv	s1, s1
+	sw	s1, 8(sp)
+	mv	s2, s2
+	sw	s2, 12(sp)
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	s10, s10
+	mv	s11, s11
+	mv	s0, ra
+	li	a0, 8
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	mv	s2, a0
+	addi	t0, s2, 0
+	la	ra, unnamed_26
+	sw	ra, 0(t0)
+	addi	ra, s2, 4
+	sw	zero, 0(ra)
+	li	a0, 8
+	mv	a0, a0
+	call	malloc
+	mv	a0, a0
+	mv	s1, a0
+	addi	t0, s1, 0
+	la	ra, unnamed_30
+	sw	ra, 0(t0)
+	addi	t0, s1, 4
+	lw	ra, init_anger
+	sw	ra, 0(t0)
+	la	a0, unnamed_33
+	mv	a0, a0
+	mv	a1, s2
+	call	work
+	la	a0, unnamed_34
+	mv	a0, a0
+	mv	a1, s1
+	call	work
+	la	a0, unnamed_35
+	mv	a0, a0
+	mv	a1, s1
+	call	work
+	mv	a0, zero
+	mv	s3, s3
+	mv	s4, s4
+	mv	s5, s5
+	mv	s6, s6
+	mv	s7, s7
+	mv	s8, s8
+	mv	s9, s9
+	mv	ra, s0
+	mv	s11, s11
+	mv	s10, s10
+	lw	s0, 4(sp)
+	mv	s0, s0
+	lw	s1, 8(sp)
+	mv	s1, s1
+	lw	s2, 12(sp)
+	mv	s2, s2
+	addi	sp, sp, 16
+	ret
 

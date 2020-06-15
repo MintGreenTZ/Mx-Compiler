@@ -413,7 +413,7 @@ public class IRBuilder extends ASTBaseVisitor {
     public void visit(NewNode node) {
         node.setIRResult(new RegValue());
         if (node.getType() instanceof ClassSymbol) {
-            curBB.addInst(new Alloc(new Imm(node.getType().getTypeSize()), node.getIRResult()));
+            curBB.addInst(new Alloc(new Imm(((ClassSymbol) node.getType()).getObjSize()), node.getIRResult()));
             FunctionSymbol constructorFunctionSymbol = ((ClassSymbol) node.getType()).getConstructor();
             if (constructorFunctionSymbol != null)
                 curBB.addInst(new FuncCall(constructorFunctionSymbol.getFunction(), node.getIRResult(), new ArrayList<>(), null));
