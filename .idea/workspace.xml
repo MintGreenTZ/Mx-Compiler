@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bd1b20ff-2766-4416-8dd7-1cb8fe9b78be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builtin.s" beforeDir="false" afterPath="$PROJECT_DIR$/builtin.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code.mx" beforeDir="false" afterPath="$PROJECT_DIR$/code.mx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ir.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mx-Compiler/Compiler/IR/IRBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SymbolTable/ClassSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ans" beforeDir="false" afterPath="$PROJECT_DIR$/test.ans" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.in" beforeDir="false" afterPath="$PROJECT_DIR$/test.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.out" beforeDir="false" afterPath="$PROJECT_DIR$/test.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.s" beforeDir="false" afterPath="$PROJECT_DIR$/test.s" afterDir="false" />
@@ -165,46 +164,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1586142006617" />
-    <state width="539" height="438" key="DebuggerActiveHint" timestamp="1592191649288">
+    <state width="539" height="438" key="DebuggerActiveHint" timestamp="1592205426868">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="539" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592191649288" />
-    <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1589039702138">
+    <state width="539" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1592205426868" />
+    <state x="290" y="53" key="FileChooserDialogImpl" timestamp="1592203554219">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589039702138" />
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592199928599">
+    <state x="290" y="53" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592203554219" />
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1592206802009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
-    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592199928599">
+    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
+    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1592206802009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
-    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592199928599">
+    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
+    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1592206802008">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
-    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592199928599">
+    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592206802008" />
+    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1592206802009">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592199928599" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592191984446">
+    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592206802009" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1592205652481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592191984446">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592205652481" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1592205652480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592191984446">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1592205652480" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1592205652480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592191984446">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1592205652480" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1592205652481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592191984446" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1592205652481" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1589195646371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -221,10 +220,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1592134482670" />
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592184014577">
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592203494862">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592184014577" />
+    <state x="212" y="76" width="857" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1592203494862" />
     <state x="383" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1591688405375">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -365,6 +364,16 @@
           <url>file://$PROJECT_DIR$/src/Compiler/IR/IRBuilder.java</url>
           <line>113</line>
           <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Compiler/SemanticAnalysis/ClassMemberVisitor.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

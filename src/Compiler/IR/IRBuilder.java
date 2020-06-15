@@ -215,7 +215,7 @@ public class IRBuilder extends ASTBaseVisitor {
         breakStack.push(exitBB);
         continueStack.push(stepBB);
 
-        node.getInit().accept(this);
+        if (node.getInit() != null) node.getInit().accept(this);
 
         curBB.addInst(new Jump(condBB));
 
